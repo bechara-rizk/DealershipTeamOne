@@ -3,7 +3,6 @@ import { MdOutlineDashboard } from "react-icons/md"
 import { HiOutlineHome } from "react-icons/hi";
 import { menuItems } from '../pages/api/dummy';
 import { Link } from "react-router-dom"
-import "../styles"
 // l
 import { FiBarChart2 } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
