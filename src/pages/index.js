@@ -1,12 +1,12 @@
-import styles from '@/styles/Home.module.css'
-import SignUp from '@/screens/products'
-import About from '@/screens/about'
-import Footer from '@/components/footer'
-import Navbar from '@/components/Navbar'
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
-  return (
-    <Navbar></Navbar>
+  const router = useRouter();
 
-  )
+  useEffect(() => {
+    router.push('/home/homescreen');
+  }, [router]);
+
+  return null
 }
