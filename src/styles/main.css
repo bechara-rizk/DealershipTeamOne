@@ -3,6 +3,7 @@
 /* @import './navbar.css'; */
 /* @import './sidebars.css'; */
 /* @import './userInfoPage.css'; */
+@import './auth.css';
 @import './homescreen.css';
 
 .container {
