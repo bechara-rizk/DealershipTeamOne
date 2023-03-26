@@ -61,3 +61,42 @@ z-index: 1; }
 .tryNav {
   display: none;
 } */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.container {
+  width: 100%; /* or a fixed width, depending on your layout */
+  overflow: hidden; /* to contain floated elements */
+}
+
+li {
+  float: left;
+  width: 20%;
+  left: 0; 
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 25px 30px;
+  text-decoration: none;
+}
+
+li {  
+  text-decoration-line: underline;
+  color: red;
+}  
+
+li a:hover {
+  background-color: #D3D3D3;
+  text-decoration-line: underline;  
+}
+
+
