@@ -1,10 +1,12 @@
-import styles from '@/styles/Home.module.css'
-import SignUp from '@/screens/products'
-import About from '@/screens/about'
-import Footer from '@/components/footer'
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
-  return (
-    <Footer></Footer>
-  )
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/home/homescreen');
+  }, [router]);
+
+  return null
 }

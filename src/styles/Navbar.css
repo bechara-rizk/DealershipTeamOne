@@ -1,0 +1,103 @@
+/* tia's code
+styling of the NAVBAR   */
+
+
+/* CSS Variables */
+/* :root {
+  --normal-font: 400;
+  --bold-font: 600;
+  --bolder-font: 900;
+  --primary-color: black;
+  --secondary-color: red;
+  --line-height: 1.7rem;
+  --transition: 0.4s ease-in;
+} */
+
+/* Resets */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: var(--transition);
+}
+
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
+} 
+.fist {
+  color: var(--secondary-color);
+}
+
+.jab {
+  color: var(--primary-color);
+}
+
+.tv {
+  color: var(--secondary-color);
+}
+nav {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  box-shadow: 2px 3px 2px #f1f1f1;
+}
+
+*{ position: sticky;
+top: 0;
+left: 0;
+z-index: 1; }
+ 
+.tryNav {
+  display: none;
+} */
+
+ul {
+  list-style-type: none;
+  margin: 25;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.container {
+  width: 100%; /* or a fixed width, depending on your layout */
+  overflow: hidden; /* to contain floated elements */
+}
+
+li {
+  float: left;
+  width: 20%;
+  left: 0; 
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 25px 30px;
+  text-decoration: none;
+  text-size-adjust: 10;
+}
+
+li {  
+  text-decoration-line: underline;
+  color: red;
+}  
+
+li a:hover {
+  background-color: #D3D3D3;
+  text-decoration-line: underline;  
+}
+
+
