@@ -64,7 +64,7 @@ z-index: 1; }
 
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: 25;
   padding: 0;
   overflow: hidden;
   background-color: white;
@@ -87,6 +87,7 @@ li a {
   text-align: center;
   padding: 25px 30px;
   text-decoration: none;
+  text-size-adjust: 10;
 }
 
 li {  

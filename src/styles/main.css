@@ -14,25 +14,25 @@
   justify-content: left;
   align-items: left;
   padding: 0%;
-  border-image-width: auto;
+  border-image-width: 1090px;
   overflow: hidden;
+    
 }
 
-/*
 .photo-strip {
   display: block;
   width: 100%;
-  height: 300px;
-  background-image: url("pic.jpg");
+  height: auto;
+  background-image: url("../images/pic.jpg");
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;}
-  */ 
+
  
 .navbar {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: left;
 }
 
