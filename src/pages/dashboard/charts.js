@@ -6,8 +6,8 @@ import Charts from '@/components/Charts';
 export default function adminCharts() {
   return (
     <div className="dashboardScreen">
-        <Sidebar></Sidebar>
-        <Charts></Charts>
+        <Sidebar/>
+        <Charts/>
     </div>
     
   )

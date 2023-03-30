@@ -2,8 +2,9 @@
 @import './homescreen.css';
 @import './Navbar.css';
 @import './Sidebars.css';
-<<<<<<< HEAD
 @import './dashboard.css';
+@import './Charts.css';
+@import './dashNavbar.css';
 
 
 
@@ -41,6 +42,3 @@
   gap: 3%;
   width: 100%;
 }
-=======
-@import './SalesInfoPage.css';
->>>>>>> 5e059fdef7e3af4b0f97a5d1e903313cfb4f874e

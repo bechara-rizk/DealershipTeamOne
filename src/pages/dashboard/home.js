@@ -6,8 +6,8 @@ import DashboardNavbar from '@/components/DashboardNavbar';
 export default function adminHome() {
   return (
     <div className="dashboardScreen">
-        <Sidebar></Sidebar>
-        <DashboardNavbar></DashboardNavbar>
+        <Sidebar/>
+        <DashboardNavbar/>
     </div>
   )
 }
