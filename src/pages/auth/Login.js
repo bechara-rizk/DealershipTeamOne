@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-export const Login=(props)=>{
+export default function Login (props){
     const [username, setUsername]= useState(''); // for updating state (is initially empty)
     const [password, setPass]= useState(''); //for updating state (is initially empty)
     const handleSubmit=(e) => { //to capture the user input when submitted

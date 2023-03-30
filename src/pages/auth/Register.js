@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export const Register=(props)=>{
+export default function Register (props){
     const [username, setUsername]= useState(''); // for updating state (is initially empty)
     const [password, setPass]= useState(''); //for updating state (is initially empty)
     const [email, setEmail]= useState(''); // for updating state (is initially empty)
