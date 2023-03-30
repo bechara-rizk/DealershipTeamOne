@@ -8,7 +8,7 @@ export default function Home() {
     <div className='container'>
       <div className='authButtons'>
         <Link href="/auth/LogIn"><button>Log in</button></Link>
-        <Link href="/auth/SignUp"><button>Sign Up</button></Link>
+        <Link href="/auth/Register"><button>Sign Up</button></Link>
       </div>
       <Navbar/>
       <Image src={car}/>
