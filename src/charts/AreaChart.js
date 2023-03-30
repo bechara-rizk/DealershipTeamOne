@@ -1,6 +1,5 @@
 import React from 'react';
-import {
-    Chart as ChartJS,
+import { Chart as ChartJS,
     CategoryScale,
     LinearScale,
     PointElement,

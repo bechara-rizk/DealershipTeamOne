@@ -2,8 +2,7 @@ import React from 'react'
 import AreaChart from '../Charts/AreaChart'
 import HorizontalBarChart from '../Charts/HorizontalBarChart'
 import LineChart from '../Charts/LineChart'
-import VerticalBarChart from '../Charts/VerticalBarChart'
-import "./Charts.css";
+// import VerticalBarChart from '../Charts/VerticalBarChart'
 
 const Charts = () => {
   return (
@@ -11,9 +10,9 @@ const Charts = () => {
       <div>
         <HorizontalBarChart/>
       </div>
-      <div>
+      {/* <div>
         <VerticalBarChart/>
-      </div>
+      </div> */}
       <div>
         <LineChart/>
       </div>
