@@ -1,63 +1,94 @@
 .navbar {
-    height: 3rem;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #1e67e7;
-    border-radius: 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+  background-color: white;
+}
+
+.navbar li {
+  width: 10%;
+}
+
+.navbar li a {
+  font-size: 1.3rem;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 0.4rem 0.5rem;
+  text-decoration: none;
+  text-size-adjust: 9;
+}
+
+.navbar li {  
+  text-decoration-line: underline;
+  color: red;
+}  
+
+.navbar li a:hover {
+  background-color: #D3D3D3;
+  text-decoration-line: underline;  
+}
+/* for thr dropdown menu for login/ sign up
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: #D3D3D3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: center;
 }
 
 
-.nav-icon {
-    font-size: 1.5rem;
-    color: #fff;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
-.search {
-    height: 2rem;
-    width: 12rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    border: 1px solid #fff;
-    border-radius: 20px;
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
 }
 
-.search:hover {
-    background-color:  #8cccf4;
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
-
-.search > .nav-icon {
-    padding-right: 0.5rem;
-    color: #fff;
-}
-
-.notification > .indicator {
-    position: absolute;
-    height: 0.8rem;
-    width: 0.8rem;
-    top: 1.9rem;
-    margin-left: 0.7rem;
-    background-color: #4cd137;
-    border-radius: 50%;
-}
-
-.user {
-    display: flex;
-    justify-content: center;
-}
-
-.user > span {
-    padding-right: 8px;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #fff;
-}
-
-.user > img {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-}
+*/

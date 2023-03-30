@@ -1,17 +1,22 @@
 import Navbar from '@/components/Navbar'
-import Image from 'next/image';
-import car from '../../images/pic.jpeg'
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className='container'>
+    <div className='homeContainer'>
       <div className='authButtons'>
-        <Link href="/auth/LogIn"><button>Log in</button></Link>
-        <Link href="/auth/SignUp"><button>Sign Up</button></Link>
+        <Link className='authElement' href="/auth/Register">Sign Up</Link>
+        <span className='authElement'>|</span>
+        <Link className='authElement' href="/auth/Login">Log In</Link>
+        <span className='authElement'>|</span>
       </div>
+
       <Navbar/>
-      <Image src={car}/>
+      <h1 className='homeTitle'>Lux Motors</h1>
     </div>
   )
 }
+
+
+
