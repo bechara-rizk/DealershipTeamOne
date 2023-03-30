@@ -24,6 +24,7 @@ function App() {
         </div>
         
         <div>
+          
           <h3>display text here </h3><h3>when clicking on an icon in the sidebar..</h3>
           {/* <Routes> */}
 
