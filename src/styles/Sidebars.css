@@ -3,7 +3,7 @@
     width: 17%;
     position: fixed;
     padding: 0.2rem 1rem;
-    background-color: #a66161;
+    background-color: #7a0319;
     color: #fff;
 }
 
@@ -44,7 +44,7 @@
 
 .item:hover {
     background-color: #fff;
-    color: #d84141;
+    color: #c41e3a;
     cursor: pointer;
 }
 
