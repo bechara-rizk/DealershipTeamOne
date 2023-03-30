@@ -70,24 +70,26 @@ ul {
   background-color: white;
 }
 
-.container {
+.container1 {
   width: 100%; /* or a fixed width, depending on your layout */
   overflow: hidden; /* to contain floated elements */
 }
 
 li {
   float: left;
-  width: 20%;
-  left: 0; 
+  margin-left: auto;
+  margin-top: 5px;
+  width: 10%;
+  left: 10px;; 
 }
 
 li a {
   display: block;
   color: black;
   text-align: center;
-  padding: 25px 30px;
+  padding: 20px 25px;
   text-decoration: none;
-  text-size-adjust: 10;
+  text-size-adjust: 9;
 }
 
 li {  
@@ -99,5 +101,67 @@ li a:hover {
   background-color: #D3D3D3;
   text-decoration-line: underline;  
 }
+/* for thr dropdown menu for login/ sign up
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: #D3D3D3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: center;
+}
 
 
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+*/

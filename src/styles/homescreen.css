@@ -1,0 +1,8 @@
+button for the homescreen to click and redirect 
+button {
+    padding: 30px;
+    position: absolute; 
+    left: 50px;
+    top: 50px;
+  }
+
