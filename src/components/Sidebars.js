@@ -15,7 +15,7 @@ const Sidebar = () => {
     <div className="container">
       <div className="logo">
         <MdOutlineDashboard className="logo-icon" />
-        <span>Dashboard</span>
+        <span>Luxe Motors</span>
       </div>
 
       <div className="menu">
