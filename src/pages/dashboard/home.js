@@ -4,6 +4,8 @@ import Sidebar from '@/components/Sidebars';
 
 export default function adminHome() {
   return (
-    <Sidebar></Sidebar>
+    <div className="dashboardScreen">
+        <Sidebar></Sidebar>
+    </div>
   )
 }
