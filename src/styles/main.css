@@ -1,44 +1,4 @@
-/* @import './footer.css'; */
-/* @import './charts.css'; */
-/* @import './navbar.css'; */
-/* @import './sidebars.css'; */
-/* @import './userInfoPage.css'; */
 @import './auth.css';
 @import './homescreen.css';
 @import './Navbar.css';
-
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  padding: 0%;
-  border-image-width: 1090px;
-  overflow: hidden;
-    
-}
-
-.photo-strip {
-  display: block;
-  width: 100%;
-  height: auto;
-  background-image: url("../images/pic.jpg");
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;}
-
- 
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: left;
-}
-
-.authButtons {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 3%;
-  width: 100%;
-}
+@import './Sidebars.css';
