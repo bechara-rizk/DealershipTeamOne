@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Typography, Table, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper, Button } from '@material-ui/core';
-
-import './SalesInfoPage.css';
  
 function SalesInfoPage() {
   const [salesInfo, setSalesInfo] = useState([]);
