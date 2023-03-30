@@ -1,9 +1,12 @@
 .charts {
-    margin: 1rem;
+  width: 84%;
+  height: 100%;
+  /* overflow-y: auto;
+  max-height: 100%; */
 }
 
 .charts > div {
-    margin: 30px;
+    margin: 50px;
     padding: 1.5rem;
     background-color: #fff;
     border-radius: 10px;

@@ -6,6 +6,8 @@ export default function Home() {
   return (
     <div className='homeContainer'>
       <div className='authButtons'>
+        <Link className='authElement' href="/dashboard/home">Admin Dashboard</Link>
+        <span className='authElement'>|</span>
         <Link className='authElement' href="/auth/Register">Sign Up</Link>
         <span className='authElement'>|</span>
         <Link className='authElement' href="/auth/Login">Log In</Link>
@@ -13,7 +15,7 @@ export default function Home() {
       </div>
 
       <Navbar/>
-      <h1 className='homeTitle'>Lux Motors</h1>
+      <h1 className='homeTitle'>Luxe Motors</h1>
     </div>
   )
 }
