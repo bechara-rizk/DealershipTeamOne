@@ -1,10 +1,9 @@
 // import React from 'react';
-// import "./Navbar.css";
+// import "./dashNavbar.css";
 // import { MdNotificationsNone } from 'react-icons/md';
 // import { FiSearch } from 'react-icons/fi';
 // import { BiMessageRoundedDetail } from 'react-icons/bi';
 // import avatar from "../data/avatar.png";
-
 
 
 // const Navbar = () => {

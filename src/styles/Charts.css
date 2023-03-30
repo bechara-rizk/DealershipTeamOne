@@ -1,9 +1,23 @@
 .charts {
-    margin: 1rem;
+    /* margin: 6rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: calc(100% - 610px); */
+
+    /* position: sticky;
+    top: 50px;
+    right: 50px; */
+
+    margin: 6rem;
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    left: calc(100% - 610px) !important;
 }
 
 .charts > div {
-    margin: 30px;
+    margin: 50px;
     padding: 1.5rem;
     background-color: #fff;
     border-radius: 10px;
