@@ -1,0 +1,5 @@
+.dashboardScreen {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}

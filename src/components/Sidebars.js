@@ -13,14 +13,14 @@ import { IoReceiptOutline } from "react-icons/io5";
 const Sidebar = () => {
   return (
 
-    <div className="container">
+    <div className="sidebarContainer">
       <div className="logo">
         <MdOutlineDashboard className="logo-icon" />
         <span>Luxe Motors</span>
       </div>
 
       <div className="menu">
-        <Link href="/dashboard/home" className="item">
+        <Link href="/home/homescreen" className="item">
           <HiOutlineHome className="menu-icon"/>
           <h3>Home</h3>
         </Link>
