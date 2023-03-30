@@ -5,8 +5,9 @@
 @import './dashboard.css';
 @import './Charts.css';
 @import './dashNavbar.css';
-
-
+@import './UserInfoPage.css';
+@import './AddCarForm.css';
+@import './SalesInfoPage.css';
 
 .container {
   display: flex;
