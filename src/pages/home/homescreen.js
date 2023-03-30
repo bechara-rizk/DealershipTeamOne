@@ -14,9 +14,7 @@ export default function Home() {
       </div>
 
       <Navbar/>
-      <button type="button" name="button">Button</button>
-      
-   
+      <h1 className='homeTitle'>Lux Motors</h1>
     </div>
   )
 }

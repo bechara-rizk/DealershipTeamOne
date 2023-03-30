@@ -37,3 +37,10 @@ button {
   color: inherit;
   font-size: 0.8rem;
 }
+
+.homeTitle {
+  color: white;
+  align-self: center;
+  margin-top: 15%;
+  font-size: 3rem;
+}

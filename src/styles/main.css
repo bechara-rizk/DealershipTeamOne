@@ -1,22 +1,4 @@
-/* @import './footer.css'; */
-/* @import './charts.css'; */
-/* @import './navbar.css'; */
-/* @import './sidebars.css'; */
-/* @import './userInfoPage.css'; */
 @import './auth.css';
 @import './homescreen.css';
 @import './Navbar.css';
 @import './Sidebars.css';
-
-
-/* .photo-strip { 
-  display: block;
-  width: 100%;
-  height: auto;
-  background-image: url("../images/pic.jpeg"); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;} */
-
- 
-
