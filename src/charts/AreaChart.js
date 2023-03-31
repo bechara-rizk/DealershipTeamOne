@@ -28,8 +28,20 @@ export const options = {
         legend: {
             position: 'top',
         },
-
     },
+    scales: {
+        y: {
+            beginAtZero: true,
+            ticks: {
+                color: 'white'
+            }
+        },
+        x: {
+            ticks: {
+                color: 'white'
+            }
+        }
+    }
 };
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
@@ -41,19 +53,20 @@ export const data = {
             fill: true,
             label: 'Customers',
             data: [20, 35, 25, 48, 62, 54, 72],
-            borderColor: 'rgb(53, 162, 235)',
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            borderColor: 'black', // trendline color
+            backgroundColor: 'rgba(128, 128, 128, 0.2)', // grey area
         },
     ],
 };
 
+
 const AreaChart = () => {
     return (
         <div className='chart'>
-            <h2>Area Chart</h2>
+            <h2 style={{color: 'black'}}>Customers</h2>
             <Line options={options} data={data} />
         </div>
     )
 }
 
-export default AreaChart
+export default AreaChart;

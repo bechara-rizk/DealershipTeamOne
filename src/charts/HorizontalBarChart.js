@@ -42,7 +42,7 @@ export const data = {
     {
       label: "Sales",
       data:[10,22, 35 ,58, 40,60, 45],
-      backgroundColor: "#0434ec",
+      backgroundColor: 'black',
       borderRadius: 25,
     },
   ],
@@ -51,7 +51,7 @@ export const data = {
 const HorizontalBarChart = () => {
   return (
     <div className="chart">
-      <h2>Horizontal Bar Chart</h2>
+      <h2 style={{color: 'black'}}>Sales </h2>
       <Bar options={options} data={data}/>
     </div>
   )
