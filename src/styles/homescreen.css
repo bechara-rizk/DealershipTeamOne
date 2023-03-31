@@ -39,9 +39,9 @@ button {
 }
 
 .homeTitle {
-  color: white;
+  color: whitesmoke;
   align-self: center;
   margin-top: 15%;
   font-size: 4rem;
-  font-family: Calibri light;
+  font-family: "Roboto", sans-serif;
 }
