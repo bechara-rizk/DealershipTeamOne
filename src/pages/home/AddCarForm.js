@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, FormControl, Paper } from '@material-ui/core';
-import './AddCarForm.css';
+
 
 const AddCarForm = () => {
   const [make, setMake] = useState('');
