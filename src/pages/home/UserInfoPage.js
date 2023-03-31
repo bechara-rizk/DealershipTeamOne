@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 
 const UserInfoPage = () => {
   const [userInfo, setUserInfo] = useState({
@@ -26,18 +21,20 @@ const UserInfoPage = () => {
 
   return (
     <div className="user-info">
-      <Avatar className="avatar">{userInfo.name[0]}</Avatar>
-      <Typography variant="h4" gutterBottom className="name">
-        {userInfo.name}
-      </Typography>
-      <Paper className="info-paper">
-        <TextField id="email" label="Email" variant="outlined" fullWidth margin="normal" value={userInfo.email} onChange={(e) => handleUserInfoChange('email', e.target.value)} />
-        <TextField id="phone" label="Phone" variant="outlined" fullWidth margin="normal" value={userInfo.phone} onChange={(e) => handleUserInfoChange('phone', e.target.value)} />
-  
-        <TextField id="address" label="Address" variant="outlined" fullWidth multiline rows={4} margin="normal" value={userInfo.address} onChange={(e) => handleUserInfoChange('address', e.target.value)} />
-        <Button style={{ backgroundColor: 'black', color: 'white' }} onClick={handleSaveChanges}>Save changes</Button>
-      </Paper>
-      
+      <div className="avatar">{userInfo.name[0]}</div>
+      <h4 className="name">{userInfo.name}</h4>
+      <div className="info-paper">
+        <label htmlFor="email">Email</label>
+        <input id="email" type="email" value={userInfo.email} onChange={(e) => handleUserInfoChange('email', e.target.value)} />
+
+        <label htmlFor="phone">Phone</label>
+        <input id="phone" type="tel" value={userInfo.phone} onChange={(e) => handleUserInfoChange('phone', e.target.value)} />
+
+        <label htmlFor="address">Address</label>
+        <textarea id="address" value={userInfo.address} onChange={(e) => handleUserInfoChange('address', e.target.value)} />
+
+        <button className="save-button" onClick={handleSaveChanges}>Save changes</button>
+      </div>
     </div>
   );
 };
