@@ -1,7 +1,15 @@
-eState('20,000');
-  const [price, setPrice] = useState('$28,000');
-  const [color, setColor] = useState('Black Sapphire Metallic');
-  const [picture, setPicture] = useState(BMW);
+import React, { useState } from 'react';
+import { TextField, Button, FormControl, Paper } from '@material-ui/core';
+
+import './EditCarForm.css';
+const EditCarForm = ({ car, onSave }) => {
+  const [make, setMake] = useState(car?.make || '');
+  const [model, setModel] = useState(car?.model || '');
+  const [year, setYear] = useState(car?.year || '');
+  const [mileage, setMileage] = useState(car?.mileage || '');
+  const [price, setPrice] = useState(car?.price || '');
+  const [color, setColor] = useState(car?.color || '');
+  const [picture, setPicture] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -79,13 +87,11 @@ eState('20,000');
           variant="contained"
           color="black"
         >
-          Save
+          Save eDIT
         </Button>
       </FormControl>
     </Paper>
   );
-
-  
 }
 
 export default EditCarForm;
