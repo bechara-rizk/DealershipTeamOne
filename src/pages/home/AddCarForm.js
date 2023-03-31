@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { TextField, Button, FormControl, Paper } from '@material-ui/core';
-
 
 const AddCarForm = () => {
   const [make, setMake] = useState('');
@@ -13,6 +11,7 @@ const AddCarForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Handle form submission here
   }
 
   const handlePictureChange = (e) => {
@@ -20,66 +19,80 @@ const AddCarForm = () => {
   }
 
   return (
-    <Paper className="add-car-form-container" elevation={3}>
-      <FormControl onSubmit={handleSubmit}>
-        <TextField
+    <form className="add-car-form-container" onSubmit={handleSubmit}>
+      <label>
+        Make:
+        <input
           className="input-field"
-          label="Make"
+          type="text"
           value={make}
           onChange={(e) => setMake(e.target.value)}
           required
         />
-        <TextField
+      </label>
+      <label>
+        Model:
+        <input
           className="input-field"
-          label="Model"
+          type="text"
           value={model}
           onChange={(e) => setModel(e.target.value)}
           required
         />
-        <TextField
+      </label>
+      <label>
+        Year:
+        <input
           className="input-field"
-          label="Year"
+          type="text"
           value={year}
           onChange={(e) => setYear(e.target.value)}
           required
         />
-        <TextField
+      </label>
+      <label>
+        Mileage:
+        <input
           className="input-field"
-          label="Mileage"
+          type="text"
           value={mileage}
           onChange={(e) => setMileage(e.target.value)}
           required
         />
-        <TextField
+      </label>
+      <label>
+        Price:
+        <input
           className="input-field"
-          label="Price"
+          type="text"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           required
         />
-        <TextField
+      </label>
+      <label>
+        Color:
+        <input
           className="input-field"
-          label="Color"
+          type="text"
           value={color}
           onChange={(e) => setColor(e.target.value)}
           required
         />
+      </label>
+      <label>
+        Picture:
         <input
           className="input-field"
           type="file"
           accept="image/*"
           onChange={handlePictureChange}
         />
-        <Button
-          className="submit-button"
-          type="submit"
-          variant="contained"
-          color="black"
-        >
-          Save
-        </Button>
-      </FormControl>
-    </Paper>
+      </label>
+      <button className="submit-button" type="submit">
+        Save
+      </button>
+    </form>
   );
 }
 
