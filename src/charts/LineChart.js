@@ -24,8 +24,12 @@ export const options = {
   plugins: {
     legend: {
       position: 'top',
+      fill: false,
     },
+    
   },
+ 
+
 };
 
 const labels = ['January', 'February', 'March', 'April', 'May'];
@@ -35,16 +39,20 @@ export const data = {
   datasets: [
       {
           label: 'Sales',
+          fill: false,
           data: ['60',"72","55","85","75"],
-          borderColor: 'rgb(255, 99, 132)',
-          backgroundColor: 'rgba(255, 99, 132,0.5)',
+          
+          borderColor: 'black', 
+          
           borderWidth: 5
+          
       },
       {
           label: 'Revenue',
           data: [19,32,55,45,85],
-          borderColor: 'rgb(53, 162, 235)',
-          backgroundColor: 'rgba(53, 162, 235, 0.5)',
+          fill: false,
+          borderColor: '#9F210D', 
+         
           borderWidth: 5
       },
   ],
@@ -53,10 +61,10 @@ export const data = {
 const LineChart = () => {
   return (
     <div className="chart">
-      <h2>Line Chart</h2>
+      <h2 style={{color: 'black'}}>Sales Statistics</h2>
       <Line options={options} data={data}/>
     </div>
   )
 }
 
-export default LineChart
+export default LineChart;
