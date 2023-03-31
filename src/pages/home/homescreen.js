@@ -15,7 +15,11 @@ export default function Home() {
       </div>
 
       <Navbar/>
-      <h1 className='homeTitle'>LUXE MOTORS</h1>
+      <h1 className='homeTitle'>A Luxury Car Voyage</h1>
+        <div className='discoverHomeButton'>
+          <span className='discoverHomeButton'>Discover <i class="arrow right"></i></span>
+          
+      </div>
     </div>
   )
 }

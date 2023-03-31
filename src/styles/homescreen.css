@@ -2,16 +2,17 @@
 button {
     padding: 30px;
     position: absolute; 
-    left: 50px;
-    top: 50px;
+    left: 60px;
+    top: 100px;
+    background-color: black;
   }
 
 .homeContainer {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  background-image: url("../images/pic.jpeg");
-  position: fixed;
+  background-image: url("https://media0.giphy.com/media/xT9Igr12tbF7Ypy5vG/giphy.gif?cid=ecf05e47wrhgxsbrum6k13s1orpidndpbuu7rpuvruld3f2x&rid=giphy.gif&ct=g");
+  position: fixed; /* Position the background image to make it scale nicely with the entire page */
   top: 0;
   left: 0;
   width: 100%;
@@ -20,28 +21,125 @@ button {
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the background image */
   z-index: -1;
+  background-color: black;
+  
 }
 
 .authButtons {
   display: flex;
   justify-content: right;
   align-items: center;
-  background-color: white;
-  gap: 1%;
+  background-color:black;
+  gap: 0%;
   width: 100%;
+  color: whitesmoke;
+}
+
+.discoverHomeButton{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #e8e8e8;
   color: black;
+  font-size: 1.5rem;
+  border: transparent whitesmoke;
+  border-radius: 12px;
+  padding: 0.85rem;
+  margin-top: 5%;
+  margin-left: 10%;
+  width: 10%;
+  height: 1%;
+  margin: 8px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.discoverHomebutton:hover {
+  background-color: #465a6e; 
+  color: white;
 }
 
 .authElement {
   text-decoration: none;
+  margin-top: 5%;
   color: inherit;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
-.homeTitle {
+.homeTitle {   
   color: whitesmoke;
-  align-self: center;
-  margin-top: 15%;
-  font-size: 4rem;
-  font-family: "Roboto", sans-serif;
+  align-self: left;
+  margin-left: 5%;
+  margin-top: 5%;
+  font-size: 2rem;
+  font: Calibri light;
 }
+
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+/* for thr dropdown menu for login/ sign up
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: center;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+*/
