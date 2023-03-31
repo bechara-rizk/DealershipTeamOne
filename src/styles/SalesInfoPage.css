@@ -5,7 +5,7 @@
 }
 
 .sales-info-heading {
-  margin-bottom: 20px;
+  text-decoration: underline solid red;
   font-size: 24px;
 }
 .sales-info-table thead th {
@@ -47,9 +47,3 @@
 }
 
 
-.sales-info-heading{
- 
-  
-  color: black;
-  border-bottom:  solid red;
-}

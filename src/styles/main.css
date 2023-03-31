@@ -8,7 +8,7 @@
 @import './dashNavbar.css';
 @import './faqs.css';
 @import './UserInfoPage.css';
-
+@import './AddCarForm.css';
 
 .container {
   display: flex;
