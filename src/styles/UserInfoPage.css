@@ -43,19 +43,25 @@ input[type="tel"],
 textarea {
   width: 100%;
   padding: 10px;
-  border: 2px solid black;
+ 
   border-radius: 5px;
   margin-bottom: 20px;
+  color: white;
 }
-
+#address {
+  color: grey;
+}
 button {
   background-color: black;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
+  margin: 0 auto;
+  display: block;
   cursor: pointer;
   transition: all 0.3s ease;
+  
 }
 
 button:hover {
