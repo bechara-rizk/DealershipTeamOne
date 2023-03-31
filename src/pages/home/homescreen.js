@@ -13,7 +13,7 @@ export default function Home() {
       </div>
 
       <Navbar/>
-      <h1 className='homeTitle'>Lux Motors</h1>
+      <h1 className='homeTitle'>LUXE MOTORS</h1>
     </div>
   )
 }
