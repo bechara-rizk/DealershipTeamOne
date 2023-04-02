@@ -1,5 +1,21 @@
+.Add-Car-Heading{
+  text-decoration: underline solid red;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+}
+.add_car{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 0px;
+  background-color: white;
+  border: 2px solid red;
+  margin: auto;
+  
+}
 .add-car-form-container {
-    padding: 24px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,13 +24,16 @@
   }
   
   .input-field {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+    background-color: white;
+    color: black;
+    padding: 0;
   }
   
   .submit-button {
     background-color: black;
     color: white;
-    margin-top: 16px;
+   
   }
   
   .submit-button:hover {
