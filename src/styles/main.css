@@ -9,7 +9,7 @@
 @import './faqs.css';
 @import './UserInfoPage.css';
 @import './AddCarForm.css';
-
+@import './carschedule.css';
 .container {
   display: flex;
   flex-direction: column;
