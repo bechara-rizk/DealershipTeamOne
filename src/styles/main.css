@@ -10,6 +10,7 @@
 @import './UserInfoPage.css';
 @import './AddCarForm.css';
 @import './carschedule.css';
+@import './EditCarForm.css';
 .container {
   display: flex;
   flex-direction: column;
