@@ -1,0 +1,5 @@
+.pageContainer {
+  margin-left :5rem; ; /* same as the width of the sidebar */
+  margin-right: 30px;
+  margin-top: 3rem; /* same as the height of the navbar */
+}
