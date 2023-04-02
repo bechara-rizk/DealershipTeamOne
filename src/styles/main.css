@@ -11,6 +11,8 @@
 @import './AddCarForm.css';
 @import './carschedule.css';
 @import './EditCarForm.css';
+@import './CarScheduleDashboard.css';
+
 .container {
   display: flex;
   flex-direction: column;

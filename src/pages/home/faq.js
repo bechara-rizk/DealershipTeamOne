@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: 'Do you offer financing options?',
-    answer: 'Yes, we offer financing options for qualified buyers. Please visit our Financing page to learn more.'
+    answer: 'Yes, we offer financing options for qualified buyers.'
   },
   {
     question: 'Do you offer warranty on your cars?',
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: 'How can I contact customer support?',
-    answer: ' You can contact our customer support team by phone, email, or live chat. Visit our Contact Us page for more information.'
+    answer: ' You can contact our customer support team by phone, email . Visit our Contact Us page for more information.'
   }
   
 
