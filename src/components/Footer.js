@@ -1,54 +1,54 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram, faLinkedinIn,} from '@fortawesome/free-brands-svg-icons';
+
+
+
+
 const Footer = () => {
 	return (
-				<div class="footer-content">
-					<h3>About Us</h3>
-					<p>Drive your dreams to reality with our unbeatable selection of top-quality cars and exceptional customer service, making your car shopping experience truly unforgettable</p>
-					<div>
-						<h2>Contact Us:</h2>
-					</div>
-					<div class="contact-info">
-						<div>
-							Phone: <a href="tel:+96100000000">+961 00 000 000</a>
-						</div>
-						<div>
-							Email: <a href="mailto:info@dealership.com">info@dealership.com</a>
-						</div>
-					</div>
-
-					<ul class="socials">
-						<li>
-							<a href=" ">
-								<i class="fa fa-facebook"></i>
-							</a>
-						</li>
-						<li>
-							<a href=" ">
-								<i class="fa fa-twitter"></i>
-							</a>
-						</li>
-						<li>
-							<a href=" ">
-								<i class="fa fa-google-plus"></i>
-							</a>
-						</li>
-						<li>
-							<a href=" ">
-								<i class="fa fa-youtube"></i>
-							</a>
-						</li>
-						<li>
-							<a href=" ">
-								<i class="fa fa-linkedin-square"></i>
-							</a>
-						</li>
-					</ul>
-
-					<div class="footer-bottom">
-						<p>copyright &copy; 2023</p>
-					</div>
-				</div>
+		<div className="footer">
+		<div className="container">
+		 <div className="row">
+		 <div className="footer-logo"  style={{ height: '200px', lineHeight: '200px', textAlign: 'center' }}>
+	   <img src="/public/images/logo.jpg"  alt="Logo" style={{width: '100px', height: 'auto' }}/>
+	 </div>
+		   <div className="footer-col">
+			 <h4>Luxe Motors</h4>
+			 <ul>
+			   <li><a href="#">about us</a></li>
+			   <li><a href="#">Contact us</a></li>
+			   <li><a href="#">our services</a></li>
+			   <li><a href="#">privacy policy</a></li>
+			   
+			 </ul>
+		   </div>
+		   <div className="footer-col">
+			 <h4>get help</h4>
+			 <ul>
+			   <li><a href=" ">FAQ</a></li>
+			   <li><a href=" ">user Profile</a></li>
+			   <li><a href=" ">Car Listing</a></li>
+			   <li><a href=" ">Test Drive</a></li>
+			 
+			 </ul>
+		   </div>
+		   
+		   <div className="footer-col">
+			 <h4>follow us</h4>
+			 <div className="social-links">
+             <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
+              <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
+              <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+              <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+			 </div>
+		   </div>
+		 </div>
+         
+		</div>
+        <div className="footer__copyright">Copyright © 2022 luxe Motor</div>
+	 </div>
 	);
 };
 
