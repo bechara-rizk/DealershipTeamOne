@@ -11,7 +11,8 @@
 @import './AddCarForm.css';
 @import './carschedule.css';
 @import './footer.css';
-
+@import './EditCarForm.css';
+@import './CarScheduleDashboard.css';
 
 
 .container {
