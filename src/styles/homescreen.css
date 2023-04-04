@@ -11,7 +11,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  background-image: url("https://media0.giphy.com/media/xT9Igr12tbF7Ypy5vG/giphy.gif?cid=ecf05e47wrhgxsbrum6k13s1orpidndpbuu7rpuvruld3f2x&rid=giphy.gif&ct=g");
+  background-image: url("/gif/backgroundHomeImage.gif");
   position: fixed; /* Position the background image to make it scale nicely with the entire page */
   top: 0;
   left: 0;
