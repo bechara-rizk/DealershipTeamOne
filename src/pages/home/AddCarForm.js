@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const AddCarForm = () => {
+  const [vin, setVin] = useState('');
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');
@@ -19,7 +20,19 @@ const AddCarForm = () => {
   }
 
   return (
+    <><h2 className='Add-Car-Heading'>Add Car</h2>
+    <div className="add_car">
     <form className="add-car-form-container" onSubmit={handleSubmit}>
+
+      <label>
+        VIN:
+        <input
+          className="input-field"
+          type="text"
+          value={vin}
+          onChange={(e) => setVin(e.target.value)}
+          required />
+      </label>
       <label>
         Make:
         <input
@@ -27,8 +40,7 @@ const AddCarForm = () => {
           type="text"
           value={make}
           onChange={(e) => setMake(e.target.value)}
-          required
-        />
+          required />
       </label>
       <label>
         Model:
@@ -37,8 +49,7 @@ const AddCarForm = () => {
           type="text"
           value={model}
           onChange={(e) => setModel(e.target.value)}
-          required
-        />
+          required />
       </label>
       <label>
         Year:
@@ -47,8 +58,7 @@ const AddCarForm = () => {
           type="text"
           value={year}
           onChange={(e) => setYear(e.target.value)}
-          required
-        />
+          required />
       </label>
       <label>
         Mileage:
@@ -57,8 +67,7 @@ const AddCarForm = () => {
           type="text"
           value={mileage}
           onChange={(e) => setMileage(e.target.value)}
-          required
-        />
+          required />
       </label>
       <label>
         Price:
@@ -67,8 +76,7 @@ const AddCarForm = () => {
           type="text"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
-          required
-        />
+          required />
       </label>
       <label>
         Color:
@@ -77,8 +85,7 @@ const AddCarForm = () => {
           type="text"
           value={color}
           onChange={(e) => setColor(e.target.value)}
-          required
-        />
+          required />
       </label>
       <label>
         Picture:
@@ -86,13 +93,12 @@ const AddCarForm = () => {
           className="input-field"
           type="file"
           accept="image/*"
-          onChange={handlePictureChange}
-        />
+          onChange={handlePictureChange} />
       </label>
       <button className="submit-button" type="submit">
         Save
       </button>
-    </form>
+    </form></div></>
   );
 }
 

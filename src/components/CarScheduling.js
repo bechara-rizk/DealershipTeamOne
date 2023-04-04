@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './carschedule.css';
+//import './carschedule.css';
 
 function CarSchedulePage() {
   const [selectedCar, setSelectedCar] = useState(null);
@@ -28,7 +28,7 @@ function CarSchedulePage() {
   };
 
   const TimeSelector = () => {
-    const availableTimes = ['9:00am','10:00am', '11:00am', '1:00pm', '2:00pm','3:00pm'];
+    const availableTimes = ['8:00am','9:00am','10:00am', '11:00am', '1:00pm', '2:00pm','3:00pm','4:00pm','5:00pm'];
 
     const handleTimeClick = (time) => {
       handleTimeSelection(time);
@@ -62,7 +62,7 @@ function CarSchedulePage() {
 
     return (
       <div className="car-selector">
-        <h2>Select a car:</h2>
+        <p className='whichcar'>Select a car:</p>
         <button onClick={() => handleCarClick(1)}>Audi A4</button>
         <button onClick={() => handleCarClick(2)}>BMW 4 series</button>
       </div>
@@ -76,7 +76,7 @@ function CarSchedulePage() {
 
     return (
       <div className="selected-times">
-        <h3>{selectedCar === 1 ? 'Audi A4' : 'BMW 4 series'} Avaiable::</h3>
+        <p className='AvTime'>{selectedCar === 1 ? 'Audi A4' : 'BMW 4 series'} Available time:</p>
         {selectedTimes.length === 0 ? (
           <p>No times selected</p>
         ) : (
@@ -101,11 +101,11 @@ function CarSchedulePage() {
 
   return (
     <div className="car-schedule-page">
-      <h1>Car Schedule Page</h1>
+      <h1>Car Schedule</h1>
       <CarSelector />
       {selectedCar !== null && (
         <>
-          <h2> {selectedCar === 1 ? 'Audi A4' : 'BMW 4 series'}</h2>
+          <p className='whichcar'> {selectedCar === 1 ? 'Audi A4' : 'BMW 4 series'}</p>
 
           <TimeSelector />
           <SelectedTimes />

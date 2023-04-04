@@ -1,8 +1,25 @@
+.car-schedule-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  left: 5rem; 
+  margin-right: 50px;
+}
+
+.car-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
 .car-schedule-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    margin-left: 10rem; 
   }
   
   .car-selector {
@@ -24,7 +41,7 @@
   }
   
   .car-selector button:hover {
-    background-color: #e91616;
+    background-color: #7a0319;
   }
   
   .time-selector {
@@ -56,7 +73,7 @@
   }
   
   .time-selector button.selected {
-    background-color: #ff0000;
+    background-color: #a3011ee8;
     color: #fff;
   }
   
@@ -92,4 +109,17 @@
   button:hover {
     background-color: #000000;
   }
-  
+  .car-schedule-page .whichcar {
+    text-decoration: underline solid #7a031994;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.7em;
+  }
+  .selected-times .AvTime {
+    text-decoration: underline solid #7a0319;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.6em;
+  }
