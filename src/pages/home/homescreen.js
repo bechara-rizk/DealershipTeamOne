@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
+    <>
     <div className='homeContainer'>
       <div className='authButtons'>
         <span className='authElement'>LogIn</span>
@@ -16,6 +17,9 @@ export default function Home() {
           
       </div>
     </div>
+
+    <Footer/>
+    </>
   )
 }
 

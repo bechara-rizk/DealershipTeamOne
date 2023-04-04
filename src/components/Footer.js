@@ -12,7 +12,7 @@ const Footer = () => {
 		<div className="container">
 		 <div className="row">
 		 <div className="footer-logo"  style={{ height: '200px', lineHeight: '200px', textAlign: 'center' }}>
-	   <img src="/public/images/logo.jpg"  alt="Logo" style={{width: '100px', height: 'auto' }}/>
+	   <img src="/images/logo.jpg"  alt="Logo" style={{width: '100px', height: 'auto' }}/>
 	 </div>
 		   <div className="footer-col">
 			 <h4>Luxe Motors</h4>
