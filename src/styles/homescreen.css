@@ -45,7 +45,7 @@ button {
   border: transparent whitesmoke;
   border-radius: 12px;
   padding: 0.85rem;
-  margin-top: 5%;
+  margin-top: 50%;
   margin-left: 10%;
   width: 10%;
   height: 1%;
@@ -95,14 +95,14 @@ button {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 1rem;  
   border: none;
   outline: none;
-  color: black;
+  color: rgb(0,0,0,0.5);
   padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+  background-color: black;
+  font-family: Calibri light;
+  margin: inherit;
   position: absolute;
   top: 0;
   right: 0;
