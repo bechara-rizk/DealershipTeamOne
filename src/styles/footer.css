@@ -92,7 +92,8 @@ ul{
 .footer-logo{
   display: 'flex';
   text-align: center;
-  margin-left: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
   
 }
 

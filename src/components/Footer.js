@@ -28,9 +28,9 @@ const Footer = () => {
 			 <h4>get help</h4>
 			 <ul>
 			   <li><a href=" ">FAQ</a></li>
-			   <li><a href=" ">user Profile</a></li>
 			   <li><a href=" ">Car Listing</a></li>
 			   <li><a href=" ">Test Drive</a></li>
+			   <li><a href=" ">News</a></li>
 			 
 			 </ul>
 		   </div>
@@ -47,7 +47,7 @@ const Footer = () => {
 		 </div>
          
 		</div>
-        <div className="footer__copyright">Copyright © 2022 luxe Motor</div>
+        <div className="footer__copyright">Copyright © 2023 luxe Motor</div>
 	 </div>
 	);
 };

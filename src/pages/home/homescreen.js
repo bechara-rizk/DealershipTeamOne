@@ -16,9 +16,10 @@ export default function Home() {
           <span className='discoverHomeButton'>Discover <i class="arrow right"></i></span>
           
       </div>
+      <Footer/>
     </div>
 
-    <Footer/>
+    
     </>
   )
 }
