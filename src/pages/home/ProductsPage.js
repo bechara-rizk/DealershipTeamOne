@@ -1,10 +1,10 @@
 
 import React from 'react'
 import { Col, Card, Row } from 'antd';
-import CheckBox from './components/CheckBox';
-import RadioBox from './components/RadioBox';
+import CheckBox from './src/components/CheckBox';
+import RadioBox from './src/components/RadioBox';
 import SearchFeature from './components/SearchFeature';
-import cars from './CarDetails'
+import cars from './src/home/CarDetails'
 
 
 const { Meta } = Card;
