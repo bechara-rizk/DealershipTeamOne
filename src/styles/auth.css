@@ -1,5 +1,5 @@
 
-.App {
+.Login {
     text-align: center;
     display: flex;
     height:100vh; 
@@ -13,21 +13,36 @@
     background-color: black;
   }
   
+  .label{
+    text-align: left; 
+    padding: 0.75rem 0; 
+  }
+  .UsernameInput,.PassInput, select, textarea{
+    color: white;
+    size: 7px;
+    
+  }  
   
-  
-  .auth-form-container, .loginform, .regform{
+   .loginform, .regform{
     display: flex;
-    flex-direction:column; 
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   
+  .auth-form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
   
   .label{
     text-align: left; 
     padding: 0.75rem 0; 
   }
   
-  input{
+  .UsernameInput, .PassInput{
     margin: 0.75rem 0;
     background-color:black; 
     border:solid 1px #ccc; 
@@ -50,37 +65,46 @@
     width: 150px;
   }
   
-  button{
+  .togglebutton{
     background-color: transparent;
     color: #C41E3A;
-    border:solid 1px transparent;
-    padding: 8px; 
-    width: 220px;
+    border: solid 1px transparent;
+    padding: 15px; 
     font-size: 10px;
     transition: 0.3s;
     display: inline-block;
     cursor: pointer;
+    width: 220px;
+    margin-top: 2.5rem;
+    margin-left: -80px;
+    
   }
   
+  .Loginbuttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  }
   
-  button1{
+  .Submitbutton{
     margin:0.5rem 0;
     background-color: transparent;
     color: white;  
     border:solid 1px #ccc; 
     text-align: center;
     font-size: 13px;
-    margin: 4px 50px 2px;
     transition: 0.3s;
     display: inline-block;
     cursor: pointer; 
     width: 90px; 
     padding: 8px; 
+    margin-left: -20px;
   }
   
   
-  .wrapper{
+  .Loginwrapper{
     background-color: transparent;
+    
     display:flex;
     position: absolute;
     right: 150px;

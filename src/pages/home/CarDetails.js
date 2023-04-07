@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import Audi from './public/images/audia4.PNG'
-import BMW from './public/images/bmw4series.PNG';
-import Mercedes from './public/images/Mercedes.PNG';
+import Audi from '../../../public/images/audia4.PNG'
+import BMW from '../../../public/images/bmw4series.PNG';
+import Mercedes from '../../../public/images/Mercedes.PNG';
 
 const cars = [
   {
