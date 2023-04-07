@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const UserInfoPage = () => {
   const [userInfo, setUserInfo] = useState({
     name: 'Username',
@@ -20,7 +21,8 @@ const UserInfoPage = () => {
   };
 
   return (
-    <div className="user-info">
+    <div className="user-info-page">
+      <div className="user-info">
       <div className="avatar">{userInfo.name[0]}</div>
       <h4 className="name">{userInfo.name}</h4>
       <div className="info-paper">
@@ -34,6 +36,7 @@ const UserInfoPage = () => {
         <textarea id="address" value={userInfo.address} onChange={(e) => handleUserInfoChange('address', e.target.value)} />
 
         <button className="save-button" onClick={handleSaveChanges}>Save changes</button>
+      </div>
       </div>
     </div>
   );
