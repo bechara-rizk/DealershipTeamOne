@@ -24,7 +24,7 @@ const contactUs = () => {
       <div className="Content">
         <h2>Get in touch!</h2>
       </div>
-      <div className="container">
+      <div className="contact_container">
         <div className="contactInfo">
           <div className="box">
             <div className="icon"><FontAwesomeIcon icon={faMapMarkerAlt}/></div>
