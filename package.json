@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -13,6 +12,7 @@
     "@emotion/react": "^11.10.6",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "antd": "^5.4.0",
     "bootstrap": "^5.2.3",
