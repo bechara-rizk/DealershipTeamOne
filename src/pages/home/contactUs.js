@@ -1,76 +1,75 @@
-import React from "react"; 
-import { Container, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-export default function ContactUs() {
-  
+const contactUs = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+ 
+    const name = event.target.elements.name.value;
+    const email = event.target.elements.email.value;
+    const message = event.target.elements.message.value;
+
+    // TODO: Send the message to the dealer
+    console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+
+    
+    event.target.elements.name.value = '';
+    event.target.elements.email.value = '';
+    event.target.elements.message.value = '';
+  };
 
   return (
-      <Container>
-     
-        <Row className="mb-5 mt-3">
-          <Col lg="8">
-            <h1 className="display-4 mb-4">Contact Me</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Get in touch</h3>
-            <address>
-              <strong>Email:</strong>{" "}
-              <br />
-              <br />
-                <p>
-                  <strong>Phone:</strong> 
-                </p>
-               : (
-                ""
-              )
-            </address>
-          </Col>
-          <Col lg="7" className="d-flex align-items-center">
-            <form  className="contact__form w-100">
-              <Row>
-                <Col lg="6" className="form-group">
-                  <input
-                    className="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="Name" 
-                    type="text"
-                    required 
-                  />
-                </Col>
-                <Col lg="6" className="form-group">
-                  <input
-                    className="form-control rounded-0"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    type="email" 
-                    required 
-                  />
-                </Col>
-              </Row>
-              <textarea
-                className="form-control rounded-0"
-                id="message"
-                name="message"
-                placeholder="Message"
-                rows="5" 
-                required
-              ></textarea>
-              <br />
-              <Row>
-                <Col lg="12" className="form-group">
-                  <button className="btn ac_btn" type="submit"> 
-                  Send
-                  </button>
-                </Col>
-              </Row>
-            </form>
-          </Col>
-        </Row>
-      </Container>
+    <section className="Contact">
+      <div className="Content">
+        <h2>Get in touch!</h2>
+      </div>
+      <div className="contact_container">
+        <div className="contactInfo">
+          <div className="box">
+            <div className="icon"><FontAwesomeIcon icon={faMapMarkerAlt}/></div>
+            <div className="text">
+              <h3>Address</h3>
+              <p>Lebanon,<br></br> Beirut</p>
+            </div>
+          </div>
+          <div className="box">
+            <div className="icon"><FontAwesomeIcon icon={faPhoneAlt}/></div>
+            <div className="text">
+              <h3>Phone</h3>
+              <a href="tel:01555555">01 555 555</a>
+            </div>
+          </div>
+          <div className="box">
+            <div className="icon"><FontAwesomeIcon icon={faEnvelope}/></div> 
+            <div className="text">
+              <h3>Email</h3>
+              <a href="mailto:luxeMotor@gmail.com">luxeMotor@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div className="contactForm">
+          <form onSubmit={handleSubmit}>
+            <h2>Send Message</h2>
+            <div className="inputBox">
+              <input type="text" name="name" required="required"></input>
+              <span>Full Name</span>
+            </div>
+            <div className="inputBox">
+              <input type="email" name="email" required="required"></input>
+              <span>Email</span>
+            </div>
+            <div className="inputBox">
+              <textarea name="message" required="required"></textarea>
+              <span>Leave your message...</span>
+            </div>
+            <div className="inputBox">
+              <button type="submit">Send</button>
+            </div>
+          </form> 
+        </div>
+      </div>
+    </section>
   );
 }
+export default contactUs;

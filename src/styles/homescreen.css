@@ -1,4 +1,4 @@
- /* button for the homescreen to click and redirect  */
+ /* 
 button {
     padding: 30px;
     position: absolute; 
@@ -6,6 +6,7 @@ button {
     top: 100px;
     background-color: black;
   }
+  button for the homescreen to click and redirect  */
 
 .homeContainer {
   display: flex;

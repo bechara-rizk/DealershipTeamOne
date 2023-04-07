@@ -1,4 +1,4 @@
-@import './auth.css';
+
 @import './homescreen.css';
 @import './Navbar.css';
 @import './Sidebars.css';
@@ -13,8 +13,9 @@
 @import './footer.css';
 @import './EditCarForm.css';
 @import './CarScheduleDashboard.css';
+@import './contactUs.css';
 
-
+/*
 .container {
   display: flex;
   flex-direction: column;
@@ -24,7 +25,7 @@
   border-image-width: 1090px;
   overflow: hidden;
     
-}
+}*/
 
 .photo-strip {
   display: block;
