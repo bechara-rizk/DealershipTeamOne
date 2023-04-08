@@ -1,6 +1,4 @@
-import Audi from '../../../public/images/audia4.PNG'
-import BMW from '../../../public/images/bmw4series.PNG';
-import Mercedes from '../../../public/images/Mercedes.PNG';
+
 
 const cars = [
   {
@@ -11,7 +9,7 @@ const cars = [
     mileage: '10,000',
     color: 'Glacier White',
     price: '$32,500',
-    picture: Audi,
+    picture: '/images/audia4.PNG',
   },
   {
     id: 2,
@@ -21,7 +19,7 @@ const cars = [
     mileage: '20,000',
     color: 'Black Sapphire Metallic',
     price: '$28,000',
-    picture: BMW,
+    picture: '/images/bmw4series.PNG',
   },
   {
     id:3,
@@ -31,7 +29,7 @@ const cars = [
     mileage: '15,000',
     color: 'Polar White',
     price: '$34,500',
-    picture: Mercedes,
+    picture: '/images/Mercedes.PNG',
   }
 ];
 
