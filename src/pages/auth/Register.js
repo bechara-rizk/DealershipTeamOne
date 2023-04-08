@@ -1,38 +1,54 @@
 import React, { useState } from "react"
+import { Login } from "./Login";
 
-export default function Register (props){
+export const Register=(props)=>{
     const [username, setUsername]= useState(''); // for updating state (is initially empty)
     const [password, setPass]= useState(''); //for updating state (is initially empty)
     const [email, setEmail]= useState(''); // for updating state (is initially empty)
     const [Number, setNum]= useState(''); //for updating state (is initially empty)
     const [Name, setName]= useState(''); // for updating state (is initially empty)
     const [LastName, setLastN]= useState(''); //for updating state (is initially empty)
+    const [currentForm, setCurrentForm] = useState("register");
+
     const handleSubmit= (e) => { //to capture the user input when submitted
        
         e.preventDefault(); //to prevent losing state when page reloaded
         console.log(username);
     } 
+    const toggleForm = (formName) => {
+        setCurrentForm(formName);
+      };
     
     return(
-        <div className= "wrapper">
+        <div className="Login-Reg">
+        {currentForm === "register" ? (
+        <div className= "LoginRegwrapper">
             <div className="auth-form-container">
             <form className="regform" onSubmit= {handleSubmit}>  
                 <h2> Sign-Up </h2>
 
-                    <input value={Name} onChange={(e)=> setName(e.target.value)} type= 'Name' placeholder="Name" id="Name" name="Name"/>
-                    <input value={LastName} onChange={(e)=> setLastN(e.target.value)} type= 'LastName' placeholder="Last Name" id="Last Name" name="Last Name"/>
-                    <input value={username} onChange={(e)=> setUsername(e.target.value)} type= 'username' placeholder="username" id="username" name="username"/>
-                    <input value={password} onChange={(e)=> setPass(e.target.value)} type= 'password' placeholder="Password" id="password" name="password"/>
-                    <input value={email} onChange={(e)=> setEmail(e.target.value)} type= 'email' placeholder="mail@example.com" id="email" name="email"/>
-                    <input value={Number} onChange={(e)=> setNum(e.target.value)} type= 'Number' placeholder="+961 " id="Number" name="Number"/>
+                    <input className="Inputs" value={Name} onChange={(e)=> setName(e.target.value)} type= 'Name' placeholder="Name" id="Name" name="Name"/>
+                    <input className="Inputs" value={LastName} onChange={(e)=> setLastN(e.target.value)} type= 'LastName' placeholder="Last Name" id="Last Name" name="Last Name"/>
+                    <input className="Inputs" value={username} onChange={(e)=> setUsername(e.target.value)} type= 'username' placeholder="username" id="username" name="username"/>
+                    <input  className="Inputs" value={password} onChange={(e)=> setPass(e.target.value)} type= 'password' placeholder="Password" id="password" name="password"/>
+                    <input className="Inputs" value={email} onChange={(e)=> setEmail(e.target.value)} type= 'email' placeholder="mail@example.com" id="email" name="email"/>
+                    <input className="Inputs" value={Number} onChange={(e)=> setNum(e.target.value)} type= 'Number' placeholder="+961 " id="Number" name="Number"/>
                     
 
                     
             
                 </form>
-                <button1 type="submit">Sign Up</button1>
-                <button onClick= {() => props.onFormSwitch('login')}> Already have an account? Log in here.</button>
-            </div>
-            </div>
-    )
+                <button className="Submitbutton" type="submit">Sign Up</button>
+            
+            <button className="togglebutton" onClick={() => toggleForm("login")}>
+            Already have an account? Log in here.
+          </button>
+        </div>
+      </div>
+    ) : (
+      <Login onFormSwitch={toggleForm} />
+    )}
+  </div>
+);
 }
+export default Register;

@@ -28,53 +28,53 @@ text-align: center;
 {
 font-size: 36px; 
 font-weight: 500; 
-color: #fff;
+color: white;
 
 }
-.container{
+.contact_container{
   width:100%;
   display:flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
 }
-.container .contactInfo{
+.contact_container .contactInfo{
   width:50%;
   display:flex;
   flex-direction:column;
   margin-left: 70px;
 }
 
-.container .contactInfo a {
+.contact_container .contactInfo a {
   text-decoration: none;
   color:#ffff;
   
 }
 
-.container .contactInfo a:hover {
+.contact_container .contactInfo a:hover {
 
   color: red;
   cursor: pointer;
 }
 
-.container .contactInfo .box{
+.contact_container .contactInfo .box{
   position:relative;
   padding:20px 0;
   display:flex;
 }
 
-.container .contactInfo .icon{
+.contact_container .contactInfo .icon{
   min-width: 60px;
   height: 60px;
   display:flex;
-  background:#fff ;
+  background:white ;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   font-size:22px ;
 }
 
-.container .contactInfo .box .text{
+.contact_container .contactInfo .box .text{
   display:flex;
   margin-left: 20px;
   font-size: 16px;
@@ -83,7 +83,7 @@ color: #fff;
   
 }
 
-.container .contactInfo .box .text h3{
+.contact_container .contactInfo .box .text h3{
   
 
   color: white;
@@ -94,7 +94,7 @@ color: #fff;
 .contactForm{
   width: 40%;
   padding: 40px;
-  background: #fff;
+  background: white;
 }
 
 .contactForm h2{

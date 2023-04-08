@@ -1,17 +1,17 @@
 
 import React from 'react'
+import SearchFeature from '../../components/SearchFeature';
 import { Col, Card, Row } from 'antd';
-import CheckBox from './src/components/CheckBox';
-import RadioBox from './src/components/RadioBox';
-import SearchFeature from './components/SearchFeature';
-import cars from './src/home/CarDetails'
-
+import RadioBox from '../../components/RadioBox';
+import CheckBox from '../../components/CheckBox';
+import cars from './CarDetails';
 
 const { Meta } = Card;
 function  ProductsPage(){
     
     const renderCards = cars.map((product, index) =>  { //once we have resolved the method of fetching the data then we can map the array of
         //Cars to (products,index) and we can use the variables presented to us 
+
         return <Col lg={6} md={8} xs={24}>
         <Card
             hoverable={true}
@@ -35,9 +35,9 @@ function  ProductsPage(){
       
 
     return(
-        <div style={{ width: '75%', margin: '3rem auto' }}>
-        <div style={{ textAlign: 'center', margin:'0 20px 0'}}>
-            <productheader>  Luxe Motors   </productheader>
+        <div className="Productpagecontainer" style={{ width: '75%', margin: '3rem auto' }}>
+        <div style={{ textAlign: 'center', margin:'0 50px 0'}}>
+            <header className="Productheader">  Luxe Motors   </header>
         </div>
 
       {/*Filter Section*/}
@@ -52,7 +52,7 @@ function  ProductsPage(){
         </Row>
 
         {/*Search Section*/}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}>
+        <div className="SearchProdductPage" style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}>
 
             <SearchFeature/>
 
@@ -61,7 +61,7 @@ function  ProductsPage(){
 
      
             {cars.length === 0 ?
-                <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
+                <div className="CarListings"  style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
                     <productheader>No post yet...</productheader>
                 </div> :
                 <div>
