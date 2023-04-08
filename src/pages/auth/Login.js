@@ -17,13 +17,15 @@ export const Login = (props) => {
   };
 
   return (
-    <div className="Login">
+    <section className="Loginsec">
+    <div className="Login-Reg">
       {currentForm === "login" ? (
-        <div className="Loginwrapper">
+        <div className="LoginRegwrapper">
           <div className="auth-form-container">
-            <h2> Login </h2>
+           
             <form className="loginform" onSubmit={handleSubmit}>
-              <input className="UsernameInput"
+            <h2> Login </h2>
+              <input className="Inputs"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 type="text"
@@ -31,7 +33,7 @@ export const Login = (props) => {
                 id="username"
                 name="username"
               />
-              <input className="PassInput"
+              <input className="Inputs"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
@@ -40,21 +42,23 @@ export const Login = (props) => {
                 name="password"
               />
               
-              
-            </form>
-            <div className="Loginbuttons">
             <button className="Submitbutton" type="submit">Login</button>
-            <button className="togglebutton" onClick={() => toggleForm("register")}>
-              Don't have an account? Sign up here.
-            </button>
+            <button className="togglebutton" onClick={() => toggleForm("register")}>Don't have an account? Sign up here.</button>
+            
+            </form>
+            
+            
+              
+            
             </div>
           </div>
-        </div>
+        
 
       ) : (
         <Register onFormSwitch={toggleForm} />
       )}
     </div>
+    </section>
   );
 };
 export default Login;
