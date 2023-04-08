@@ -22,11 +22,7 @@
     /* Add a margin-top to push the content below the navbar */
     position: relative; /* Set the position property to relative */
   }
-  
-  /* Header div */
-  .about-us-header {
-    
-  }
+
   .black-block {
     background-color: black;
     height: 50px; /* Set the height to cover the entire viewport height */
@@ -51,7 +47,7 @@
     text-align: center;
     font-family: 'Montserrat';
     text-decoration: underline solid #7a0319;
-    text-underline-offset: 0.33rem;
+    text-underline-offset: 0.34rem;
 
   }
   /* Content div */
