@@ -8,6 +8,16 @@ export default function Home() {
     <div className='homeContainer'>
       <div className='authButtons'>
         <span className='authElement'>Login</span>
+        <div class="dropdown">
+          <button class="dropbtn">Log in <i className="arrowLogin down"></i>
+          <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Sign Up</a>
+          <a href="#">Adminstrator login </a>
+    </div>
+  </div>
       </div>
       <Navbar/>
       <div className='homescreenCentered'>

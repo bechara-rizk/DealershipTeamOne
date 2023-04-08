@@ -57,7 +57,7 @@ button {
 }
 
 .discoverHomebutton:hover {
-  background-color: #465a6e; 
+  background-color: #34913b; 
   color: white;
 }
 
@@ -98,7 +98,7 @@ button {
 
 }
 
-/* for thr dropdown menu for login/ sign up
+/* for thr dropdown menu for login/ sign up */
 
 .dropdown {
   float: left;
@@ -109,7 +109,7 @@ button {
   font-size: 1rem;  
   border: none;
   outline: none;
-  color: rgb(0,0,0,0.5);
+  color: whitesmoke;
   padding: 14px 16px;
   background-color: black;
   font-family: Calibri light;
@@ -123,10 +123,11 @@ button {
   display: none;
   position: absolute;
   right: 0;
-  background-color: #f9f9f9;
+  background-color: white;
   min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 2;
+  margin-top: 15px;
 }
 
 .dropdown-content a {
@@ -135,6 +136,7 @@ button {
   padding: 12px 16px;
   display: block;
   text-align: center;
+  text-decoration: none;
 }
 
 
@@ -142,15 +144,18 @@ button {
   display: block;
 }
 
-.arrow {
-  border: solid black;
+.arrowLogin {
+  border: solid white;
   border-width: 0 2px 2px 0;
   display: inline-block;
-  padding: 3px;
+  padding: 4px;
 }
 
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
-*/
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
