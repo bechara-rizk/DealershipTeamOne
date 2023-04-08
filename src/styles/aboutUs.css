@@ -1,0 +1,158 @@
+/* styles.css */
+
+/* Container for AboutUs component */
+.about-us-container {
+    background-image: url('/images/aboutUsCar.webp');
+    background-size: cover;
+    background-color: black; 
+    padding: 300px; /* Adjust padding as needed */
+    height: 100px;
+    width: 626px;
+     background-repeat: no-repeat;
+    object-fit: fill; 
+    font-size: larger;
+    object-position: 25% 25%;
+    z-index:500;
+    text-align: center;
+    font-family: 'Montserrat';
+
+
+  }
+  .main-content {
+    /* Add a margin-top to push the content below the navbar */
+    position: relative; /* Set the position property to relative */
+  }
+  
+  /* Header div */
+  .about-us-header {
+    
+  }
+  .black-block {
+    background-color: black;
+    height: 50px; /* Set the height to cover the entire viewport height */
+    width: 100%; /* Set the width to cover the entire viewport width */
+    top: 0; /* Position it at the top of the page */
+    left: 0; /* Position it at the left of the page */
+    z-index: 9999; /* Set a high z-index to ensure it's on top of other elements */
+  }
+  
+  /* Heading (h1) */
+  .about-us-heading {
+    font-size: 35px; /* Adjust font size as needed */
+    text-align: center;
+    margin-top: -200px;
+    font-family: 'Montserrat';
+    text-decoration: underline solid #7a0319;
+  }
+  
+  .team-heading
+  {
+    font-size: 35px; /* Adjust font size as needed */
+    text-align: center;
+    font-family: 'Montserrat';
+    text-decoration: underline solid #7a0319;
+    text-underline-offset: 0.33rem;
+
+  }
+  /* Content div */
+  .about-us-content {
+    background-color: #ffffff7e; /* Add desired background color for text box */
+    padding: 17px; /* Adjust padding as needed */
+    margin-top: -10px;
+    font-family: 'Montserrat';
+
+    
+  }
+  
+  /* Paragraphs (p) */
+  .about-us-paragraph {
+    margin-bottom: 10px; /* Add margin-bottom as needed */
+    font-family: 'Montserrat';
+    font-weight:200px;
+
+  }
+  .team-container {
+    display: flex; /* Use flexbox to arrange team members in a row */
+    justify-content: center; /* Center team members horizontally */
+   /* Set background color to black */
+    padding: 50px; /* Add padding for spacing */
+    color:rgb(0, 0, 0);
+    font-family: 'Montserrat';
+    font-weight:200px;
+
+  }
+  
+  .team-member {
+
+    flex: 1; /* Distribute space evenly among team members */
+    text-align: center; /* Center text and image within team member container */
+    margin: 0 50px; /* Add margin for spacing between team members */
+    font-weight:550;
+    font-family: 'Montserrat';
+    
+  }
+  .team-desc{
+    margin-left: 50px;
+    margin-right: 50px;;
+    color: rgb(0, 0, 0);
+    object-fit: contain;
+    font-family: 'Montserrat';
+    font-weight:180px;
+    
+  }
+  .team-member-image {
+    width: 100px; /* Set width of team member image */
+    height: 100px; /* Set height of team member image */
+    object-fit: cover; /* Scale image to cover container */
+    font-family: 'Montserrat';
+
+    border-radius: 50%; /* Apply border-radius to make image round */
+  }
+  
+  .team-member-description {
+    color:rgb(0, 0, 0);/* Your styles for team member description */
+    font-family: 'Montserrat';
+  }
+  .why-choose-us{
+    font-family: 'Montserrat';
+    width: 100%;
+    margin-right: 150px;
+  }
+  .about-us-paragraph2{
+    text-align: center;
+    flex:1 ;
+    font-family: 'Montserrat';
+    font-weight: 150px;
+
+  }
+  .why-choose-us .wcu{
+    font: 35px;
+   
+    text-align: center;
+    text-decoration: underline solid #7a0319;
+    text-underline-offset: 0.33rem;
+  }
+  .about-us-paragraph3{
+    margin-left: 50px;;
+    color: rgb(0, 0, 0);
+    object-fit: contain;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 150px;
+  }
+
+.whyluxe2{
+  display: flex; /* Use flexbox to arrange team members in a row */
+    justify-content: center; /* Center team members horizontally */
+   /* Set background color to black */
+    padding: 50px; /* Add padding for spacing */
+    margin: 0 50px;
+    color:rgb(0, 0, 0);
+    font-family: 'Montserrat';
+    font-weight: 150px;
+}
+    .whyluxe{
+        margin: 0 50px;
+        font-family: 'Montserrat';
+        font-weight: 150px;
+    }
