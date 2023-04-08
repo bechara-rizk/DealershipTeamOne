@@ -7,15 +7,17 @@ export default function Home() {
     <>
     <div className='homeContainer'>
       <div className='authButtons'>
-        <span className='authElement'>LogIn</span>
+        <span className='authElement'>Login</span>
       </div>
       <Navbar/>
-      <h1 className='homeTitle'>A Luxury Car Voyage</h1>
+      <div className='homescreenCentered'>
+        <h1 className='homeTitle'>A Luxury Car Voyage</h1>
         <div className='discoverHomeButton'>
           <span className='discoverHomeButton'>Discover <i className="arrow right"></i></span>
         </div>
-      <Footer/>
+      </div>
     </div>
+      <Footer/>
     </>
   )
 }

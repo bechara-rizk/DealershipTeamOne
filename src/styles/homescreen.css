@@ -13,17 +13,18 @@ button {
   flex-direction: column;
   justify-content: left;
   background-image: url("/gif/backgroundHomeImage.gif");
-  position: fixed; /* Position the background image to make it scale nicely with the entire page */
-  top: 0;
+  /* position: fixed; /* Position the background image to make it scale nicely with the entire page */
+  /* top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; */
   background-size: cover; /* Scale the background image to cover the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the background image */
-  z-index: -1;
+  /* z-index: -1; */
   background-color: black;
-  
+  width: 100%;
+  height: 90vh;
 }
 
 .authButtons {
@@ -48,7 +49,7 @@ button {
   padding: 0.85rem;
   margin-top: 50%;
   margin-left: 10%;
-  width: 10%;
+  width: auto;
   height: 1%;
   margin: 8px 2px;
   cursor: pointer;
@@ -62,7 +63,7 @@ button {
 
 .authElement {
   text-decoration: none;
-  margin-top: 5%;
+  margin: 2% 2% 1% 2%;
   color: inherit;
   font-size: 1rem;
 }
@@ -70,8 +71,8 @@ button {
 .homeTitle {   
   color: whitesmoke;
   align-self: left;
-  margin-left: 5%;
-  margin-top: 5%;
+  /* margin-left: 5%;
+  margin-top: 5%; */
   font-size: 2rem;
   font: Calibri light;
 }
@@ -86,6 +87,15 @@ button {
 .right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+}
+
+.homescreenCentered{
+  /* center items inside div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 /* for thr dropdown menu for login/ sign up
