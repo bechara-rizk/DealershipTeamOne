@@ -1,5 +1,4 @@
 import { useState } from 'react';
-//import './styles.css';
 
 function TestDriveScheduler() {
   const [selectedCar, setSelectedCar] = useState('');
@@ -30,12 +29,12 @@ function TestDriveScheduler() {
 
   return (
     <>
-      <h1>Test Drive Scheduler</h1>
-      <p>Select a car and available time slot to schedule a test drive.</p>
+      <h1 className='TestDriveTitle'>Test Drive Scheduler</h1>
+      <p className='Select-A-Test-Car'>Select a car and available time slot to schedule a test drive.</p>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="car">Car:</label>
+        <label htmlFor="car-Test">Car:</label>
         <select id="car" value={selectedCar} onChange={(e) => setSelectedCar(e.target.value)}>
-          <option value="">-- Select a car --</option>
+          <option value="Select-A-TestCar">-- Select a car --</option>
           <option value="Audi A4">Audi A4</option>
           <option value="BMW 4 series">BMW 4 series</option>
           <option value="Mercedes-Benz C-Class">Mercedes-Benz C-Class</option>
@@ -59,23 +58,23 @@ function TestDriveScheduler() {
       
         </select>
         <br />
-        <label htmlFor="time">Time:</label>
+        <label htmlFor="time-Test">Time:</label>
         <select id="time" value={selectedTime} onChange={(e) => setSelectedTime(e.target.value)} required>
           <option value="">-- Select a time slot --</option>
-          <option value="9:00am-10:00am">9:00am-10:00am</option>
-          <option value="10:00am-11:00am">10:00am-11:00am</option>
-          <option value="11:00am-12:00pm">11:00am-12:00pm</option>
-          <option value="12:00pm -1:00pm">12:00pm -1:00pm</option>
-          <option value="1:00pm -2:00pm ">1:00pm -2:00pm</option>
-          <option value="2:00pm -3:00pm">2:00pm -3:00pm</option>
-          <option value="3:00pm -4:00pm">3:00pm -4:00pm</option>
-          <option value="4:00pm -5:00pm">4:00pm -5:00pm</option>
+          <option value="9:00am">9:00am</option>
+          <option value="10:00am">10:00am</option>
+          <option value="11:00am">11:00am</option>
+          <option value="12:00pm ">12:00pm </option>
+          <option value="1:00pm  ">1:00pm </option>
+          <option value="2:00pm ">2:00pm </option>
+          <option value="3:00pm ">3:00pm </option>
+          <option value="4:00pm ">4:00pm </option>
         </select>
         <br />
-        <label htmlFor="date">Date:</label>
-        <input type="date" id="date" min={minDate} max={minDate} required />
+        <label className="date-Test">Date:</label>
+        <input className="Date2" type="date" id="date" min={minDate} max={minDate} required />
         <br />
-        <button type="submit">Schedule Test Drive</button>
+        <button type="submit-Test">Schedule Test Drive</button>
       </form>
       {scheduledDateTime && <div><p>Your test drive for {scheduledDateTime} has been scheduled Successfully!</p></div>}
     </>
