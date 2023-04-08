@@ -1,13 +1,13 @@
 .navbar {
   display: flex;
-  gap: 5%;
+  /* gap: 5%; */
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.navbar li {
+/* .navbar li {
   width: 10%;
-}
+} */
 
 .navbar li a {
   font-size: 1.3rem;
@@ -22,4 +22,15 @@
 
 .navbar li a:hover {
   background-color: #454545; 
+}
+
+.navbar > ul{
+  list-style: none;
+  display:inline-flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar > ul > li{
+  margin: 0 max(10px, 3vw) 0 max(10px, 3vw);
 }
