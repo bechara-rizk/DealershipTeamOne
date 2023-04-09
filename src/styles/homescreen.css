@@ -64,9 +64,14 @@ button {
   transition-duration: 0.4s;
 }
 
-.discoverHomebutton:hover {
+.discoverHomeButton:hover {
   background-color: #34913b; 
   color: white;
+}
+
+.discoverHomeButton:hover .arrow {
+  border-color: white;
+  transition-duration: 0.4s;
 }
 
 .authElement {
