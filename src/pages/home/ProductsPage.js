@@ -36,7 +36,7 @@ function  ProductsPage(){
 
     return(
         <div className="Productpagecontainer" style={{ width: '75%', margin: '3rem auto' }}>
-        <div style={{ textAlign: 'center', margin:'0 50px 0'}}>
+        <div className="headercontainer" style={{ textAlign: 'center', margin:'0 50px 0'}}>
             <header className="Productheader">  Luxe Motors   </header>
         </div>
 
