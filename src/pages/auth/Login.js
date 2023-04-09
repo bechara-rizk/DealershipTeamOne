@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Register } from "./Register";
-
+import Footer from '@/components/Footer';
 
 export const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -48,7 +48,7 @@ export const Login = (props) => {
             </form>
             
             
-              
+            <Footer/>
             
             </div>
           </div>
@@ -58,7 +58,9 @@ export const Login = (props) => {
         <Register onFormSwitch={toggleForm} />
       )}
     </div>
+    
     </section>
+    
   );
 };
 export default Login;

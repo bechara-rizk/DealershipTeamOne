@@ -36,6 +36,12 @@ button {
   width: 100%;
   color: whitesmoke;
   height: 15vh;
+  
+}
+
+.homeTitle{
+  font-family: 'Poppins' ;
+  font-weight: 200;
 }
 
 .discoverHomeButton{
@@ -44,7 +50,8 @@ button {
   align-items: center;
   background-color: #e8e8e8;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-family: 'Poppins' ;
   border: transparent whitesmoke;
   border-radius: 12px;
   padding: 0.85rem;
@@ -120,11 +127,13 @@ button {
   color: whitesmoke;
   padding: 14px 16px;
   background-color: black;
-  font-family: Calibri light;
+  font-family: Poppins;
   margin: inherit;
   position: absolute;
   top: 0;
   right: 0;
+  margin-top: 50px;
+  margin-right: 60px;
 }
 
 .dropdown-content {
@@ -141,6 +150,7 @@ button {
 .dropdown-content a {
   float: none;
   color: black;
+  font-family: 'Poppins';
   padding: 12px 16px;
   display: block;
   text-align: center;

@@ -5,6 +5,8 @@ import { Col, Card, Row } from 'antd';
 import RadioBox from '../../components/RadioBox';
 import CheckBox from '../../components/CheckBox';
 import cars from './CarDetails';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar'
 
 const { Meta } = Card;
 function  ProductsPage(){
@@ -37,7 +39,22 @@ function  ProductsPage(){
     return(
         <div className="Productpagecontainer" style={{ width: '75%', margin: '3rem auto' }}>
         <div className="headercontainer" style={{ textAlign: 'center', margin:'0 50px 0'}}>
-            <header className="Productheader">  Luxe Motors   </header>
+        <div className='authButtons'>
+        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+        {/* <span className='authElement'>Login</span> */}
+        <div class="dropdown">
+          <button class="dropbtnProdPage">Log in <i className="arrowLogin down"></i>
+          <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content-ProdPage">
+          <a href="#">Login</a>
+          <a href="#">Sign Up</a>
+          <a href="#">Adminstrator login </a>
+    </div>
+  </div>
+  </div>
+  <Navbar/>
+          
         </div>
 
       {/*Filter Section*/}
@@ -71,7 +88,7 @@ function  ProductsPage(){
 
                     </Row>
 
-
+                    <Footer/>
                 </div>
             }
             <br /><br />
