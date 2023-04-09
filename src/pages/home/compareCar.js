@@ -27,7 +27,7 @@ export default function CompareCar() {
       
       
       <div className="child">
-        <img  src={selectedCar1 && car1 ? car1.picture :  '/images/blackcar.jpg'}  alt="car image" style={{width: '450px', height: 'auto' }}/>
+        <img  src={selectedCar1 && car1 ? car1.picture :  '/images/blackcar.png'}  alt="car image" style={{width: '450px', height: 'auto' }}/>
         <form onSubmit={handleSubmit}>
          <h3 className="cars">First Car</h3>
         <label htmlFor="car-Test">Car:</label>
