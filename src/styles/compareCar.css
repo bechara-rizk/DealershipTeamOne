@@ -14,7 +14,7 @@
     border-radius: 70%;
     border-color: black;
     border-style: solid;
-    background-color: #fff;
+    background-color: white;
     border-radius: 15px;
     
     padding: 30px;
@@ -23,13 +23,14 @@
   .header{
     text-decoration: underline solid red;
     font-size: 24px;
-    color: black;
+    color: white;
     align-items: center;
     margin-left: 100px;
   }  
 
   .discription{
   margin-left: 100px;
+  color: white;
   
   }
 
@@ -52,6 +53,7 @@
   .details{
     border-bottom: 1px solid lightgrey;
     margin-bottom: 15px;
+    
   }
 
   .details h4,
@@ -60,11 +62,6 @@
     vertical-align: top;
   }
 
-  .car-Test .select-option:hover {
-    background-color: gray;
-    color: white;
-  }
-
-option:hover { 
-    background-color: aliceblue;
-} 
+.compareCar{
+  background-color: black;
+}
