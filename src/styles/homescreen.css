@@ -36,7 +36,7 @@ button {
   width: 100%;
   color: whitesmoke;
   height: 15vh;
-  
+  max-height: 130px;
 }
 
 .homeTitle{
@@ -137,8 +137,8 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: 50px;
-  margin-right: 60px;
+  margin-top: 20px;
+  margin-right: 30px;
 }
 
 .dropdown-content {
@@ -149,7 +149,7 @@ button {
   min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 2;
-  margin-top: 12px;
+  margin-top: 30px;
 }
 
 .dropdown-content a {
