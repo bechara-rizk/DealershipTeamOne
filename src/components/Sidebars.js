@@ -31,19 +31,25 @@ const Sidebar = () => {
           <h3>Customers</h3>
         </div>
 
-        <div className="item">
+        {/* /*</div><div className="item">/*        adde here the link to the actual page below */  }
+        <Link href="/home/ProductsPage" className="item">
         <FaCar className="car-icon" />
           <h3>My Car List</h3>
-        </div>
+    
+        </Link>
 
         <div className="item">
         <BiUser className="employee-icon" />
           <h3>Employees</h3>
         </div>
-        <div className="item">
+
+        
+        <Link href="/dashboard/SalesInfoPage" className="item">
         <IoReceiptOutline className="orders-icon" />
           <h3>Orders</h3>
-        </div>
+        </Link>
+
+
         <Link href="/dashboard/charts" className="item">
         <FiBarChart2 className="chart-icon" />
           <h3>Charts</h3>

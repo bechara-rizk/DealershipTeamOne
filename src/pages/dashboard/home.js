@@ -8,6 +8,7 @@ export default function adminHome() {
     <div className="dashboardScreen">
         <Sidebar/>
         <DashboardNavbar/>
+        
     </div>
   )
 }
