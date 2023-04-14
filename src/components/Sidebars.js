@@ -9,6 +9,7 @@ import { FiBarChart2 } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { BiUser } from "react-icons/bi";
 import { IoReceiptOutline } from "react-icons/io5";
+import { FaCar } from 'react-icons/fa';
 
 const Sidebar = () => {
   return (
@@ -29,7 +30,12 @@ const Sidebar = () => {
         <FaUser className="customer-icon" />
           <h3>Customers</h3>
         </div>
-      
+
+        <div className="item">
+        <FaCar className="car-icon" />
+          <h3>My Car List</h3>
+        </div>
+
         <div className="item">
         <BiUser className="employee-icon" />
           <h3>Employees</h3>
