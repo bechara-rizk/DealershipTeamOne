@@ -1,9 +1,10 @@
 import React from "react";
 import Navbar from '@/components/Navbar';
+import Footer from "@/components/Footer";
 
 const AboutUs = () => {
   return (
-    <><div class="black-block"></div><><div className="main-content">
+    <><><div class="black-block"></div><><div className="main-content">
       <Navbar />
     </div><div>
         <div className="about-us-container">
@@ -72,37 +73,40 @@ const AboutUs = () => {
               pricing, flexible financing options, and a knowledgeable sales
               team to guide you through the car buying process.
             </p>
-            <div  className="whyluxe2">
+            <div className="whyluxe2">
 
-            <div className="whyluxe">
-              <img
-                src={'/images/Exp.jpg'}
-                alt="experience"
-                className="whyluxe-image" />
+              <div className="whyluxe">
+                <img
+                  src={'/images/Exp.jpg'}
+                  alt="experience"
+                  className="whyluxe-image" />
 
-            </div>
-            <div className="whyluxe">
-              <img
-                src={'/images/bestPrice.jpg'}
-                alt="bestPrice"
-                className="whyluxe-image" />
+              </div>
+              <div className="whyluxe">
+                <img
+                  src={'/images/bestPrice.jpg'}
+                  alt="bestPrice"
+                  className="whyluxe-image" />
 
-            </div>
-            <div className="whyluxe">
-              <img
-                src={'/images/TopQ.jpg'}
-                alt="top quality"
-                className="whyluxe-image" />
+              </div>
+              <div className="whyluxe">
+                <img
+                  src={'/images/TopQ.jpg'}
+                  alt="top quality"
+                  className="whyluxe-image" />
 
-            </div>
+              </div>
             </div>
 
 
           </div>
         </div>
-      </div></></>
+      </div></></><><div class="black-block"></div><><div className="main-content">
+        <Footer />
+      </div>  </></></>
 
-  );
-};
+        );
+        };
 
-export default AboutUs;
+        export default AboutUs;
+    
