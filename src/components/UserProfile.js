@@ -61,7 +61,7 @@ const UserInfoPage = ({ onClose }) => {
             <>
            
             <div className='inputs'>
-            <label htmlFor="username" className='Uname'>Username</label>
+            <label htmlFor="username" className='Uname'>Name</label>
               <input  type="text" value={userInfo.name} onChange={(e) => handleUserInfoChange('name', e.target.value)} />
             </div>              
             

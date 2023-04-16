@@ -24,11 +24,12 @@
 max-width: 800px; 
 text-align: center;
 }
-.Contact .Content h2
+.Contact .Content .header
 {
 font-size: 36px; 
 font-weight: 500; 
 color: white;
+text-decoration: none;
 
 }
 .contact_container{
@@ -161,5 +162,12 @@ color: white;
 }
 .contactForm .inputBox button:hover{
  background-color: red;
+
+}
+
+.header{
+  color:white;
+  font-size: 24px;
+  text-decoration: none;
 
 }
