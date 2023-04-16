@@ -23,7 +23,20 @@ const contactUs = () => {
 
   return (
     <>
-    <div class="black-block"></div>
+    <div className='authButtons'>
+        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+        <div class="dropdown">
+          <button class="dropbtn">Log in <i className="arrowLogin down"></i>
+          <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+            <a href="#">Adminstrator login </a>
+          </div>
+   
+      </div>
+    </div>
     <div><Navbar /></div>
     <section className="Contact">
       
