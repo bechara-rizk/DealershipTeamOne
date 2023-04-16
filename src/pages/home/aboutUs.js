@@ -4,9 +4,26 @@ import Footer from "@/components/Footer";
 
 const AboutUs = () => {
   return (
-    <><><div class="black-block"></div><><div className="main-content">
+    <><>
+    <div className='authButtons'>
+        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+        <div class="dropdown">
+          <button class="dropbtn">Log in <i className="arrowLogin down"></i>
+          <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+            <a href="#">Adminstrator login </a>
+          </div>
+   
+        </div>
+      </div>
+    <>
+    <div className="main-content">
       <Navbar />
-    </div><div>
+    </div>
+    <div>
         <div className="about-us-container">
           <div className="about-us-header">
             <h1 className="about-us-heading">About Us</h1>
