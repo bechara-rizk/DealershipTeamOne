@@ -37,7 +37,7 @@ function  ProductsPage(){
       
 
     return(
-        <div className="Productpagecontainer" style={{ width: '75%', margin: '3rem auto' }}>
+        <div className="Productpagecontainer" style={{ width: '75%', margin: '0 auto' }}>
         <div className="headercontainer" style={{ textAlign: 'center', margin:'0 50px 0'}}>
         <div className='authButtons'>
         <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
@@ -91,9 +91,6 @@ function  ProductsPage(){
                     <Footer/>
                 </div>
             }
-            <br /><br />
-
-
     </div>
     )
     }
