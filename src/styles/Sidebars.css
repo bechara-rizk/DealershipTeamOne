@@ -38,6 +38,19 @@
     border-radius: 5rem;
     transition: 0.2s all smooth;
 }
+.item2 {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 2rem 5rem;
+    height: 4rem;
+    margin: 1rem 0;
+    padding-left: 1rem;
+    row-gap: 2rem;
+    align-items: center;
+    color: #fff;
+    border-radius: 5rem;
+    transition: 0.2s all smooth;
+}
 
 .icon {
     font-size: 1.4rem;
@@ -45,6 +58,11 @@
 }
 
 .item:hover {
+    background-color: #fff;
+    color: #c41e3a;
+    cursor: pointer;
+}
+.item2:hover {
     background-color: #fff;
     color: #c41e3a;
     cursor: pointer;

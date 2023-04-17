@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const contactUs = () => {
   const handleSubmit = (event) => {
@@ -20,28 +22,45 @@ const contactUs = () => {
   };
 
   return (
+    <>
+    <div className='authButtons'>
+        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+        <div class="dropdown">
+          <button class="dropbtn">Log in <i className="arrowLogin down"></i>
+          <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+            <a href="#">Adminstrator login </a>
+          </div>
+   
+      </div>
+    </div>
+    <div><Navbar /></div>
     <section className="Contact">
+      
       <div className="Content">
-        <h2>Get in touch!</h2>
+        <h3 className='header'>Get in touch!</h3>
       </div>
       <div className="contact_container">
         <div className="contactInfo">
           <div className="box">
-            <div className="icon"><FontAwesomeIcon icon={faMapMarkerAlt}/></div>
+            <div className="icon"><FontAwesomeIcon icon={faMapMarkerAlt} /></div>
             <div className="text">
               <h3>Address</h3>
               <p>Lebanon,<br></br> Beirut</p>
             </div>
           </div>
           <div className="box">
-            <div className="icon"><FontAwesomeIcon icon={faPhoneAlt}/></div>
+            <div className="icon"><FontAwesomeIcon icon={faPhoneAlt} /></div>
             <div className="text">
               <h3>Phone</h3>
-              <a href="tel:01555555">01 555 555</a>
+              <a href="tel:55555555">55 555 555</a>
             </div>
           </div>
           <div className="box">
-            <div className="icon"><FontAwesomeIcon icon={faEnvelope}/></div> 
+            <div className="icon"><FontAwesomeIcon icon={faEnvelope} /></div>
             <div className="text">
               <h3>Email</h3>
               <a href="mailto:luxeMotor@gmail.com">luxeMotor@gmail.com</a>
@@ -66,10 +85,12 @@ const contactUs = () => {
             <div className="inputBox">
               <button type="submit">Send</button>
             </div>
-          </form> 
+          </form>
         </div>
       </div>
-    </section>
+
+    </section><div><Footer /></div></>
+    
   );
 }
 export default contactUs;

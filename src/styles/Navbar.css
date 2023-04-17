@@ -3,6 +3,8 @@
   /* gap: 5%; */
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
+
+  
 }
 
 /* .navbar li {
@@ -10,8 +12,8 @@
 } */
 
 .navbar li a {
-  font-size: 1.3rem;
-  font: Calibri light;
+  font-size: 0.9rem;
+  font-family: 'Poppins' ;
   display: block;
   color: whitesmoke;
   text-align: center;
@@ -25,6 +27,7 @@
 }
 
 .navbar > ul{
+  position: absolute;
   list-style: none;
   display:inline-flex;
   padding: 0;
@@ -34,3 +37,13 @@
 .navbar > ul > li{
   margin: 0 max(10px, 3vw) 0 max(10px, 3vw);
 }
+
+
+
+.profile{
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top:4px;
+}
+
+ 

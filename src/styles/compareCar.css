@@ -1,0 +1,67 @@
+.CarContainer{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+   
+  }
+  
+  .CarContainer .child{
+    color:black;
+    margin:30px;
+    margin-top: 0;
+    border-radius: 70%;
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+    border-radius: 15px;
+    
+    padding: 30px;
+  }
+
+  .header{
+    text-decoration: underline solid red;
+    font-size: 24px;
+    color: white;
+    align-items: center;
+    margin-left: 100px;
+  }  
+
+  .discription{
+  margin-left: 100px;
+  color: white;
+  
+  }
+
+  .CarContainer .child .cars{
+    margin-top: 40px;
+
+  }
+
+ .compare_button{
+    margin-left: 100px;
+    background-color: black;
+    color: white;
+   
+  }
+  
+ .compare_button:hover {
+    background-color: red;
+  }
+  
+  .details{
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 15px;
+    
+  }
+
+  .details h4,
+  .details p{
+    display: inline;
+    vertical-align: top;
+  }
+
+.compareCar{
+  background-color: black;
+}

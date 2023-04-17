@@ -7,3 +7,97 @@
     'Noto Color Emoji';
     align-items: center;
 }
+
+
+.ant-input{
+    margin-top: 11.75px;
+}
+
+.headercontainer{
+    padding-bottom: 25px;
+}
+
+.homepageLogo{
+    /* width: 100%; */
+    height: 80%;
+    margin: 0 auto 0 auto; ;
+    /* margin-top: 10%; */
+  }
+  
+  /* for thr dropdown menu for login/ sign up */
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    margin-bottom:50px;
+  }
+  
+  .dropdown .dropbtnProdPage {
+    font-size: 1rem;  
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: transparent;
+    font-family: Poppins;
+    margin: inherit;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 65px;
+    margin-right: 40px;
+  }
+  
+  .dropdown-content-ProdPage {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+  
+  .dropdown-content-ProdPage a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  
+  .dropdown:hover .dropdown-content-ProdPage {
+    display: block;
+    font-family: 'Poppins';
+  }
+  
+  .arrowLogin {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  .dropdown-content-ProdPage a:hover {
+    background-color: #ddd;
+
+  }
+  
+  .authButtons {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color:black;
+    gap: 0%;
+    width: 100%;
+    color: whitesmoke;
+    height: 15vh;
+  }
+
+  

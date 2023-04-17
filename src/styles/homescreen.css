@@ -36,6 +36,12 @@ button {
   width: 100%;
   color: whitesmoke;
   height: 15vh;
+  max-height: 130px;
+}
+
+.homeTitle{
+  font-family: 'Poppins' ;
+  font-weight: 200;
 }
 
 .discoverHomeButton{
@@ -44,7 +50,8 @@ button {
   align-items: center;
   background-color: #e8e8e8;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-family: 'Poppins' ;
   border: transparent whitesmoke;
   border-radius: 12px;
   padding: 0.85rem;
@@ -57,9 +64,14 @@ button {
   transition-duration: 0.4s;
 }
 
-.discoverHomebutton:hover {
+.discoverHomeButton:hover {
   background-color: #34913b; 
   color: white;
+}
+
+.discoverHomeButton:hover .arrow {
+  border-color: white;
+  transition-duration: 0.4s;
 }
 
 .authElement {
@@ -120,11 +132,13 @@ button {
   color: whitesmoke;
   padding: 14px 16px;
   background-color: black;
-  font-family: Calibri light;
+  font-family: Poppins;
   margin: inherit;
   position: absolute;
   top: 0;
   right: 0;
+  margin-top: 20px;
+  margin-right: 30px;
 }
 
 .dropdown-content {
@@ -135,12 +149,13 @@ button {
   min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 2;
-  margin-top: 12px;
+  margin-top: 30px;
 }
 
 .dropdown-content a {
   float: none;
   color: black;
+  font-family: 'Poppins';
   padding: 12px 16px;
   display: block;
   text-align: center;
