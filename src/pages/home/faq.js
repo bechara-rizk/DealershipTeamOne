@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
-
+import Footer from '@/components/Footer';
 const faqs = [
   {
     question: 'How do I schedule a test drive?',
@@ -80,6 +80,7 @@ function faqPage() {
         ))}
       </ul>
     </div>
+    <Footer />
     </>
   );
 }
