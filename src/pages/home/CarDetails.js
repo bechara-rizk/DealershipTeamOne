@@ -34,10 +34,10 @@ const cars = [
 ];
 
 var selectedCarMakes = ["Audi", "Mercedes-Benz", 'BMW'];
-cars.filter(car=> selectedCarMakes.includes(car.Make)); // returns cars with make Audi, Mercedes-Benz, or BMW
+cars.filter(car=> selectedCarMakes.includes(car.make)); // returns cars with make Audi, Mercedes-Benz, or BMW
 
 var selectedCarMilage = ["10,000", "20,000", '15,000'];
-cars.filter(car=> selectedCarMilage.includes(car.Milage));
+cars.filter(car=> selectedCarMilage.includes(car.mileage));
 
 var selectedCarColor = ['Black Sapphire Metallic','Polar White','Glacier White' ];
 cars.filter(car=> selectedCarColor.includes(car.color));
