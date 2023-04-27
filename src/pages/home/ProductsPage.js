@@ -10,7 +10,6 @@ import Navbar from '@/components/Navbar'
 
 const { Meta } = Card;
 function  ProductsPage(){
-    
     const renderCards = cars.map((product, index) =>  { //once we have resolved the method of fetching the data then we can map the array of
         //Cars to (products,index) and we can use the variables presented to us 
 
@@ -42,11 +41,11 @@ function  ProductsPage(){
         <div className='authButtons'>
         <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
         {/* <span className='authElement'>Login</span> */}
-        <div class="dropdown">
-          <button class="dropbtnProdPage">Log in <i className="arrowLogin down"></i>
-          <i class="fa fa-caret-down"></i>
+        <div className="dropdown">
+          <button className="dropbtnProdPage">Log in <i className="arrowLogin down"></i>
+          <i className="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content-ProdPage">
+          <div className="dropdown-content-ProdPage">
           <a href="#">Login</a>
           <a href="#">Sign Up</a>
           <a href="#">Adminstrator login </a>

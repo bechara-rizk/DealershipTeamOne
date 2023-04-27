@@ -33,19 +33,19 @@ const cars = [
   }
 ];
 
-selectedCarMakes = ["Audi", "Mercedes-Benz", 'BMW'];
+var selectedCarMakes = ["Audi", "Mercedes-Benz", 'BMW'];
 cars.filter(car=> selectedCarMakes.includes(car.Make)); // returns cars with make Audi, Mercedes-Benz, or BMW
 
-selectedCarMilage = ["10,000", "20,000", '15,000'];
+var selectedCarMilage = ["10,000", "20,000", '15,000'];
 cars.filter(car=> selectedCarMilage.includes(car.Milage));
 
-selectedCarColor = ['Black Sapphire Metallic','Polar White','Glacier White' ];
+var selectedCarColor = ['Black Sapphire Metallic','Polar White','Glacier White' ];
 cars.filter(car=> selectedCarColor.includes(car.color));
 
-selectedCarPrice = ['$32,500','$28,000','$34,500'];
+var selectedCarPrice = ['$32,500','$28,000','$34,500'];
 cars.filter(car=> selectedCarPrice.includes(car.price));
 
-selectedCarYear = [2018,2019,2020];
+var selectedCarYear = [2018,2019,2020];
 cars.filter(car=> selectedCarYear.includes(car.year));
 
 export default cars.filter; // returns cars with mileage 10,000, 20,000, or 15,000
