@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAxMvQrEVvVODwMnC-PKh6haLPk4w3lAxI",
-  authDomain: "car-dealership-9bbbe.firebaseapp.com",
-  projectId: "car-dealership-9bbbe",
-  storageBucket: "car-dealership-9bbbe.appspot.com",
-  messagingSenderId: "1088203370503",
-  appId: "1:1088203370503:web:3aa620d2ec46fc9bd17aa2"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
