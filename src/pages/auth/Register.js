@@ -1,5 +1,9 @@
 import React, { useState } from "react"
 import { Login } from "./Login";
+import { auth } from '../../../firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
+import { useRouter } from 'next/router';
 
 export const Register=(props)=>{
     const [username, setUsername]= useState(''); // for updating state (is initially empty)
@@ -9,12 +13,30 @@ export const Register=(props)=>{
     const [Name, setName]= useState(''); // for updating state (is initially empty)
     const [LastName, setLastN]= useState(''); //for updating state (is initially empty)
     const [currentForm, setCurrentForm] = useState("register");
+    const router = useRouter();
 
-    const handleSubmit= (e) => { //to capture the user input when submitted
-       
+
+    const handleSubmit= async (e) => { //to capture the user input when submitted
         e.preventDefault(); //to prevent losing state when page reloaded
-        console.log(username);
+
+      try {
+        let userCredentials = await createUserWithEmailAndPassword(auth, email, password)
+        let db = getFirestore()
+        let colRef = collection(db, "users")
+        const docRef = doc(colRef, userCredentials.user.uid)
+        await setDoc(docRef, {
+          username: username,
+          email: email,
+          number: Number,
+          firstName: Name,
+          lastName: LastName
+        })
+        router.push('/auth/Login')
+      } catch (e) {
+        console.log(e)
+      }
     } 
+
     const toggleForm = (formName) => {
         setCurrentForm(formName);
       };
@@ -34,11 +56,9 @@ export const Register=(props)=>{
                     <input className="Inputs" value={email} onChange={(e)=> setEmail(e.target.value)} type= 'email' placeholder="mail@example.com" id="email" name="email"/>
                     <input className="Inputs" value={Number} onChange={(e)=> setNum(e.target.value)} type= 'Number' placeholder="+961 " id="Number" name="Number"/>
                     
-
-                    
             
                 </form>
-                <button className="Submitbutton" type="submit">Sign Up</button>
+                <button className="Submitbutton" type="submit" onClick={handleSubmit}>Sign Up</button>
             
             <button className="togglebutton" onClick={() => toggleForm("login")}>
             Already have an account? Log in here.

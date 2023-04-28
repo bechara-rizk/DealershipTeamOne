@@ -1,15 +1,24 @@
 import React, { useState } from "react";
 import { Register } from "./Register";
 import Footer from '@/components/Footer';
+import { auth } from '../../../firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from 'next/router';
 
 export const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [currentForm, setCurrentForm] = useState("login");
+  const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username);
+    try {
+      await signInWithEmailAndPassword(auth, username, password)
+      router.push('/home/homescreen')
+    } catch (e) {
+      console.log(e)
+    }
   };
 
   const toggleForm = (formName) => {
