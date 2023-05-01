@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Login } from "./Login";
 import { auth } from '../../../firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
 import { useRouter } from 'next/router';
 
@@ -21,6 +21,7 @@ export const Register=(props)=>{
 
       try {
         let userCredentials = await createUserWithEmailAndPassword(auth, email, password)
+        await signInWithEmailAndPassword(auth, email, password)
         let db = getFirestore()
         let colRef = collection(db, "users")
         const docRef = doc(colRef, userCredentials.user.uid)
@@ -31,7 +32,7 @@ export const Register=(props)=>{
           firstName: Name,
           lastName: LastName
         })
-        router.push('/auth/Login')
+        router.push('/home/homescreen')
       } catch (e) {
         console.log(e)
       }
