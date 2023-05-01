@@ -30,9 +30,9 @@ export default function Home() {
       <Navbar/>
       <div className='homescreenCentered'>
         <h1 className='homeTitle'>A Luxury Car Voyage</h1>
-        <div className='discoverHomeButton'>
+        <Link href="/home/ProductsPage" className='discoverHomeButton'>
           <span className=''>Discover <i className="arrow right"></i></span>
-        </div>
+        </Link>
       </div>
     </div>
       <Footer/>
