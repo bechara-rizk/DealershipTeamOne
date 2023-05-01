@@ -48,4 +48,4 @@ cars.filter(car=> selectedCarPrice.includes(car.price));
 var selectedCarYear = [2018,2019,2020];
 cars.filter(car=> selectedCarYear.includes(car.year));
 
-export default cars.filter; // returns cars with mileage 10,000, 20,000, or 15,000
+export default cars; // returns cars with mileage 10,000, 20,000, or 15,000

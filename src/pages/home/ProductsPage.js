@@ -6,7 +6,7 @@ import RadioBox from '../../components/RadioBox';
 import CheckBox from '../../components/CheckBox';
 import cars from './CarDetails';
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/Navbar';
 
 const { Meta } = Card;
 function  ProductsPage(){
@@ -39,10 +39,10 @@ function  ProductsPage(){
         <div className="Productpagecontainer" style={{ width: '75%', margin: '0 auto' }}>
         <div className="headercontainer" style={{ textAlign: 'center', margin:'0 50px 0'}}>
         <div className='authButtons'>
-        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+        {/* <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/> */}
         {/* <span className='authElement'>Login</span> */}
         <div className="dropdown">
-          <button className="dropbtnProdPage">Log in <i className="arrowLogin down"></i>
+          <button className="dropbtnProdPage">Login <i className="arrowLogin down"></i>
           <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content-ProdPage">
@@ -52,7 +52,7 @@ function  ProductsPage(){
     </div>
   </div>
   </div>
-  <Navbar/>
+  {/* <Navbar/> */}
           
         </div>
 
