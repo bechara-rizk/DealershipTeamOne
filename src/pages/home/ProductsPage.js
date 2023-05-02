@@ -16,10 +16,15 @@ function  ProductsPage(){
         return <Col lg={6} md={8} xs={24}>
         <Card
             hoverable={true}
-            cover={<a href={`/product/${product.id}`} >
-                <img src={product.picture} alt="" style={{ width: '100%', maxHeight: '150px' }} />
-            </a>}
-        >
+            cover={
+                <img
+                src={product.picture}
+                alt=""
+                style={{ width: '100%', maxHeight: '150px' }}
+                />
+            }
+            >
+
            <Meta
                 title={product.make}
                 description={
@@ -36,11 +41,13 @@ function  ProductsPage(){
       
 
     return(
-        <div className="Productpagecontainer" style={{ width: '75%', margin: '0 auto' }}>
-        <div className="headercontainer" style={{ textAlign: 'center', margin:'0 50px 0'}}>
-        <div className='authButtons'>
-        {/* <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/> */}
-        {/* <span className='authElement'>Login</span> */}
+    
+        <div className= "ProductsPageCont">
+        <div className="ProdHead">
+        <img src='/images/logo.jpg' alt='logo' className='ProdPLogo'/>
+        <Navbar />
+        </div>
+        <div className="Productcontainer" style={{ width: '60%', margin: '0 auto' }}>
         <div className="dropdown">
           <button className="dropbtnProdPage">Login <i className="arrowLogin down"></i>
           <i className="fa fa-caret-down"></i>
@@ -51,21 +58,13 @@ function  ProductsPage(){
           <a href="#">Adminstrator login </a>
     </div>
   </div>
-  </div>
-  {/* <Navbar/> */}
+  
+
           
-        </div>
+      
 
       {/*Filter Section*/}
-        <Row gutter={[16, 16]}> 
-            <Col lg={12} xs={24} >
-                <CheckBox />
-          
-            </Col>
-            <Col lg={12} xs={24}>
-                <RadioBox />
-            </Col>
-        </Row>
+       
 
         {/*Search Section*/}
         <div className="SearchProdductPage" style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}>
@@ -87,9 +86,11 @@ function  ProductsPage(){
 
                     </Row>
 
-                    <Footer/>
+                    
                 </div>
             }
+    </div>
+    <Footer/>
     </div>
     )
     }
