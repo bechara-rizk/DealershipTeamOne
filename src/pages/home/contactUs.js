@@ -37,7 +37,7 @@ const contactUs = () => {
    
       </div>
     </div>
-    <div><Navbar /></div>
+    <div style={{display:'flex', width:'100vw', height:'35px'}}><Navbar /></div>
     <section className="Contact">
       
       <div className="Content">
