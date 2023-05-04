@@ -11,9 +11,9 @@ return (
       <li><a href="/home/contactUs">Contact</a></li>
       <li><a href="/home/aboutUs">About</a></li>
     </ul>
-    <div className="profile">
+    {/* <div className="profile">
       <UserProfile />
-    </div>
+    </div> */}
   </div></>
 );
 };

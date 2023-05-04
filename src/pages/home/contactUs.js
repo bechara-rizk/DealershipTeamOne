@@ -26,7 +26,7 @@ const contactUs = () => {
     <div className='authButtons'>
         <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
         <div class="dropdown">
-          <button class="dropbtn">Log in <i className="arrowLogin down"></i>
+          <button class="dropbtn">Login<i className="arrowLogin down"></i>
           <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
@@ -41,7 +41,7 @@ const contactUs = () => {
     <section className="Contact">
       
       <div className="Content">
-        <h3 className='header'>Get in touch!</h3>
+        <h3 className='header' style={{margin:0}}>Get in touch!</h3>
       </div>
       <div className="contact_container">
         <div className="contactInfo">
@@ -71,15 +71,15 @@ const contactUs = () => {
           <form onSubmit={handleSubmit}>
             <h2>Send Message</h2>
             <div className="inputBox">
-              <input type="text" name="name" required="required"></input>
+              <input type="text" name="name" required="required" style={{color:"#000"}}></input>
               <span>Full Name</span>
             </div>
             <div className="inputBox">
-              <input type="email" name="email" required="required"></input>
+              <input type="email" name="email" required="required" style={{color:"#000"}}></input>
               <span>Email</span>
             </div>
             <div className="inputBox">
-              <textarea name="message" required="required"></textarea>
+              <textarea name="message" required="required" style={{color:"#000"}}></textarea>
               <span>Leave your message...</span>
             </div>
             <div className="inputBox">
