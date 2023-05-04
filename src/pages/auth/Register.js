@@ -4,6 +4,7 @@ import { auth } from '../../../firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
 import { useRouter } from 'next/router';
+import Navbar from "@/components/Navbar";
 
 export const Register=(props)=>{
     const [username, setUsername]= useState(''); // for updating state (is initially empty)
@@ -45,6 +46,13 @@ export const Register=(props)=>{
     return(
         <div className="Login-Reg">
         {currentForm === "register" ? (
+          <>
+        <div className='LoginContainer'>
+      <div className='authButtons'>
+        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+      </div>
+      <Navbar/>
+      </div>
         <div className= "LoginRegwrapper">
             <div className="auth-form-container">
             <form className="regform" onSubmit= {handleSubmit}>  
@@ -66,6 +74,7 @@ export const Register=(props)=>{
           </button>
         </div>
       </div>
+      </>
     ) : (
       <Login onFormSwitch={toggleForm} />
     )}
