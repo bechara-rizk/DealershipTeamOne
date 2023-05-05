@@ -25,11 +25,11 @@ const contactUs = () => {
     <>
     <div className='authButtons'>
         <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
-        <div class="dropdown">
-          <button class="dropbtn">Login<i className="arrowLogin down"></i>
-          <i class="fa fa-caret-down"></i>
+        <div className="dropdown">
+          <button className="dropbtn">Login<i className="arrowLogin down"></i>
+          <i className="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content">
+          <div className="dropdown-content">
             <a href="#">Login</a>
             <a href="#">Sign Up</a>
             <a href="#">Adminstrator login </a>
