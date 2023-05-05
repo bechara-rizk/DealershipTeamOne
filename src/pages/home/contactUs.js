@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import emailjs from '@emailjs/browser';
 
 const contactUs = () => {
   const handleSubmit = (event) => {
@@ -14,6 +15,8 @@ const contactUs = () => {
 
     // TODO: Send the message to the dealer
     console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+
+    emailjs.sendForm('service_yogknkd', 'template_cyu3s5f', event.target, 'oTRpc9rMm5VwpDu1U')
 
     
     event.target.elements.name.value = '';
@@ -79,7 +82,7 @@ const contactUs = () => {
               <span>Email</span>
             </div>
             <div className="inputBox">
-              <textarea name="message" required="required" style={{color:"#000"}}></textarea>
+              <textarea name="message" required="required" style={{color:"#000"}} rows="2"></textarea>
               <span>Leave your message...</span>
             </div>
             <div className="inputBox">
