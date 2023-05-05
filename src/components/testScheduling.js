@@ -45,7 +45,7 @@ function TestDriveScheduler() {
   return (
     <div className="testDriveContainer">
       <div className="testDriveBox">
-        <h1 className="testDriveTitle">Test Drive Scheduler</h1>
+      <h1 className="testDriveTitle">  Schedule your test drive Now </h1>
         <p className="testDriveLabel">Select a car and available time slot to schedule a test drive.</p>
         <form onSubmit={handleSubmit}>
           <label htmlFor="car" className="testDriveLabel">
@@ -53,6 +53,7 @@ function TestDriveScheduler() {
           </label>
 
           <select
+          className='pleasebeblack'
             id="car"
             value={selectedCar}
             onChange={(e) => setSelectedCar(e.target.value)}
@@ -75,10 +76,12 @@ function TestDriveScheduler() {
           </label>
           <select
             id="time"
+            className='pleasebeblack'
             value={selectedTime}
             onChange={(e) => setSelectedTime(e.target.value)}
             required
           >
+
             <option value="">-- Select a time slot --</option>
             <option value="9:00am">9:00am</option>
             <option value="10:00am">10:00am</option>
@@ -93,7 +96,7 @@ function TestDriveScheduler() {
           <label htmlFor="date" className="testDriveLabel">
             Date:
           </label>
-          <input className="testDriveDate" type="date" id="date" min={minDate} max={minDate} required />
+          <input  className='pleasebeblack' type="date" id="date" min={minDate} max={minDate} required />
           <br />
           <button type="submit" className="testDriveSubmit" disabled={scheduledTestDrivesCounter >= 3}>
             Schedule Test Drive
