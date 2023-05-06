@@ -10,11 +10,11 @@ export default function Home() {
     <div className='homeContainer'>
       <div className='authButtons'>
         <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
-        <div class="dropdown">
-          <button class="dropbtn">{!auth.currentUser ? "Login" : "Sign Out"} <i className="arrowLogin down"></i>
-          <i class="fa fa-caret-down"></i>
+        <div className="dropdown">
+          <button className="dropbtn">{!auth.currentUser ? "Login" : "Sign Out"} <i className="arrowLogin down"></i>
+          <i className="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content">
+          <div className="dropdown-content">
             { !auth.currentUser ? <>
             <a href="/auth/Login">Login</a>
             <a href="/auth/Register">Sign Up</a>

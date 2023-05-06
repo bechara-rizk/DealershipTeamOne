@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import emailjs from '@emailjs/browser';
 
 const contactUs = () => {
   const handleSubmit = (event) => {
@@ -15,6 +16,8 @@ const contactUs = () => {
     // TODO: Send the message to the dealer
     console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
 
+    emailjs.sendForm('service_yogknkd', 'template_cyu3s5f', event.target, 'oTRpc9rMm5VwpDu1U')
+
     
     event.target.elements.name.value = '';
     event.target.elements.email.value = '';
@@ -25,11 +28,11 @@ const contactUs = () => {
     <>
     <div className='authButtons'>
         <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
-        <div class="dropdown">
-          <button class="dropbtn">Log in <i className="arrowLogin down"></i>
-          <i class="fa fa-caret-down"></i>
+        <div className="dropdown">
+          <button className="dropbtn">Login<i className="arrowLogin down"></i>
+          <i className="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content">
+          <div className="dropdown-content">
             <a href="#">Login</a>
             <a href="#">Sign Up</a>
             <a href="#">Adminstrator login </a>
@@ -37,11 +40,11 @@ const contactUs = () => {
    
       </div>
     </div>
-    <div><Navbar /></div>
+    <div style={{display:'flex', width:'100vw', height:'35px'}}><Navbar /></div>
     <section className="Contact">
       
       <div className="Content">
-        <h3 className='header'>Get in touch!</h3>
+        <h3 className='header' style={{margin:0}}>Get in touch!</h3>
       </div>
       <div className="contact_container">
         <div className="contactInfo">
@@ -71,15 +74,15 @@ const contactUs = () => {
           <form onSubmit={handleSubmit}>
             <h2>Send Message</h2>
             <div className="inputBox">
-              <input type="text" name="name" required="required"></input>
+              <input type="text" name="name" required="required" style={{color:"#000"}}></input>
               <span>Full Name</span>
             </div>
             <div className="inputBox">
-              <input type="email" name="email" required="required"></input>
+              <input type="email" name="email" required="required" style={{color:"#000"}}></input>
               <span>Email</span>
             </div>
             <div className="inputBox">
-              <textarea name="message" required="required"></textarea>
+              <textarea name="message" required="required" style={{color:"#000"}} rows="2"></textarea>
               <span>Leave your message...</span>
             </div>
             <div className="inputBox">

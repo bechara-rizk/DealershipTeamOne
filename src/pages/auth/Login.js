@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Register } from "./Register";
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import { auth } from '../../../firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'next/router';
@@ -26,13 +27,20 @@ export const Login = (props) => {
   };
 
   return (
-    <section className="Loginsec">
+    
     <div className="Login-Reg">
+      <div className="LoginHeader">
+      <img src='/images/logo.jpg' alt='logo' className='LoginLogo'/>
+      <Navbar />
+      </div>
       {currentForm === "login" ? (
+        
         <div className="LoginRegwrapper">
+          
           <div className="auth-form-container">
            
             <form className="loginform" onSubmit={handleSubmit}>
+              
             <h2> Login </h2>
               <input className="Inputs"
                 value={username}
@@ -57,7 +65,7 @@ export const Login = (props) => {
             </form>
             
             
-            <Footer/>
+            
             
             </div>
           </div>
@@ -66,9 +74,10 @@ export const Login = (props) => {
       ) : (
         <Register onFormSwitch={toggleForm} />
       )}
+      
     </div>
     
-    </section>
+    
     
   );
 };
