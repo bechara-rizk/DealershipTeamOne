@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from "@/components/Footer";
 
 const AddCarForm = () => {
   const [vin, setVin] = useState('');
@@ -20,11 +22,29 @@ const AddCarForm = () => {
   }
 
   return (
-    <><h2 className='Add-Car-Heading'>Add Car</h2>
+    <>
+   <div className='authButtons'>
+        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+        <div className="dropdown">
+          <button className="dropbtn">Log in <i className="arrowLogin down"></i>
+          <i className="fa fa-caret-down"></i>
+          </button>
+          <div className="dropdown-content">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+            <a href="#">Adminstrator login </a>
+          </div>
+   
+      </div>
+    </div>
+     <div className= "navbar"><Navbar/></div>
+    <div className="add_car_form">
+    
     <div className="add_car">
     <form className="add-car-form-container" onSubmit={handleSubmit}>
-
-      <label>
+    <h2 className='Add-Car-Heading'>Add Car</h2>
+    <div className="inputs_margin">
+      <label className="vin">
         VIN:
         <input
           className="input-field"
@@ -33,7 +53,7 @@ const AddCarForm = () => {
           onChange={(e) => setVin(e.target.value)}
           required />
       </label>
-      <label>
+      <label className="make">
         Make:
         <input
           className="input-field"
@@ -42,7 +62,9 @@ const AddCarForm = () => {
           onChange={(e) => setMake(e.target.value)}
           required />
       </label>
-      <label>
+      </div>
+      <div className="inputs_margin">
+      <label className="model">
         Model:
         <input
           className="input-field"
@@ -51,7 +73,7 @@ const AddCarForm = () => {
           onChange={(e) => setModel(e.target.value)}
           required />
       </label>
-      <label>
+      <label className="year">
         Year:
         <input
           className="input-field"
@@ -60,7 +82,9 @@ const AddCarForm = () => {
           onChange={(e) => setYear(e.target.value)}
           required />
       </label>
-      <label>
+      </div>
+      <div className="inputs_margin">
+      <label className="mileage">
         Mileage:
         <input
           className="input-field"
@@ -69,7 +93,7 @@ const AddCarForm = () => {
           onChange={(e) => setMileage(e.target.value)}
           required />
       </label>
-      <label>
+      <label className="price">
         Price:
         <input
           className="input-field"
@@ -78,7 +102,8 @@ const AddCarForm = () => {
           onChange={(e) => setPrice(e.target.value)}
           required />
       </label>
-      <label>
+      </div>
+      <label className="color">
         Color:
         <input
           className="input-field"
@@ -87,7 +112,7 @@ const AddCarForm = () => {
           onChange={(e) => setColor(e.target.value)}
           required />
       </label>
-      <label>
+      <label className="picture">
         Picture:
         <input
           className="input-field"
@@ -96,9 +121,10 @@ const AddCarForm = () => {
           onChange={handlePictureChange} />
       </label>
       <button className="submit-button" type="submit">
-        Save
+        Add Car
       </button>
-    </form></div></>
+    </form></div></div>
+    <Footer /></>
   );
 }
 

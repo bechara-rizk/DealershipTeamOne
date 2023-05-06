@@ -1,5 +1,5 @@
 .Add-Car-Heading{
-  text-decoration: underline solid red;
+  
   font-size: 24px;
   color: black;
   text-align: center;
@@ -7,35 +7,94 @@
 .add_car{
   display: flex;
   flex-direction: column;
-  width: 400px;
+ 
   padding: 0px;
-  background-color: white;
-  border: 2px solid red;
-  margin: auto;
+ 
+ height: 100%;
   
 }
-.add-car-form-container {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    color: black;
-  }
+.add_car_form{
+  background-image: url('/images/road2.jpg');
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.8;
+  height: 100%;
+ 
+}
+.add-car-form-container { 
+  
+  width: 40%;
+  height: 100%;
+  min-width: 350px;
+ margin-top: 0;
+ margin-right: 0;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  background-color: rgba(255, 255, 255, 0.651);
+  color: black;
+  
+}
+
+  
   
   .input-field {
-    margin-bottom: 8px;
-    background-color: white;
+   
+    background-color: rgba(255, 255, 255, 0.614);
     color: black;
-    padding: 0;
+    width: auto;
+    background-color: transparent;
+    
   }
   
   .submit-button {
     background-color: black;
     color: white;
-   
   }
-  
+
+  .vin{
+    color: black;
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+
+  .model{
+    color: black;
+    margin-right: 40px;
+    margin-left: 10px;
+  }
+  .make{
+    color: black;
+    margin-right: 40px;
+  }
+  .color{
+    color: black;
+    margin-right: 40px;
+    margin-left: 12px;
+  }
+  .picture{
+    color: black;
+    margin-right: 40px;
+    margin-left: 12px;
+    
+  }
+  .mileage{
+    color: black;
+    margin-right: 40px;
+  }
+  .price{
+    color: black;
+    margin-right: 40px;
+  }
+  .year{
+    color: black;
+    margin-right: 40px;
+  }
+  .navbar{
+    background-color: black;
+    position: fixed;
+  }
   .submit-button:hover {
     background-color: red;
   }
