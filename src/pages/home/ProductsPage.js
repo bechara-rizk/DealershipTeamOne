@@ -17,21 +17,25 @@ function ProductsPage() {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
-            hoverable={true}
-            cover={<a href={`/product/${product.id}`} >
-                <img src={product.picture} alt="" style={{ width: '100%', maxHeight: '150px' }} />
-            </a>}
+          hoverable={true}
+          cover={
+            <a href={`/product/${product.id}`}>
+              <img
+                src={product.picture}
+                alt=""
+                style={{ width: '100%', maxHeight: '150px' }}
+              />
+            </a>
+          }
         >
-           <Meta
-                title={product.make}
-                description={
-                `Model: ${product.model}
-                Price: ${product.price}
-                Mileage: ${product.mileage}
-                Year: ${product.year}
-                Color: ${product.color}`}
-            />
-
+          <Meta
+            title={product.make}
+            description={`Model: ${product.model}
+              Price: ${product.price}
+              Mileage: ${product.mileage}
+              Year: ${product.year}
+              Color: ${product.color}`}
+          />
         </Card>
       </Col>
     );
@@ -41,37 +45,41 @@ function ProductsPage() {
     setShowTestScheduling((prevState) => !prevState);
   };
 
-    return(
-        <div className="Productpagecontainer" style={{ width: '75%', margin: '0 auto' }}>
-        <div className="headercontainer" style={{ textAlign: 'center', margin:'0 50px 0'}}>
-        <div className='authButtons'>
-        {/* <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/> */}
-        {/* <span className='authElement'>Login</span> */}
-        <div className="dropdown">
-          <button className="dropbtnProdPage">Login <i className="arrowLogin down"></i>
-          <i className="fa fa-caret-down"></i>
-          </button>
-          <div className="dropdown-content-ProdPage">
-          <a href="#">Login</a>
-          <a href="#">Sign Up</a>
-          <a href="#">Adminstrator login </a>
-    </div>
-  </div>
-  </div>
-  {/* <Navbar/> */}
-          
+  return (
+    <>
+      <div className="headercontainer" style={{ textAlign: 'center' }}>
+        <div className="authButtons">
+          <img src="/images/logo.jpg" alt="logo" className="homepageLogo" />
+          <div className="dropdown">
+            <button className="dropbtnProdPage">
+              Log in <i className="arrowLogin down"></i>
+              <i className="fa fa-caret-down"></i>
+            </button>
+            <div className="dropdown-content-ProdPage">
+              <a href="#">Login</a>
+              <a href="#">Sign Up</a>
+              <a href="#">Adminstrator login</a>
+            </div>
+          </div>
         </div>
+        <Navbar />
+      </div>
 
-      {/*Filter Section*/}
-        <Row gutter={[16, 16]}> 
-            <Col lg={12} xs={24} >
-                <CheckBox />
-          
-            </Col>
-            <Col lg={12} xs={24}>
-                <RadioBox />
-            </Col>
-        </Row>
+      <div style={{ width: '100%' }}>
+        <div className="Productpagecontainer" style={{ margin: '0 auto', maxWidth: '1200px', minHeight: '100vh' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+
+            {/*Filter and Search Section*/}
+            <div>
+              {/*Filter Section*/}
+              <Row gutter={[16, 16]}>
+                <Col lg={12} xs={24}>
+                  <CheckBox />
+                </Col>
+                <Col lg={12} xs={24}>
+                  <RadioBox />
+                </Col>
+              </Row>
 
               {/*Search Section*/}
               <div
@@ -82,8 +90,9 @@ function ProductsPage() {
               </div>
             </div>
 
-</div>
+
           </div>
+
          
           
       <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
@@ -145,11 +154,12 @@ function ProductsPage() {
         </div>
       </div>
 
-                    <Footer/>
-                </div>
-            }
-    </div>
-    )
-    }
+      </div>
+
+      </div>
+      <Footer />
+    </>
+  );
+}
 
 export default ProductsPage;
