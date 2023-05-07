@@ -13,7 +13,6 @@ const contactUs = () => {
     const email = event.target.elements.email.value;
     const message = event.target.elements.message.value;
 
-    // TODO: Send the message to the dealer
     console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
 
     emailjs.sendForm('service_yogknkd', 'template_cyu3s5f', event.target, 'oTRpc9rMm5VwpDu1U')
