@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchFeature from '../../components/SearchFeature';
 import { Col, Card, Row } from 'antd';
 import RadioBox from '../../components/RadioBox';
@@ -7,13 +7,75 @@ import cars from './CarDetails';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import TestScheduling from '@/components/testScheduling';
+import { firestore, storage } from '../../../firebase';
+import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
+import { getStorage, ref, listAll, getDownloadURL, list } from "firebase/storage";
+
 
 const { Meta } = Card;
 
+const fetchCollectionData = async () => {
+  let db = firestore
+  let colRef = collection(db, "listings")
+  let q = query(colRef, where("sold", "==", false))
+  const querySnapshot = await getDocs(q);
+  const documents = querySnapshot.docs.map((doc) => doc.data());
+  return documents;
+};
+
+const fetchStorageData = async (files) => {
+  const storage = getStorage();
+
+  const listRef = ref(storage, 'images/');
+  let itemReferences = []
+  let data = await listAll(listRef)
+    .then((res) => {
+      res.prefixes.forEach((folderRef) => {
+        // All the prefixes under listRef.
+        // You may call listAll() recursively on them.
+      });
+      res.items.forEach((itemRef) => {
+        itemReferences.push(itemRef)
+        // All the items under listRef.
+      });
+    }).catch((error) => {
+      // Uh-oh, an error occurred!
+    });
+  
+  let images = {}
+  for (let itemRef of itemReferences){
+    let url = await getDownloadURL(itemRef)
+    images[itemRef.name.slice(0, -4)] = url
+  }
+  return images;
+};
+
+
+
 function ProductsPage() {
   const [showTestScheduling, setShowTestScheduling] = useState(false);
+  const [listings, setListings] = useState(null);
+  const [images, setImages] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const renderCards = cars.map((product, index) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      const collectionData = await fetchCollectionData();
+      const storageData = await fetchStorageData(collectionData);
+
+      setListings(collectionData);
+      setImages(storageData);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  
+  const renderCards = listings.map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
@@ -21,7 +83,7 @@ function ProductsPage() {
           cover={
             <a href={`/product/${product.id}`}>
               <img
-                src={product.picture}
+                src={images[product.VIN]}
                 alt=""
                 style={{ width: '100%', maxHeight: '150px' }}
               />
