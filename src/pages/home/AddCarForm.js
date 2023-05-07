@@ -37,7 +37,7 @@ const AddCarForm = () => {
    
       </div>
     </div>
-     <Navbar />
+    <div style={{display:'flex', width:'100vw', height:'35px'}}><Navbar /></div>
     <h2 className='Add-Car-Heading'>Add Car</h2>
     <div className="add_car">
     <form className="add-car-form-container" onSubmit={handleSubmit}>

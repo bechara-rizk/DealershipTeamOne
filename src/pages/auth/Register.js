@@ -13,7 +13,6 @@ export const Register=(props)=>{
     const [Number, setNum]= useState(''); //for updating state (is initially empty)
     const [Name, setName]= useState(''); // for updating state (is initially empty)
     const [LastName, setLastN]= useState(''); //for updating state (is initially empty)
-    const [currentForm, setCurrentForm] = useState("register");
     const router = useRouter();
 
 
@@ -39,13 +38,12 @@ export const Register=(props)=>{
       }
     } 
 
-    const toggleForm = (formName) => {
-        setCurrentForm(formName);
+    const toggleForm = () => {
+      router.push('/auth/Login')
       };
     
     return(
         <div className="Login-Reg">
-        {currentForm === "register" ? (
           <>
         <div className='LoginContainer'>
       <div className='authButtons'>
@@ -69,15 +67,12 @@ export const Register=(props)=>{
                 </form>
                 <button className="Submitbutton" type="submit" onClick={handleSubmit}>Sign Up</button>
             
-            <button className="togglebutton" onClick={() => toggleForm("login")}>
+            <button className="togglebutton" onClick={() => toggleForm()}>
             Already have an account? Log in here.
           </button>
         </div>
       </div>
       </>
-    ) : (
-      <Login onFormSwitch={toggleForm} />
-    )}
   </div>
 );
 }

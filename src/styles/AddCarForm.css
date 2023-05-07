@@ -91,10 +91,10 @@
     color: black;
     margin-right: 40px;
   }
-  .navbar{
+  /* .navbar{
     background-color: black;
     position: fixed;
-  }
+  } */
   .submit-button:hover {
     background-color: red;
   }

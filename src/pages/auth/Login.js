@@ -9,7 +9,6 @@ import { useRouter } from 'next/router';
 export const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [currentForm, setCurrentForm] = useState("login");
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -22,9 +21,9 @@ export const Login = (props) => {
     }
   };
 
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  };
+  const toggleForm = () => {
+      router.push('/auth/Register')
+    };
 
   return (
     
@@ -33,10 +32,7 @@ export const Login = (props) => {
       <img src='/images/logo.jpg' alt='logo' className='LoginLogo'/>
       <Navbar />
       </div>
-      {currentForm === "login" ? (
-        
         <div className="LoginRegwrapper">
-          
           <div className="auth-form-container">
            
             <form className="loginform" onSubmit={handleSubmit}>
@@ -60,20 +56,11 @@ export const Login = (props) => {
               />
               
             <button className="Submitbutton" type="submit">Login</button>
-            <button className="togglebutton" onClick={() => toggleForm("register")}>Don't have an account? Sign up here.</button>
+            <button className="togglebutton" onClick={() => toggleForm()}>Don't have an account? Sign up here.</button>
             
             </form>
-            
-            
-            
-            
             </div>
           </div>
-        
-
-      ) : (
-        <Register onFormSwitch={toggleForm} />
-      )}
       
     </div>
     
