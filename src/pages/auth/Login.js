@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Register } from "./Register";
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { auth } from '../../../firebase';

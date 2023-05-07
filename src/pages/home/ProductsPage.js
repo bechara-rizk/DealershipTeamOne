@@ -1,19 +1,71 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchFeature from '../../components/SearchFeature';
 import { Col, Card, Row } from 'antd';
 import RadioBox from '../../components/RadioBox';
 import CheckBox from '../../components/CheckBox';
-import cars from './CarDetails';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import TestScheduling from '@/components/testScheduling';
+import { firestore, storage } from '../../../firebase';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { ref, listAll, getDownloadURL, list } from "firebase/storage";
+
 
 const { Meta } = Card;
 
+const fetchCollectionData = async () => {
+  let db = firestore
+  let colRef = collection(db, "listings")
+  let q = query(colRef, where("sold", "==", false))
+  const querySnapshot = await getDocs(q);
+  const documents = querySnapshot.docs.map((doc) => doc.data());
+  return documents;
+};
+
+const fetchStorageData = async (files) => {
+  const listRef = ref(storage, 'images/');
+  let itemReferences = []
+  await listAll(listRef)
+    .then((res) => {
+      res.items.forEach((itemRef) => {
+        itemReferences.push(itemRef)
+      });
+    })
+  
+  let images = {}
+  for (let itemRef of itemReferences){
+    let url = await getDownloadURL(itemRef)
+    images[itemRef.name.slice(0, -4)] = url
+  }
+  return images;
+};
+
+
+
 function ProductsPage() {
   const [showTestScheduling, setShowTestScheduling] = useState(false);
+  const [listings, setListings] = useState(null);
+  const [images, setImages] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const renderCards = cars.map((product, index) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      const collectionData = await fetchCollectionData();
+      const storageData = await fetchStorageData(collectionData);
+
+      setListings(collectionData);
+      setImages(storageData);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  
+  const renderCards = listings.map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
@@ -21,7 +73,7 @@ function ProductsPage() {
           cover={
             <a href={`/product/${product.id}`}>
               <img
-                src={product.picture}
+                src={images[product.VIN]}
                 alt=""
                 style={{ width: '100%', maxHeight: '150px' }}
               />
@@ -98,7 +150,7 @@ function ProductsPage() {
       <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
         {/*Car Listings*/}
         <div style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
-          {cars.length === 0 ? (
+          {listings.length === 0 ? (
             <div
               className="CarListings"
               style={{
