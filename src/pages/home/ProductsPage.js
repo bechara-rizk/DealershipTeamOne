@@ -3,13 +3,12 @@ import SearchFeature from '../../components/SearchFeature';
 import { Col, Card, Row } from 'antd';
 import RadioBox from '../../components/RadioBox';
 import CheckBox from '../../components/CheckBox';
-import cars from './CarDetails';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import TestScheduling from '@/components/testScheduling';
 import { firestore, storage } from '../../../firebase';
-import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
-import { getStorage, ref, listAll, getDownloadURL, list } from "firebase/storage";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 
 
 const { Meta } = Card;
@@ -24,23 +23,14 @@ const fetchCollectionData = async () => {
 };
 
 const fetchStorageData = async (files) => {
-  const storage = getStorage();
-
   const listRef = ref(storage, 'images/');
   let itemReferences = []
-  let data = await listAll(listRef)
+  await listAll(listRef)
     .then((res) => {
-      res.prefixes.forEach((folderRef) => {
-        // All the prefixes under listRef.
-        // You may call listAll() recursively on them.
-      });
       res.items.forEach((itemRef) => {
         itemReferences.push(itemRef)
-        // All the items under listRef.
       });
-    }).catch((error) => {
-      // Uh-oh, an error occurred!
-    });
+    })
   
   let images = {}
   for (let itemRef of itemReferences){
@@ -160,7 +150,7 @@ function ProductsPage() {
       <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
         {/*Car Listings*/}
         <div style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
-          {cars.length === 0 ? (
+          {listings.length === 0 ? (
             <div
               className="CarListings"
               style={{
