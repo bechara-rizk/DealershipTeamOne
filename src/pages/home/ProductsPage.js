@@ -149,7 +149,6 @@ function ProductsPage() {
             <div className="dropdown-content-ProdPage">
               <a href="#">Login</a>
               <a href="#">Sign Up</a>
-              <a href="#">Adminstrator login</a>
             </div>
           </div>
         </div>
@@ -254,16 +253,9 @@ function ProductsPage() {
             onChange={(e) => setSelectedCar(e.target.value)}
           >
             <option value="Select-A-TestCar">-- Select a car --</option>
-            <option value="Audi A4">Audi A4</option>
-          <option value="BMW 4 series">BMW 4 series</option>
-          <option value="Mercedes-Benz C-Class">Mercedes-Benz C-Class</option>
-          <option value="Lexus ES">Lexus ES</option>
-          <option value="Infiniti Q50">Infiniti Q50</option>
-          <option value="Volvo S60">Volvo S60</option>
-          <option value="Acura TLX">Acura TLX</option>
-          <option value="Cadillac CTS">Cadillac CTS</option>
-          <option value="Lincoln MKZ">Lincoln MKZ</option>
-          <option value="Genesis G80">Genesis G80</option>
+            {listings.map((listing, index) => (
+              <option key={index} value={listing.make + " " + listing.model}>{listing.make + " " + listing.model}</option>
+            ))}
           </select>
           <br />
           <label htmlFor="time" className="testDriveLabel">
