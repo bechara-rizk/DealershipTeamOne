@@ -14,7 +14,7 @@ const contactUs = () => {
     const message = event.target.elements.message.value;
 
     console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-
+    // console.log(event.target.elements.name);
     emailjs.sendForm('service_yogknkd', 'template_cyu3s5f', event.target, 'oTRpc9rMm5VwpDu1U')
 
     

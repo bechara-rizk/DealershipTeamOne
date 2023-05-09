@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchFeature from '../../components/SearchFeature';
-import { Col, Card, Row } from 'antd';
+import { Col, Card, Row, Select } from 'antd';
 import RadioBox from '../../components/RadioBox';
 import CheckBox from '../../components/CheckBox';
 import Footer from '@/components/Footer';
@@ -11,6 +11,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import emailjs from '@emailjs/browser';
 
 const { Meta } = Card;
 
@@ -66,6 +67,9 @@ function ProductsPage() {
       alert('Selected time slot is already scheduled. Please choose a different time slot.');
       return;
     }
+    
+    console.log(e.target.elements);
+    emailjs.sendForm('service_yogknkd', 'template_6ljs4f7', e.target, 'oTRpc9rMm5VwpDu1U');
 
     setScheduledTestDrives([...scheduledTestDrives, newTestDrive]);
     setSelectedCar('');
@@ -251,6 +255,7 @@ function ProductsPage() {
             id="car"
             value={selectedCar}
             onChange={(e) => setSelectedCar(e.target.value)}
+            name='carclient'
           >
             <option value="Select-A-TestCar">-- Select a car --</option>
             {listings.map((listing, index) => (
@@ -267,17 +272,18 @@ function ProductsPage() {
             value={selectedTime}
             onChange={(e) => setSelectedTime(e.target.value)}
             required
+            name='timeclient'
           >
 
             <option value="">-- Select a time slot --</option>
             <option value="9:00am">9:00am</option>
             <option value="10:00am">10:00am</option>
             <option value="11:00am">11:00am</option>
-            <option   value="12:00pm ">12:00pm </option>
-            <option value="1:00pm  ">1:00pm </option>
-           <option value="2:00pm ">2:00pm </option>
-            <option value="3:00pm ">3:00pm </option>
-           <option value="4:00pm ">4:00pm </option>
+            <option   value="12:00pm">12:00pm</option>
+            <option value="1:00pm ">1:00pm</option>
+           <option value="2:00pm">2:00pm</option>
+            <option value="3:00pm">3:00pm</option>
+           <option value="4:00pm">4:00pm</option>
           </select>
           <br />
           <label htmlFor="date" className="testDriveLabel">
@@ -291,7 +297,11 @@ function ProductsPage() {
           maxDate={new Date(maxDateFormatted)}
           filterDate={(date) => date.getDay() !== 0}
           required
+          name='dateclient'
         />
+        {/* {TODO: put variables instead of fixed values @backend} */}
+        <input type="text" hidden value={'bechara'} name="nameclient"/>
+        <input type="text" hidden value={'becharaerizk@yahoo.com'} name="emailclient"/>
           <br />
           <button type="submit" className="testDriveSubmit" disabled={scheduledTestDrivesCounter >= 3}>
             Schedule Test Drive
