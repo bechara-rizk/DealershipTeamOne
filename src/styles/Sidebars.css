@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: 2rem 5rem;
     height: 2.5rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     padding-left: 1rem;
     row-gap: 2rem;
     align-items: center;
@@ -43,7 +43,7 @@
     display: grid;
     grid-template-columns: 2rem 5rem;
     height: 4rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     padding-left: 1rem;
     row-gap: 2rem;
     align-items: center;
@@ -103,3 +103,4 @@
         display: none;
     }
   }  
+  

@@ -35,7 +35,7 @@ const Sidebar = () => {
         {/* /*</div><div className="item">/*        adde here the link to the actual page below */  }
         <Link href="/home/ProductsPage" className="item">
         <FaCar className="car-icon" />
-          <h3>My Car List</h3>
+          <h3>Car List</h3>
     
         </Link>
 
