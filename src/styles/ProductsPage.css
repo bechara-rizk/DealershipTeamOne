@@ -41,7 +41,7 @@ background-color: black;
   .dropdown {
     float: left;
     overflow: hidden;
-    margin-bottom:50px;
+    margin-bottom:100px;
   }
   
   .dropbtnProdPage {
@@ -55,7 +55,7 @@ background-color: black;
     position: absolute;
     top: 0;
     right: 0;
-    margin-bottom: 70px;
+    margin-bottom: 120px;
     margin-right: 40px;
   }
   
@@ -90,6 +90,31 @@ background-color: black;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
+  }
+  .date-picker-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    width:5rem;
+    font-size: 16px;
+    
+ 
+  }
+  myInput{
+    width: 200px;
+    
+  }
+  .pleasebeblack2{
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-left: 95px;
+    max-width: max-content;
+  }
+  .date-picker-container .testDriveLabel {
+    margin-right: 0px; /* adjust as needed */
+    width:100%;
+    font-size: larger;
   }
   
   .down {

@@ -219,13 +219,14 @@ function ProductsPage() {
             alignItems: "flex-end",
             width: "30%",
             minWidth: "180px",
-            marginRight:'-100px'
+            marginRight:'-200px'
           }}
         >
-          <div style={{ position: 'relative' }}> {/* Add this wrapper */}
+          <div style={{ position: 'relative', marginRight:'-7rem' }}> 
             <button
               onClick={toggleTestScheduling}
               style={{ width: "100%", marginBottom: "1rem", }}
+
             >
               Schedule Your Test Drive
             </button>
@@ -237,8 +238,9 @@ function ProductsPage() {
                   alignSelf: 'flex-start',
                   width: '100%',
                   minWidth: '100px',
-                  maxWidth: '600px',
-                  marginTop: '-9rem',
+                  maxWidth: '800px',
+                  marginTop: '-15rem',
+                   marginRight: '-60px',
                 }}
               >
                     <div className="testDriveContainer">
@@ -247,58 +249,67 @@ function ProductsPage() {
         <p className="testDriveLabel">Select a car and available time slot to schedule a test drive.</p>
         <form onSubmit={handleSubmit}>
           <label htmlFor="car" className="testDriveLabel">
-            Car:
-          </label>
+  Car:
+</label>
 
-          <select
-          className='pleasebeblack'
-            id="car"
-            value={selectedCar}
-            onChange={(e) => setSelectedCar(e.target.value)}
-            name='carclient'
-          >
-            <option value="Select-A-TestCar">-- Select a car --</option>
-            {listings.map((listing, index) => (
-              <option key={index} value={listing.make + " " + listing.model}>{listing.make + " " + listing.model}</option>
-            ))}
-          </select>
-          <br />
+<select
+  className='pleasebeblack'
+  id="car"
+  value={selectedCar}
+  onChange={(e) => setSelectedCar(e.target.value)}
+  name='carclient'
+>
+  <option value="Select-A-TestCar">-- Select a car --</option>
+  {listings.map((listing, index) => (
+    <option key={index} value={listing.make + " " + listing.model}>{listing.make + " " + listing.model}</option>
+  ))}
+</select>
+<br />
+<div className="date-picker-container">
+  <label htmlFor="date" className="testDriveLabel">
+    Date:
+  </label>
+  <DatePicker
+    className='pleasebeblack2'
+    selected={selectedDate}
+    onChange={(date) => setSelectedDate(date)}
+    minDate={new Date(minDate)}
+    maxDate={new Date(maxDateFormatted)}
+    filterDate={(date) => date.getDay() !== 0}
+    required
+    name='dateclient'
+  
+    disabled={!selectedCar || selectedCar === 'Select-A-TestCar'}
+  />
+</div>
+
+
+        <br/>
           <label htmlFor="time" className="testDriveLabel">
             Time:
           </label>
           <select
-            id="time"
-            className='pleasebeblack'
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
-            required
-            name='timeclient'
-          >
+  id="time"
+  className='pleasebeblack'
+  value={selectedTime}
+  onChange={(e) => setSelectedTime(e.target.value)}
+  required
+  name='timeclient'
+  disabled={!selectedCar || selectedCar === 'Select-A-TestCar' || !selectedDate}
+>
+   <option value="">-- Select a time slot --</option>
+  <option value="9:00am">9:00am</option>
+  <option value="10:00am">10:00am</option>
+  <option value="11:00am">11:00am</option>
+  <option   value="12:00pm">12:00pm</option>
+  <option value="1:00pm ">1:00pm</option>
+  <option value="2:00pm">2:00pm</option>
+  <option value="3:00pm">3:00pm</option>
+  <option value="4:00pm">4:00pm</option>
+</select>
 
-            <option value="">-- Select a time slot --</option>
-            <option value="9:00am">9:00am</option>
-            <option value="10:00am">10:00am</option>
-            <option value="11:00am">11:00am</option>
-            <option   value="12:00pm">12:00pm</option>
-            <option value="1:00pm ">1:00pm</option>
-           <option value="2:00pm">2:00pm</option>
-            <option value="3:00pm">3:00pm</option>
-           <option value="4:00pm">4:00pm</option>
-          </select>
           <br />
-          <label htmlFor="date" className="testDriveLabel">
-          Date:
-        </label>
-        <DatePicker
-          className='pleasebeblack'
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          minDate={new Date(minDate)}
-          maxDate={new Date(maxDateFormatted)}
-          filterDate={(date) => date.getDay() !== 0}
-          required
-          name='dateclient'
-        />
+
         {/* {TODO: put variables instead of fixed values @backend} */}
         <input type="text" hidden value={'bechara'} name="nameclient"/>
         <input type="text" hidden value={'becharaerizk@yahoo.com'} name="emailclient"/>
@@ -327,7 +338,7 @@ function ProductsPage() {
 </div>
               </div>
             )}
-          </div> {/* Close the wrapper */}
+          </div> 
         </div>
       </div>
 
