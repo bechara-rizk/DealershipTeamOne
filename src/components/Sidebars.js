@@ -27,22 +27,22 @@ const Sidebar = () => {
           <h3>Home</h3>
         </Link>
       
-        {/* <div className="item">
+        <div className="item">
         <FaUser className="customer-icon" />
           <h3>Customers</h3>
-        </div> */}
+        </div>
 
         {/* /*</div><div className="item">/*        adde here the link to the actual page below */  }
         <Link href="/home/ProductsPage" className="item">
         <FaCar className="car-icon" />
-          <h3>Car List</h3>
+          <h3>My Car List</h3>
     
         </Link>
 
-        {/* <div className="item">
+        <div className="item">
         <BiUser className="employee-icon" />
           <h3>Employees</h3>
-        </div> */}
+        </div>
         
         
         <Link href="/dashboard/SalesInfoPage" className="item">

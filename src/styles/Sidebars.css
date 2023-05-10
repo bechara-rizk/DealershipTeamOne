@@ -3,11 +3,15 @@
     width: 16%;
     padding: 0.2rem 1rem;
     background-color: #7a0319;
-    color: #ffffffe3;
+    color: #ffffff;
     position: fixed;
     left:0;
+    transition: width 0.2s ease;
 }
 
+.sidebarContainer.collapsed {
+    width: 5%; /* Adjust the width as needed */
+  }
 
 .logo {
     display: flex;
