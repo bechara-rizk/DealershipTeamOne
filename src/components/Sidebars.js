@@ -1,21 +1,90 @@
-import React from 'react';
-import Link from 'next/link';
+//NB** the uncommented code is at the end of this page 
+// import React from 'react';
+// import Link from 'next/link';
 
-import { MdOutlineDashboard } from "react-icons/md"
-import { HiOutlineHome } from "react-icons/hi";
-import { menuItems } from '../pages/api/dummy';
-// l
-import { FiBarChart2 } from "react-icons/fi";
-import { FaUser } from "react-icons/fa";
-import { BiUser } from "react-icons/bi";
-import { IoReceiptOutline } from "react-icons/io5";
+// import { MdOutlineDashboard } from "react-icons/md"
+// import { HiOutlineHome } from "react-icons/hi";
+// import { menuItems } from '../pages/api/dummy';
+// // l
+// import { FiBarChart2 } from "react-icons/fi";
+// import { FaUser } from "react-icons/fa";
+// import { BiUser } from "react-icons/bi";
+// import { IoReceiptOutline } from "react-icons/io5";
+// import { FaCar } from 'react-icons/fa';
+// import { FaCalendarAlt } from "react-icons/fa"; 
+
+// const Sidebar = () => {
+//   return (
+
+//     <div className="sidebarContainer">
+//       <div className="logo">
+//         <MdOutlineDashboard className="logo-icon" />
+//         <span>Luxe Motors</span>
+//       </div>
+
+//       <div className="menu">
+//         <Link href="/home/homescreen" className="item">
+//           <HiOutlineHome className="menu-icon"/>
+//           <h3>Home</h3>
+//         </Link>
+      
+        
+
+//         {/* /*</div><div className="item">/*        adde here the link to the actual page below */  }
+//         <Link href="/home/ProductsPage" className="item">
+//         <FaCar className="car-icon" />
+//           <h3>Car List</h3>
+    
+//         </Link>
+
+        
+        
+//         <Link href="/dashboard/SalesInfoPage" className="item">
+//         <IoReceiptOutline className="orders-icon" />
+//           <h3>Orders</h3>
+//         </Link>
+//         <div>
+//         <Link href="/dashboard/CarSchedule" className="item2">
+//         <FaCalendarAlt className="TestSchedule-icon" />
+//           <h3>Test Schedule</h3>
+//         </Link>
+//        </div>
+//         <div>
+//         <Link href="/dashboard/charts" className="item">
+//         <FiBarChart2 className="chart-icon" />
+//           <h3>Charts</h3>
+//         </Link>
+//         </div>
+//       </div>
+      
+//     </div>
+
+    
+//   )
+// }
+
+// export default Sidebar;
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { MdOutlineDashboard } from 'react-icons/md';
+import { HiOutlineHome } from 'react-icons/hi';
+import { FiBarChart2 } from 'react-icons/fi';
+import { FaUser } from 'react-icons/fa';
+import { BiUser } from 'react-icons/bi';
+import { IoReceiptOutline } from 'react-icons/io5';
 import { FaCar } from 'react-icons/fa';
-import { FaCalendarAlt } from "react-icons/fa"; 
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const Sidebar = () => {
-  return (
+  const [collapsed, setCollapsed] = useState(false);
 
-    <div className="sidebarContainer">
+  const handleToggle = () => {
+    setCollapsed(!collapsed);
+  };
+
+  return (
+    <div className={`sidebarContainer ${collapsed ? 'collapsed' : ''}`}>
       <div className="logo">
         <MdOutlineDashboard className="logo-icon" />
         <span>Luxe Motors</span>
@@ -23,51 +92,54 @@ const Sidebar = () => {
 
       <div className="menu">
         <Link href="/home/homescreen" className="item">
-          <HiOutlineHome className="menu-icon"/>
-          <h3>Home</h3>
+          <HiOutlineHome className="menu-icon" />
+          {!collapsed && <h3>Home</h3>}
         </Link>
-      
-        <div className="item">
-        <FaUser className="customer-icon" />
-          <h3>Customers</h3>
-        </div>
 
-        {/* /*</div><div className="item">/*        adde here the link to the actual page below */  }
+        {/* {!collapsed && (
+          <div className="item">
+            <FaUser className="customer-icon" />
+            <h3>Customers</h3>
+          </div>
+        )} */}
+
         <Link href="/home/ProductsPage" className="item">
-        <FaCar className="car-icon" />
-          <h3>Car List</h3>
-    
+          <FaCar className="car-icon" />
+          {!collapsed && <h3>Car List</h3>}
         </Link>
 
-        <div className="item">
-        <BiUser className="employee-icon" />
-          <h3>Employees</h3>
-        </div>
-        
-        
+        {/* {!collapsed && (
+          <div className="item">
+            <BiUser className="employee-icon" />
+            <h3>Employees</h3>
+          </div>
+        )} */}
+
         <Link href="/dashboard/SalesInfoPage" className="item">
-        <IoReceiptOutline className="orders-icon" />
-          <h3>Orders</h3>
+          <IoReceiptOutline className="orders-icon" />
+          {!collapsed && <h3>Orders</h3>}
         </Link>
+
         <div>
-        <Link href="/dashboard/CarSchedule" className="item2">
-        <FaCalendarAlt className="TestSchedule-icon" />
-          <h3>Test Schedule</h3>
-        </Link>
-       </div>
+          <Link href="/dashboard/CarSchedule" className="item2">
+            <FaCalendarAlt className="TestSchedule-icon" />
+            {!collapsed && <h3>Test Schedule</h3>}
+          </Link>
+        </div>
+
         <div>
-        <Link href="/dashboard/charts" className="item">
-        <FiBarChart2 className="chart-icon" />
-          <h3>Charts</h3>
-        </Link>
+          <Link href="/dashboard/charts" className="item">
+            <FiBarChart2 className="chart-icon" />
+            {!collapsed && <h3>Charts</h3>}
+          </Link>
         </div>
       </div>
-      
-    </div>
 
-    
-  )
-}
+      <div className="toggle" onClick={handleToggle}>
+        <div className={`toggle-icon ${collapsed ? 'collapsed' : ''}`} />
+      </div>
+    </div>
+  );
+};
 
 export default Sidebar;
-
