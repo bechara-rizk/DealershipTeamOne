@@ -27,7 +27,7 @@
 }
 
 .navbar > ul{
-  position: absolute;
+  /* position: absolute; */
   list-style: none;
   display:inline-flex;
   padding: 0;
