@@ -290,7 +290,7 @@ function ProductsPage() {
           </label>
           <select
   id="time"
-  className='pleasebeblack'
+  className='pleasebeblack3'
   value={selectedTime}
   onChange={(e) => setSelectedTime(e.target.value)}
   required
