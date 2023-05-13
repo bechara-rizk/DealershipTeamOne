@@ -29,9 +29,9 @@ const Sidebar = () => {
             <h3>Car List</h3>
           </Link>
 
-          <Link href="/dashboard/SalesInfoPage" className="item">
+          <Link href="/dashboard/SalesInfoPage" className="item2">
             <IoReceiptOutline className="orders-icon" />
-            <h3>Orders</h3>
+            <h3>Sales Information</h3>
           </Link>
 
           <Link href="/dashboard/CarSchedule" className="item2">
@@ -45,9 +45,7 @@ const Sidebar = () => {
           </Link>
         </div>
 
-        <div className="toggle">
-          <div className="toggle-icon"></div>
-        </div>
+       
       </div>
     </div>
   );
