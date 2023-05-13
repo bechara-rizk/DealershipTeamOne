@@ -17,8 +17,8 @@ const Footer = () => {
 		   <div className="footer-col">
 			 <h4>Luxe Motors</h4>
 			 <ul>
-			   <li><a href="#">about us</a></li>
-			   <li><a href="#">Contact us</a></li>
+			   <li><a href="/home/aboutUs">about us</a></li>
+			   <li><a href="/home/contactUs">Contact us</a></li>
 			   <li><a href="#">our services</a></li>
 			   <li><a href="#">privacy policy</a></li>
 			   
@@ -29,8 +29,8 @@ const Footer = () => {
 			 <ul>
 			 	
 			   <li><a href="/home/faq ">FAQ</a></li>
-			   <li><a href=" ">Car Listing</a></li>
-			   <li><a href=" ">Test Drive</a></li>
+			   <li><a href="/home/ProductsPage">Products page</a></li>
+			   <li><a href="/home/compareCar">Compare Cars</a></li>
 			   <li><a href=" ">News</a></li>
 			   
 			 </ul>
