@@ -159,21 +159,14 @@ function ProductsPage() {
         <Navbar />
       </div>
 
-      <div style={{ width: '100%' }}>
+      <div className="lists" style={{ width: '100%' }}>
         <div className="Productpagecontainer" style={{ margin: '0 auto', maxWidth: '1200px', minHeight: '100vh' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
 
             {/*Filter and Search Section*/}
             <div>
               {/*Filter Section*/}
-              <Row gutter={[16, 16]}>
-                <Col lg={12} xs={24}>
-                  <CheckBox />
-                </Col>
-                <Col lg={12} xs={24}>
-                  <RadioBox />
-                </Col>
-              </Row>
+             
 
               {/*Search Section*/}
               <div
@@ -189,9 +182,9 @@ function ProductsPage() {
 
          
           
-      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+      <div  style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
         {/*Car Listings*/}
-        <div style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
+        <div className="listings" style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
           {listings.length === 0 ? (
             <div
               className="CarListings"
@@ -222,8 +215,7 @@ function ProductsPage() {
             marginRight:'-200px'
           }}
         >
-          <div style={{ position: 'relative', marginRight:'-7rem' }}> 
-            <button
+            <button className="testb"
               onClick={toggleTestScheduling}
               style={{ width: "100%", marginBottom: "1rem", }}
 
@@ -344,7 +336,7 @@ function ProductsPage() {
 
       </div>
 
-      </div>
+     
       <Footer />
     </>
   );
