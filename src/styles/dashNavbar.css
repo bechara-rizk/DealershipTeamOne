@@ -4,7 +4,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color:  #000000;
+    background-color:  #383636;
     border-radius: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -64,4 +64,10 @@
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
+}
+
+html{
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
 }
