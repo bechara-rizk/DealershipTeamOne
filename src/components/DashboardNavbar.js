@@ -17,16 +17,18 @@ const DashboardNavbar = () => {
         <div className="indicator"></div>
         <BiMessageRoundedDetail className='nav-icon' />
       </div> */}
-      
-
-      <div className="notification">
-        <div className="indicator"></div>
-        <MdNotificationsNone className='nav-icon' />
-      </div>
+       
 
       <div className="user">
-        <span>Admin Name</span>
+        <span>Admin </span>
+        <span>   </span>
        <img src={"https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"} alt="avatar" />
+      </div>
+
+      <div className="signout">
+      <Link href="" className="item">
+      <span>Sign out</span>
+          </Link>
       </div>
     </div>
   )

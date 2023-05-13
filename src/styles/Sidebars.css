@@ -7,7 +7,8 @@
   position: fixed;
   left: 0;
   transition: width 0.3s ease-in-out; /* Add transition for smooth animation */
-  min-width: 140px;
+  min-width: 147px;
+  overflow: auto;
 }
 
 .logo {
@@ -21,16 +22,20 @@
   margin-right: 0.5rem;
 }
 
+
 .menu {
   margin: 2rem 0;
   display: grid;
+  grid-gap: 0.5rem;
 }
 
 .item {
   width: 90%;
+  display: flex; /* Change display to flex */
+  justify-content: flex-start; /* Align items to the start */
   display: grid;
   grid-template-columns: 2rem 5rem;
-  height: 2.5rem;
+  height: 3rem;
   margin: 0.5rem 0;
   padding-left: 1rem;
   row-gap: 2rem;
@@ -38,13 +43,19 @@
   color: #fff;
   border-radius: 5rem;
   transition: 0.2s all ease-in-out;
+  line-height: 2.5rem;
+  font:poppins;
+  white-space: nowrap;
+  font-weight: bold;
 }
 
 .item2 {
   width: 90%;
+  display: flex; /* Change display to flex */
+  justify-content: flex-start; /* Align items to the start */
   display: grid;
   grid-template-columns: 2rem 5rem;
-  height: 4rem;
+  height: 3rem;
   margin: 0.5rem 0;
   padding-left: 1rem;
   row-gap: 2rem;
@@ -52,6 +63,9 @@
   color: #fff;
   border-radius: 5rem;
   transition: 0.2s all ease-in-out;
+  line-height:2.5rem;
+  white-space: nowrap;
+  font-weight: bold;
 }
 
 .icon {
@@ -60,18 +74,23 @@
 }
 
 .item:hover {
-  background-color: #fff;
-  color: #000000;
+  background-color: #454545;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .item2:hover {
-  background-color: #fff;
-  color: #000000;
+  background-color: #454545;
+  color: #ffffff;
   cursor: pointer;
 }
+.item span,
+.item2 span {
+  margin: 0;
+  padding: 0;
+}
 
-.toggle {
+/* .toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,16 +108,16 @@
 }
 
 .collapsed .sidebarContainer {
-  width: 4%; /* Adjust the width for the collapsed state */
+  width: 4%; 
 }
 
 .collapsed .menu .item,
 .collapsed .menu .item2 {
-  display: none; /* Hide the menu items when collapsed */
+  display: none; 
 }
 
 .collapsed .toggle-icon {
-  transform: rotate(-90deg); /* Rotate the toggle icon when collapsed */
+  transform: rotate(-90deg); 
 }
 
 .sidebarWrapper {
@@ -123,4 +142,4 @@
 
 .sidebarContainer.collapsed h3 {
   display: none;
-}
+} */

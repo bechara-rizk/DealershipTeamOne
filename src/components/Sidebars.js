@@ -19,35 +19,38 @@ const Sidebar = () => {
         </div>
 
         <div className="menu">
-          <Link href="/dashboard/home" className="item">
-            <HiOutlineHome className="menu-icon" />
-            <h3>Home</h3>
-          </Link>
+  <Link href="/dashboard/home" className="item">
+    <HiOutlineHome className="menu-icon" />
+    <span className="menu-text">Home</span>
+  </Link>
 
-          <Link href="/dashboard/carlistingsDashboard" className="item">
-            <FaCar className="car-icon" />
-            <h3>Car List</h3>
-          </Link>
+  <Link href="/dashboard/carlistingsDashboard" className="item">
+    <FaCar className="car-icon" />
+    <span className="menu-text">Car List</span>
+  </Link>
 
-          <Link href="/dashboard/SalesInfoPage" className="item2">
-            <IoReceiptOutline className="orders-icon" />
-            <h3>Sales Information</h3>
-          </Link>
+  <Link href="/dashboard/SalesInfoPage" className="item2">
+    <IoReceiptOutline className="orders-icon" />
+    <span className="menu-text">Sales Information</span>
+  </Link>
+ <div>
+  <Link href="/dashboard/CarSchedule" className="item2">
+    <FaCalendarAlt className="TestSchedule-icon" />
+    <span className="menu-text">Test Schedule</span>
+  </Link>
+  </div>
 
-          <Link href="/dashboard/CarSchedule" className="item2">
-            <FaCalendarAlt className="TestSchedule-icon" />
-            <h3>Test Schedule</h3>
-          </Link>
 
+</div>
           <Link href="/dashboard/charts" className="item">
             <FiBarChart2 className="chart-icon" />
-            <h3>Charts</h3>
+            <span className="menu-text">Test Schedule</span>
           </Link>
         </div>
 
        
       </div>
-    </div>
+   
   );
 };
 
