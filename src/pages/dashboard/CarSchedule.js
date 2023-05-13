@@ -8,12 +8,9 @@ export default function adminCharts() {
   return (
     <div className="side-content">
     <Sidebar/>
-     <div className="main-content">
        <DashboardNavbar/>
-        <div className="pageContainer">
-          <CarSchedulePage/>
-        </div>
-      </div>
+        <CarSchedulePage/>
+      
  </div>
   );
 }

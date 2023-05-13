@@ -45,7 +45,9 @@ const Sidebar = () => {
           </Link>
         </div>
 
-        
+        <div className="toggle">
+          <div className="toggle-icon"></div>
+        </div>
       </div>
     </div>
   );
