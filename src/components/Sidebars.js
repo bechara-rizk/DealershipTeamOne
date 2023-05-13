@@ -65,6 +65,7 @@
 
 // export default Sidebar;
 
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { MdOutlineDashboard } from 'react-icons/md';
@@ -84,59 +85,61 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebarContainer ${collapsed ? 'collapsed' : ''}`}>
-      <div className="logo">
-        <MdOutlineDashboard className="logo-icon" />
-        <span>Luxe Motors</span>
-      </div>
-
-      <div className="menu">
-        <Link href="/home/homescreen" className="item">
-          <HiOutlineHome className="menu-icon" />
-          {!collapsed && <h3>Home</h3>}
-        </Link>
-
-        {/* {!collapsed && (
-          <div className="item">
-            <FaUser className="customer-icon" />
-            <h3>Customers</h3>
-          </div>
-        )} */}
-
-        <Link href="/home/ProductsPage" className="item">
-          <FaCar className="car-icon" />
-          {!collapsed && <h3>Car List</h3>}
-        </Link>
-
-        {/* {!collapsed && (
-          <div className="item">
-            <BiUser className="employee-icon" />
-            <h3>Employees</h3>
-          </div>
-        )} */}
-
-        <Link href="/dashboard/SalesInfoPage" className="item">
-          <IoReceiptOutline className="orders-icon" />
-          {!collapsed && <h3>Orders</h3>}
-        </Link>
-
-        <div>
-          <Link href="/dashboard/CarSchedule" className="item2">
-            <FaCalendarAlt className="TestSchedule-icon" />
-            {!collapsed && <h3>Test Schedule</h3>}
-          </Link>
+    <div className={`sidebarWrapper ${collapsed ? 'collapsed' : ''}`}>
+      <div className={`sidebarContainer ${collapsed ? 'collapsed' : ''}`}>
+        <div className="logo">
+          <MdOutlineDashboard className="logo-icon" />
+          <span>Luxe Motors</span>
         </div>
 
-        <div>
-          <Link href="/dashboard/charts" className="item">
-            <FiBarChart2 className="chart-icon" />
-            {!collapsed && <h3>Charts</h3>}
+        <div className="menu">
+          <Link href="/home/homescreen" className="item">
+            <HiOutlineHome className="menu-icon" />
+            {!collapsed && <h3>Home</h3>}
           </Link>
-        </div>
-      </div>
 
-      <div className="toggle" onClick={handleToggle}>
-        <div className={`toggle-icon ${collapsed ? 'collapsed' : ''}`} />
+          {/* {!collapsed && (
+            <div className="item">
+              <FaUser className="customer-icon" />
+              <h3>Customers</h3>
+            </div>
+          )} */}
+
+          <Link href="/home/ProductsPage" className="item">
+            <FaCar className="car-icon" />
+            {!collapsed && <h3>Car List</h3>}
+          </Link>
+
+          {/* {!collapsed && (
+            <div className="item">
+              <BiUser className="employee-icon" />
+              <h3>Employees</h3>
+            </div>
+          )} */}
+
+          <Link href="/dashboard/SalesInfoPage" className="item">
+            <IoReceiptOutline className="orders-icon" />
+            {!collapsed && <h3>Orders</h3>}
+          </Link>
+
+          <div>
+            <Link href="/dashboard/CarSchedule" className="item2">
+              <FaCalendarAlt className="TestSchedule-icon" />
+              {!collapsed && <h3>Test Schedule</h3>}
+            </Link>
+          </div>
+
+          <div>
+            <Link href="/dashboard/charts" className="item">
+              <FiBarChart2 className="chart-icon" />
+              {!collapsed && <h3>Charts</h3>}
+            </Link>
+          </div>
+        </div>
+
+        <div className="toggle" onClick={handleToggle}>
+          <div className="toggle-icon"></div>
+        </div>
       </div>
     </div>
   );
