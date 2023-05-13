@@ -25,37 +25,43 @@ const Sidebar = () => {
         </div>
 
         <div className="menu">
-          <Link href="/home/homescreen" className="item">
-            <HiOutlineHome className="menu-icon" />
-            {!collapsed && <h3>Home</h3>}
+          <Link passHref href="/home/homescreen">
+            <div className="item">
+              <HiOutlineHome className="menu-icon" />
+              {!collapsed && <h3>Home</h3>}
+            </div>
           </Link>
 
 
-          <Link href="/home/ProductsPage" className="item">
-            <FaCar className="car-icon" />
-            {!collapsed && <h3>Car List</h3>}
+          <Link passHref href="/home/ProductsPage">
+            <div className="item">
+              <FaCar className="car-icon" />
+              {!collapsed && <h3>Car List</h3>}
+            </div>
           </Link>
 
 
-          <Link href="/dashboard/SalesInfoPage" className="item">
-            <IoReceiptOutline className="orders-icon" />
-            {!collapsed && <h3>Orders</h3>}
+          <Link passHref href="/dashboard/SalesInfoPage">
+            <div className="item">
+              <IoReceiptOutline className="orders-icon" />
+              {!collapsed && <h3>Orders</h3>}
+            </div>
           </Link>
 
-        
-            <Link href="/dashboard/CarSchedule" className="item2">
+          <Link passHref href="/dashboard/CarSchedule">
+            <div className="item">
               <FaCalendarAlt className="TestSchedule-icon" />
-              {!collapsed && <h3>Test Schedule</h3>}
-            </Link>
-        
+              {!collapsed && <h3>TestSchedule</h3>}
+            </div>
+          </Link>
 
-          
-            <Link href="/dashboard/charts" className="item">
+          <Link passHref href="/dashboard/charts">
+            <div className="item">
               <FiBarChart2 className="chart-icon" />
               {!collapsed && <h3>Charts</h3>}
-            </Link>
-          </div>
-        
+            </div>
+          </Link>
+        </div>
 
         <div className="toggle" onClick={handleToggle}>
           <div className="toggle-icon"></div>
