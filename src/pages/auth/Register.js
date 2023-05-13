@@ -4,6 +4,7 @@ import { auth } from '../../../firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
 import { useRouter } from 'next/router';
+import Navbar from "@/components/Navbar";
 
 export const Register=(props)=>{
     const [username, setUsername]= useState(''); // for updating state (is initially empty)
@@ -12,7 +13,6 @@ export const Register=(props)=>{
     const [Number, setNum]= useState(''); //for updating state (is initially empty)
     const [Name, setName]= useState(''); // for updating state (is initially empty)
     const [LastName, setLastN]= useState(''); //for updating state (is initially empty)
-    const [currentForm, setCurrentForm] = useState("register");
     const router = useRouter();
 
 
@@ -38,13 +38,19 @@ export const Register=(props)=>{
       }
     } 
 
-    const toggleForm = (formName) => {
-        setCurrentForm(formName);
+    const toggleForm = () => {
+      router.push('/auth/Login')
       };
     
     return(
         <div className="Login-Reg">
-        {currentForm === "register" ? (
+          <>
+        <div className='LoginContainer'>
+      <div className='authButtons'>
+        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+      </div>
+      <Navbar/>
+      </div>
         <div className= "LoginRegwrapper">
             <div className="auth-form-container">
             <form className="regform" onSubmit= {handleSubmit}>  
@@ -61,14 +67,12 @@ export const Register=(props)=>{
                 </form>
                 <button className="Submitbutton" type="submit" onClick={handleSubmit}>Sign Up</button>
             
-            <button className="togglebutton" onClick={() => toggleForm("login")}>
+            <button className="togglebutton" onClick={() => toggleForm()}>
             Already have an account? Log in here.
           </button>
         </div>
       </div>
-    ) : (
-      <Login onFormSwitch={toggleForm} />
-    )}
+      </>
   </div>
 );
 }

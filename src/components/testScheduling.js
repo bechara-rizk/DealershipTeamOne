@@ -1,23 +1,23 @@
 
 import React, { useState } from 'react';
 
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function TestDriveScheduler() {
   const [selectedCar, setSelectedCar] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [scheduledTestDrives, setScheduledTestDrives] = useState([]);
   const [scheduledTestDrivesCounter, setScheduledTestDrivesCounter] = useState(0);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const scheduledDate = e.target.elements.date.value;
-
-    const newTestDrive = {
-      car: selectedCar,
-      time: selectedTime,
-      date: scheduledDate
-    };
-
+    if (!selectedDate) {
+      alert('Please select a date.');
+      return;
+    }
+    const scheduledDate = selectedDate.toISOString().slice(0, 10);
     // Check if selected time slot is already scheduled
     if (scheduledTestDrives.some(testDrive => testDrive.time === selectedTime && testDrive.date === scheduledDate)) {
       alert('Selected time slot is already scheduled. Please choose a different time slot.');
@@ -38,14 +38,16 @@ function TestDriveScheduler() {
   // Calculate the next date
   const nextDay = new Date();
   nextDay.setDate(nextDay.getDate() + 1);
-
-  // Format the date for the input element
   const minDate = nextDay.toISOString().slice(0, 10);
+
+  const maxDate = new Date();
+  maxDate.setDate(maxDate.getDate() +7);
+  const maxDateFormatted = maxDate.toISOString().slice(0, 10);
 
   return (
     <div className="testDriveContainer">
       <div className="testDriveBox">
-        <h1 className="testDriveTitle">Test Drive Scheduler</h1>
+      <h1 className="testDriveTitle">  Schedule your test drive Now </h1>
         <p className="testDriveLabel">Select a car and available time slot to schedule a test drive.</p>
         <form onSubmit={handleSubmit}>
           <label htmlFor="car" className="testDriveLabel">
@@ -53,6 +55,7 @@ function TestDriveScheduler() {
           </label>
 
           <select
+          className='pleasebeblack'
             id="car"
             value={selectedCar}
             onChange={(e) => setSelectedCar(e.target.value)}
@@ -75,10 +78,12 @@ function TestDriveScheduler() {
           </label>
           <select
             id="time"
+            className='pleasebeblack'
             value={selectedTime}
             onChange={(e) => setSelectedTime(e.target.value)}
             required
           >
+
             <option value="">-- Select a time slot --</option>
             <option value="9:00am">9:00am</option>
             <option value="10:00am">10:00am</option>
@@ -91,9 +96,17 @@ function TestDriveScheduler() {
           </select>
           <br />
           <label htmlFor="date" className="testDriveLabel">
-            Date:
-          </label>
-          <input className="testDriveDate" type="date" id="date" min={minDate} max={minDate} required />
+          Date:
+        </label>
+        <DatePicker
+          className='pleasebeblack'
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          minDate={new Date(minDate)}
+          maxDate={new Date(maxDateFormatted)}
+          filterDate={(date) => date.getDay() !== 0}
+          required
+        />
           <br />
           <button type="submit" className="testDriveSubmit" disabled={scheduledTestDrivesCounter >= 3}>
             Schedule Test Drive
