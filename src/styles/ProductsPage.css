@@ -1,10 +1,19 @@
+.Dashboardproducts{
+  margin-left: 20%;
+  height: 100%;
+padding-top: 60px;
 
+  
+ 
+}
 .Productheader{
+  padding-top: 10%;
     font-size:50px;
     font-family: 'Segoe UI', 'Helvetica Neue', Arial,
     'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
     align-items: center;
+    
 }
 
 .ProductsPageCont{
@@ -41,9 +50,11 @@ background-color: black;
   .dropdown {
     float: left;
     overflow: hidden;
-    margin-bottom:50px;
+    margin-bottom:100px;
   }
-  
+  .edit-icon {
+    color: black;
+  }
   .dropbtnProdPage {
     font-size: 1rem;  
     border: none;
@@ -55,7 +66,7 @@ background-color: black;
     position: absolute;
     top: 0;
     right: 0;
-    margin-bottom: 70px;
+    margin-bottom: 120px;
     margin-right: 40px;
   }
   
@@ -91,7 +102,42 @@ background-color: black;
     display: inline-block;
     padding: 4px;
   }
-  
+  .date-picker-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    width:5rem;
+    font-size: 16px;
+    
+ 
+  }
+  myInput{
+    width: 200px;
+    
+  }
+  .pleasebeblack2{
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+    max-width: max-content;}
+
+    .pleasebeblack3{
+      color: #000;
+      font-size: 16px;
+      margin-bottom: 25px;
+      margin-left: 85px;
+    
+  }
+  .date-picker-container .testDriveLabel {
+    margin-right: 0px; /* adjust as needed */
+    width:100%;
+    margin-left: 5px;
+
+  }
+  .testDriveLabel{
+    margin-left: 2.5px;
+  }
   .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
