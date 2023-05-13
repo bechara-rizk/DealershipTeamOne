@@ -8,6 +8,9 @@ import Sidebar from '@/components/Sidebars';
 import { firestore, storage } from '../../../firebase';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { PushpinOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
 
@@ -61,11 +64,13 @@ function ProductsPage() {
 
   const renderCards = listings.map((product, index) => {
     return (
+      
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
           hoverable={true}
           cover={
             <a href={`/product/${product.id}`}>
+              
               <img
                 src={images[product.VIN]}
                 alt=""
@@ -75,7 +80,13 @@ function ProductsPage() {
           }
         >
           <Meta
-            title={product.make}
+            title={
+              <h3>
+                {product.make}
+                <FontAwesomeIcon icon={faPen} className="edit-icon" style={{ marginLeft: '10px' }} />
+              </h3>
+            }
+           
             description={`Model: ${product.model}
               Price: ${product.price}
               Mileage: ${product.mileage}
@@ -89,9 +100,12 @@ function ProductsPage() {
 
   return (
     <>
+    <DashboardNavbar />
+    <Sidebar />
+    <div className='Dashboardproducts'>
       <div className="headercontainer" style={{ textAlign: 'center' }}>
-        <DashboardNavbar />
-        <Sidebar />
+        
+       
       </div>
 
       <div style={{ width: '100%' }}>
@@ -142,6 +156,7 @@ function ProductsPage() {
             </div>
           </div> 
         </div>
+      </div>
       </div>
     </>
   );
