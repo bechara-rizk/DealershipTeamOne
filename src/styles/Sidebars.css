@@ -9,6 +9,7 @@
   transition: width 0.3s ease-in-out; /* Add transition for smooth animation */
   min-width: 147px;
   overflow: auto;
+  margin-top: 50px;
 }
 
 .logo {
