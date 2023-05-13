@@ -12,6 +12,7 @@ import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import emailjs from '@emailjs/browser';
+import AuthButtons from '@/components/AuthButtonsComp';
 
 const { Meta } = Card;
 
@@ -114,23 +115,21 @@ function ProductsPage() {
         <Card
           hoverable={true}
           cover={
-            <a href={`/product/${product.id}`}>
+            <a href={`/product/${product.id}`} style={{display:'flex'}}>
               <img
                 src={images[product.VIN]}
                 alt=""
-                style={{ width: '100%', maxHeight: '150px' }}
+                style={{ width: 'auto', maxHeight: '150px', 'margin':'1px auto 0px auto'}}
               />
             </a>
           }
         >
-          <Meta
-            title={product.make}
-            description={`Model: ${product.model}
-              Price: ${product.price}
-              Mileage: ${product.mileage}
-              Year: ${product.year}
-              Color: ${product.color}`}
-          />
+          <h3 style={{margin:0, 'margin-bottom':8}}>{product.make}</h3>
+          <p style={{margin:0, color:'#8C8C8C'}}>Model: {product.model}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Price: {product.price}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Mileage: {product.mileage}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Year: {product.year}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Color: {product.color}</p>
         </Card>
       </Col>
     );
@@ -143,19 +142,7 @@ function ProductsPage() {
   return (
     <>
       <div className="headercontainer" style={{ textAlign: 'center' }}>
-        <div className="authButtons">
-          <img src="/images/logo.jpg" alt="logo" className="homepageLogo" />
-          <div className="dropdown">
-            <button className="dropbtnProdPage">
-              Log in <i className="arrowLogin down"></i>
-              <i className="fa fa-caret-down"></i>
-            </button>
-            <div className="dropdown-content-ProdPage">
-              <a href="#">Login</a>
-              <a href="#">Sign Up</a>
-            </div>
-          </div>
-        </div>
+        <AuthButtons />
         <Navbar />
       </div>
 
