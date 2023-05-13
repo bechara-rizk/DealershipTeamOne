@@ -19,7 +19,7 @@ const Sidebar = () => {
         </div>
 
         <div className="menu">
-          <Link href="/home/homescreen" className="item">
+          <Link href="/dashboard/home" className="item">
             <HiOutlineHome className="menu-icon" />
             <h3>Home</h3>
           </Link>
