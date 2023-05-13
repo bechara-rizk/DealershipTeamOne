@@ -69,30 +69,25 @@ function ProductsPage() {
         <Card
           hoverable={true}
           cover={
-            <a href={`/product/${product.id}`}>
+            <a href={`/product/${product.id}`} style={{display:'flex'}}>
               
               <img
                 src={images[product.VIN]}
                 alt=""
-                style={{ width: '100%', maxHeight: '150px' }}
+                style={{ width: 'auto', maxHeight: '150px', 'margin':'1px auto 0px auto'}}
               />
             </a>
           }
         >
-          <Meta
-            title={
-              <h3>
+          <h3 style={{margin:0, 'margin-bottom':8}}>
                 {product.make}
                 <FontAwesomeIcon icon={faPen} className="edit-icon" style={{ marginLeft: '10px' }} />
               </h3>
-            }
-           
-            description={`Model: ${product.model}
-              Price: ${product.price}
-              Mileage: ${product.mileage}
-              Year: ${product.year}
-              Color: ${product.color}`}
-          />
+              <p style={{margin:0, color:'#8C8C8C'}}>Model: {product.model}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Price: {product.price}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Mileage: {product.mileage}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Year: {product.year}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Color: {product.color}</p>
         </Card>
       </Col>
     );
