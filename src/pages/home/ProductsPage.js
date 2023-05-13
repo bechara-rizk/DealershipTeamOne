@@ -12,6 +12,7 @@ import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import emailjs from '@emailjs/browser';
+import AuthButtons from '@/components/AuthButtonsComp';
 
 const { Meta } = Card;
 
@@ -141,19 +142,7 @@ function ProductsPage() {
   return (
     <>
       <div className="headercontainer" style={{ textAlign: 'center' }}>
-        <div className="authButtons">
-          <img src="/images/logo.jpg" alt="logo" className="homepageLogo" />
-          <div className="dropdown">
-            <button className="dropbtnProdPage">
-              Log in <i className="arrowLogin down"></i>
-              <i className="fa fa-caret-down"></i>
-            </button>
-            <div className="dropdown-content-ProdPage">
-              <a href="#">Login</a>
-              <a href="#">Sign Up</a>
-            </div>
-          </div>
-        </div>
+        <AuthButtons />
         <Navbar />
       </div>
 
