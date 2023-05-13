@@ -127,7 +127,9 @@ function ProductsPage() {
           <h3 style={{margin:0, 'margin-bottom':8}}>{product.make}</h3>
           <p style={{margin:0, color:'#8C8C8C'}}>Model: {product.model}</p>
           <p style={{margin:0, color:'#8C8C8C'}}>Price: {product.price}</p>
-          <p style={{margin:0, color:'#8C8C8C'}}>Mileage: {product.mileage}</p>
+          {typeof(product.mileage)==='undefined'?
+          <p style={{margin:0, color:'#8C8C8C'}}>Mileage: undefined</p>:
+          <p style={{margin:0, color:'#8C8C8C'}}>Mileage: {product.mileage}</p>}
           <p style={{margin:0, color:'#8C8C8C'}}>Year: {product.year}</p>
           <p style={{margin:0, color:'#8C8C8C'}}>Color: {product.color}</p>
         </Card>
