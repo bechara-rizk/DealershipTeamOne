@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from "@/components/Footer";
+
+import Sidebar from '@/components/Sidebars';
+import DashboardNavbar from '@/components/DashboardNavbar';
 
 const AddCarForm = () => {
   const [vin, setVin] = useState('');
@@ -23,21 +24,7 @@ const AddCarForm = () => {
 
   return (
     <>
-   <div className='authButtons'>
-        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
-        <div className="dropdown">
-          <button className="dropbtn">Log in <i className="arrowLogin down"></i>
-          <i className="fa fa-caret-down"></i>
-          </button>
-          <div className="dropdown-content">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
-            <a href="#">Adminstrator login </a>
-          </div>
-   
-      </div>
-    </div>
-     <div className= "navbar"><Navbar/></div>
+   <DashboardNavbar /><Sidebar />
     <div className="add_car_form">
     
     <div className="add_car">
@@ -124,7 +111,7 @@ const AddCarForm = () => {
         Add Car
       </button>
     </form></div></div>
-    <Footer /></>
+ </>
   );
 }
 
