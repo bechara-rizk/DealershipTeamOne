@@ -1,0 +1,53 @@
+/* Reset the margin and padding for the entire page */
+html,
+#__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+  
+body {
+    width: 100vw; /* Set the width to 100% of the viewport width */
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Make the .dashboardScreen position relative */
+  .dashboardScreen {
+    position: relative;
+    height: 100%; /* Set height to 100% to occupy the full height of the viewport */
+  }
+  
+  /* Make the .entirePage position absolute */
+  .entirePage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Make the .backgroundImage fill the entire space */
+  .backgroundImage {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Set the background image to cover the space */
+  .backgroundImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Set the .overlay to position absolute and occupy the entire space */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
