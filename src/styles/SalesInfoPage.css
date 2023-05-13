@@ -2,7 +2,9 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-}
+  margin-left: 20%;
+  height: 100%;
+padding-top: 60px;}
 
 .sales-info-heading {
   text-decoration: underline solid red;
