@@ -1,5 +1,5 @@
 import React from "react";
-import myImage from "../path/to/your/image.jpg"; //to do: Replace "../path/to/your/image.jpg" with the actual path to your image file
+import myImage from "images/road2.jpg"; 
 
 const ImagePage = () => {
   return (

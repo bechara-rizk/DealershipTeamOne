@@ -1,121 +1,11 @@
-/* the non-commented code that acheives the "sidebar collapsable" is at the end of this page**/
 
-/*.sidebarContainer {
-    height: 100%;
-    width: 16%;
-    padding: 0.2rem 1rem;
-    background-color: #7a0319;
-    color: #ffffff;
-    position: fixed;
-    left:0;
-    transition: width 0.2s ease;
-}
-
-.sidebarContainer.collapsed {
-    width: 5%; 
-  }
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: bolder;
-}
-
-.logo-icon {
-    margin-right: 0.5rem;
-}
-
-.menu {
-    margin: 2rem 0;
-    display: grid;
-}
-
-.item {
-    width: 90%;
-    display: grid;
-    grid-template-columns: 2rem 5rem;
-    height: 2.5rem;
-    margin: 0.5rem 0;
-    padding-left: 1rem;
-    row-gap: 2rem;
-    align-items: center;
-    color: #fff;
-    border-radius: 5rem;
-    transition: 0.2s all smooth;
-}
-.item2 {
-    width: 90%;
-    display: grid;
-    grid-template-columns: 2rem 5rem;
-    height: 4rem;
-    margin: 0.5rem 0;
-    padding-left: 1rem;
-    row-gap: 2rem;
-    align-items: center;
-    color: #fff;
-    border-radius: 5rem;
-    transition: 0.2s all smooth;
-}
-
-.icon {
-    font-size: 1.4rem;
-    margin-right: 1rem;
-}
-
-.item:hover {
-    background-color: #fff;
-    color: #c41e3a;
-    cursor: pointer;
-}
-.item2:hover {
-    background-color: #fff;
-    color: #c41e3a;
-    cursor: pointer;
-}
-
-
-
-@media screen and (max-width : 1024px ) {
-    .logo-icon {
-        display: none;
-    }
-  }
-  
-
-  
-  @media screen and (max-width : 600px ) {
-    .container {
-        width: 7%;
-    }
-
-    .item {
-        width: 48.5%;
-        margin-left: -1rem;
-        border-radius: 0;
-    }
-
-    .icon, .logo-icon {
-        font-size: 2.5rem;
-    }
-
-    .logo-icon {
-        display: inline;
-        justify-self: center;
-    }
-
-    .logo>span ,.item > h3  {
-        display: none;
-    }
-  }  
-   */
 
    .sidebarContainer {
     height: 100%;
     width: 16%;
     padding: 0.2rem 1rem;
-    background-color: #7a0319;
-    color: #ffffff;
+    background-color: #323030;
+    color: #f2f2f2;
     position: fixed;
     left: 0;
     transition: width 0.3s ease-in-out; /* Add transition for smooth animation */
@@ -172,13 +62,13 @@
   
   .item:hover {
     background-color: #fff;
-    color: #c41e3a;
+    color: #000000;
     cursor: pointer;
   }
   
   .item2:hover {
     background-color: #fff;
-    color: #c41e3a;
+    color: #000000;
     cursor: pointer;
   }
   
