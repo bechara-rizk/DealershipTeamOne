@@ -1,10 +1,19 @@
+.Dashboardproducts{
+  margin-left: 20%;
+  height: 100%;
+padding-top: 60px;
 
+  
+ 
+}
 .Productheader{
+  padding-top: 10%;
     font-size:50px;
     font-family: 'Segoe UI', 'Helvetica Neue', Arial,
     'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
     align-items: center;
+    
 }
 
 .ProductsPageCont{
@@ -43,7 +52,9 @@ background-color: black;
     overflow: hidden;
     margin-bottom:100px;
   }
-  
+  .edit-icon {
+    color: black;
+  }
   .dropbtnProdPage {
     font-size: 1rem;  
     border: none;
