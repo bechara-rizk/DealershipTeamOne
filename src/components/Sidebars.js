@@ -122,20 +122,20 @@ const Sidebar = () => {
             {!collapsed && <h3>Orders</h3>}
           </Link>
 
-          <div>
+        
             <Link href="/dashboard/CarSchedule" className="item2">
               <FaCalendarAlt className="TestSchedule-icon" />
               {!collapsed && <h3>Test Schedule</h3>}
             </Link>
-          </div>
+        
 
-          <div>
+          
             <Link href="/dashboard/charts" className="item">
               <FiBarChart2 className="chart-icon" />
               {!collapsed && <h3>Charts</h3>}
             </Link>
           </div>
-        </div>
+        
 
         <div className="toggle" onClick={handleToggle}>
           <div className="toggle-icon"></div>
