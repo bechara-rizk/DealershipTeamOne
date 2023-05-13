@@ -8,7 +8,68 @@
   flex-direction: column;
   align-items: center;
 }
+.containerCarEdit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1a1919;
+  padding-top: 60px;
+  margin-block-start: 20px;
+  margin-left :150px;
+}
+.edit_car_form {
+  width: 100%;
+  max-width: 600px;
+  height: 80%;
+  color: aliceblue;
+  background: #ffffff;
+  border-radius: 3px;
+  border: solid #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 120px;
+  margin-left :350px;
+  margin-top: 50px;
+}
 
+.Edit-Car-Heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.inputs_margin {
+  margin-bottom: 60px;
+  margin-right: 50px;
+
+}
+.labelcaredit {
+  font-weight: bold;
+  color: #000000;
+ 
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 2px;
+}
+.picturecaredit {
+  display: block;
+  margin-top: 20px;
+  color: #000000;
+}
+
+.picturecaredit input[type="file"] {
+  border-color: #000000;
+}
+
+.picturecaredit .labelcaredit {
+  color: #000000;
+}
 .car-info label {
   font-weight: bold;
   margin-right: 10px;
