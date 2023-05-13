@@ -4,17 +4,6 @@
 // import DashboardNavbar from '@/components/DashboardNavbar';
 // //import extraImage from '@/components/Extraimage';
 
-// export default function adminHome() {
-//   return (
-//     <div className="dashboardScreen">
-//         <Sidebar/>
-//         <DashboardNavbar/>
-        
-//     </div>
-
-    
-//   )
-// }
 import Link from 'next/link';
 import React from 'react';
 import Sidebar from '@/components/Sidebars';
@@ -29,7 +18,7 @@ export default function AdminHome() {
       <div className="overlay">
         <Sidebar />
         <DashboardNavbar />
-      </div>
+        </div>
         <img src="/images/road2.jpg" alt="Image Description" style={{'width':'100%'}}/>
       </div>
       
