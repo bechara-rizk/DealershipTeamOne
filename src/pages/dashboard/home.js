@@ -19,7 +19,7 @@ export default function AdminHome() {
         <Sidebar />
         <DashboardNavbar />
         </div>
-        <img src="/images/road2.jpg" alt="Image Description" style={{'width':'100%'}}/>
+        <img src="/images/road2.jpg" alt="Image Description" style={{'width':'100%', 'marginLeft':100}}/>
       </div>
       
     </div>
