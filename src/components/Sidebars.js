@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { MdOutlineDashboard } from 'react-icons/md';
 import { HiOutlineHome } from 'react-icons/hi';
@@ -10,15 +10,9 @@ import { FaCar } from 'react-icons/fa';
 import { FaCalendarAlt } from 'react-icons/fa';
 
 const Sidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
-
-  const handleToggle = () => {
-    setCollapsed(!collapsed);
-  };
-
   return (
-    <div className={`sidebarWrapper ${collapsed ? 'collapsed' : ''}`}>
-      <div className={`sidebarContainer ${collapsed ? 'collapsed' : ''}`}>
+    <div className="sidebarWrapper">
+      <div className="sidebarContainer">
         <div className="logo">
           <MdOutlineDashboard className="logo-icon" />
           <span>Luxe Motors</span>
@@ -27,39 +21,31 @@ const Sidebar = () => {
         <div className="menu">
           <Link href="/home/homescreen" className="item">
             <HiOutlineHome className="menu-icon" />
-            {!collapsed && <h3>Home</h3>}
+            <h3>Home</h3>
           </Link>
 
-
-          <Link href="/home/ProductsPage" className="item">
+          <Link href="/dashboard/carlistingsDashboard" className="item">
             <FaCar className="car-icon" />
-            {!collapsed && <h3>Car List</h3>}
+            <h3>Car List</h3>
           </Link>
-
 
           <Link href="/dashboard/SalesInfoPage" className="item">
             <IoReceiptOutline className="orders-icon" />
-            {!collapsed && <h3>Orders</h3>}
+            <h3>Orders</h3>
           </Link>
 
-        
-            <Link href="/dashboard/CarSchedule" className="item2">
-              <FaCalendarAlt className="TestSchedule-icon" />
-              {!collapsed && <h3>Test Schedule</h3>}
-            </Link>
-        
+          <Link href="/dashboard/CarSchedule" className="item2">
+            <FaCalendarAlt className="TestSchedule-icon" />
+            <h3>Test Schedule</h3>
+          </Link>
 
-          
-            <Link href="/dashboard/charts" className="item">
-              <FiBarChart2 className="chart-icon" />
-              {!collapsed && <h3>Charts</h3>}
-            </Link>
-          </div>
-        
-
-        <div className="toggle" onClick={handleToggle}>
-          <div className="toggle-icon"></div>
+          <Link href="/dashboard/charts" className="item">
+            <FiBarChart2 className="chart-icon" />
+            <h3>Charts</h3>
+          </Link>
         </div>
+
+        
       </div>
     </div>
   );
