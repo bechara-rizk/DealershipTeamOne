@@ -48,11 +48,7 @@ function SalesInfoPage() {
       <button className="sales-info-button" onClick={getSalesInfo}>
         Refresh
       </button>
-      <div className="header-container">
-        <Link href="http://localhost:3000/dashboard/home" className="item">
-          <h6>Back</h6>
-        </Link>
-      </div>
+      
     </div></>
   );
 }
