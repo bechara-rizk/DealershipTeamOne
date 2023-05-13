@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 import { IoReceiptOutline } from 'react-icons/io5';
+import Sidebar from '@/components/Sidebars';
+import DashboardNavbar from '@/components/DashboardNavbar';
 
 
 function SalesInfoPage() {
@@ -21,7 +23,7 @@ function SalesInfoPage() {
   }, []);
 
   return (
-    <div className="sales-info-page">
+    <><DashboardNavbar /><Sidebar /><div className="sales-info-page">
       <h1 className="sales-info-heading">Sales Information</h1>
       <table className="sales-info-table">
         <thead>
@@ -51,7 +53,7 @@ function SalesInfoPage() {
           <h6>Back</h6>
         </Link>
       </div>
-    </div>
+    </div></>
   );
 }
 
