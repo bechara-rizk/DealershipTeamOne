@@ -6,7 +6,22 @@ const AuthButtons = () => {
   const [user, loading] = useAuthState(auth);
   if (loading) {
     // console.log('loading')
-    return <h1>Loading...</h1>;
+    return(
+      <>
+      <div className='authButtons'>
+      <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+      <div className="dropdown" style={{'z-index':'-99'}}>
+        <button className="dropbtn">Login <i className="arrowLogin down"></i>
+        <i className="fa fa-caret-down"></i>
+        </button>
+        <div className="dropdown-content">
+          <a href="/auth/Login">Login</a>
+          <a href="/auth/Register">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      </>
+    );
   }
   return(
       <>
