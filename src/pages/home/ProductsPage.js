@@ -146,7 +146,18 @@ function ProductsPage() {
   return (
     <>
       <div className="headercontainer" style={{ textAlign: 'center' }}>
-        <AuthButtons />
+        <div className="authButtons">
+          <img src="/images/logo.jpg" alt="logo" className="homepageLogo" />
+          <div className="dropdown">
+            {!auth.currentUser ? <>
+              <a href="/auth/Login">Login</a>
+              <a href="/auth/Register">Sign Up</a></> :
+              <>
+                {auth.currentUser.uid === "4rplVi6gQfW4oZSvnXGf1D4z05x2" ? <a href="/dashboard/home">Admin</a> : null}
+                <a href="" onClick={() => auth.signOut}>Sign out</a>
+              </>}
+          </div>
+        </div>
         <Navbar />
       </div>
 

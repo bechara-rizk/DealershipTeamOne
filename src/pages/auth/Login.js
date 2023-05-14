@@ -10,12 +10,10 @@ export const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-<<<<<<< HEAD
-  const [error, setError] = useState("");
-=======
-  const onChange = (value) => {};
 
->>>>>>> 07b5f87a1cfb3e48c1d1f2e814c7156363d672a4
+  const [error, setError] = useState("");
+
+  const onChange = (value) => {};
   const handleSubmit = async (e) => {
      e.preventDefault();
      try {
@@ -28,6 +26,9 @@ export const Login = (props) => {
     if (errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found') {
      setError('Incorrect username or password');
     
+    }
+    else{
+      setError('Invalid Input!');
     }
      }
      };
@@ -54,7 +55,7 @@ export const Login = (props) => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 type="text"
-                placeholder="Username"
+                placeholder="Email"
                 id="username"
                 name="username"
               />
