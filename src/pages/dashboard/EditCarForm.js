@@ -21,9 +21,10 @@ import Sidebar from "@/components/Sidebars";
     setPicture(e.target.files[0]);
   }
 
-  return (
+  return ( 
+  <><DashboardNavbar/> <Sidebar />
     <div className="side-content">
-    <DashboardNavbar/> <Sidebar />
+   
     <div className="edit_car_form">
     
     <div className="edit_car">
@@ -109,7 +110,7 @@ import Sidebar from "@/components/Sidebars";
         Edit Car
       </button>
     </form></div></div>
-    </div>
+    </div></>
   );
 }
 
