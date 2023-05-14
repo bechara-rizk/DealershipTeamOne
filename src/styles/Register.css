@@ -1,0 +1,14 @@
+  
+  .password-suggestion-weak {
+    color: red;
+  }
+  
+  .password-suggestion-moderate {
+    color: orange;
+  }
+  
+  .password-suggestion-strong {
+    color: green;
+  }
+  
+ 
