@@ -90,7 +90,6 @@ import {
   doc,
 } from "firebase/firestore";
 import { useRouter } from "next/router";
-import zxcvbn from "zxcvbn"; // Import the password strength estimation library
 import Navbar from "@/components/Navbar";
 
 export const Register = (props) => {
@@ -132,28 +131,36 @@ export const Register = (props) => {
   const toggleForm = () => {
     router.push("/auth/Login");
   };
+//to check for length anddd special characters
+// Calculate the password strength based on length and special characters
+const handlePasswordChange = (e) => {
+  const passwordValue = e.target.value;
+  setPass(passwordValue);
 
-  // Calculate the password strength
-  const handlePasswordChange = (e) => {
-    const passwordValue = e.target.value;
-    setPass(passwordValue);
+  const passwordLength = passwordValue.length;
+  const specialCharacterCount = (passwordValue.match(/[!@#$%^&*(),.?":{}|<>]/g) || []).length;
+  const passwordStrength = passwordLength + (specialCharacterCount > 2 ? 1 : 0);
 
-    const passwordScore = zxcvbn(passwordValue).score;
-    setPasswordStrength(passwordScore);
+  setPasswordStrength(passwordStrength);
+};
+
+// Password suggestion based on strength
+const getPasswordSuggestions = () => {
+  const passwordStyle = {
+    fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
   };
 
-  // Password suggestion based on strength
-  const getPasswordSuggestions = () => {
-    if (passwordStrength === 0) {
-      return "Enter a password";
-    } else if (passwordStrength < 3) {
-      return "Password is weak";
-    } else if (passwordStrength === 3) {
-      return "Password is moderate";
-    } else {
-      return "Password is strong";
-    }
-  };
+  if (passwordStrength === 0) {
+    return <span style={{ ...passwordStyle, color: "gray" }}>Enter a password</span>;
+  } else if (passwordStrength < 6) {
+    return <span style={{ ...passwordStyle, color: "red" }}>Password is weak</span>;
+  } else if (passwordStrength < 10) {
+    return <span style={{ ...passwordStyle, color: "orange" }}>Password is moderate</span>;
+  } else {
+    return <span style={{ ...passwordStyle, color: "green" }}>Password is strong</span>;
+  }
+};
+
 
   return (
     <div className="Login-Reg">
@@ -165,26 +172,34 @@ export const Register = (props) => {
           <Navbar />
         </div>
         <div className="LoginRegwrapper">
-          <div className="auth-form-container">
-            <form className="regform" onSubmit={handleSubmit}>
-              <h2> Sign-Up </h2>
+  <div className="auth-form-container">
+    <form className="regform" onSubmit={handleSubmit}>
+      <h2> Sign-Up </h2>
 
-                  <input className="Inputs" value={Name} onChange={(e)=> setName(e.target.value)} type= 'Name' placeholder="Name" id="Name" name="Name"/>
-                  <input className="Inputs" value={LastName} onChange={(e)=> setLastN(e.target.value)} type= 'LastName' placeholder="Last Name" id="Last Name" name="Last Name"/>
-                  <input className="Inputs" value={username} onChange={(e)=> setUsername(e.target.value)} type= 'username' placeholder="username" id="username" name="username"/>
-                  <input  className="Inputs" value={password} onChange={(e)=> setPass(e.target.value)} type= 'password' placeholder="Password" id="password" name="password"/>
-                  <input className="Inputs" value={email} onChange={(e)=> setEmail(e.target.value)} type= 'email' placeholder="mail@example.com" id="email" name="email"/>
-                  <input className="Inputs" value={Number} onChange={(e)=> setNum(e.target.value)} type= 'Number' placeholder="+961 " id="Number" name="Number"/>
-                    
-            
-                  </form>
-                  <button className="Submitbutton" type="submit" onClick={handleSubmit}>Sign Up</button>
-            
-             <button className="togglebutton" onClick={() => toggleForm()}>
-             Already have an account? Log in here.
-           </button>
-         </div>
-       </div>
+      <input className="Inputs" value={Name} onChange={(e) => setName(e.target.value)} type='Name' placeholder="Name" id="Name" name="Name" />
+      <input className="Inputs" value={LastName} onChange={(e) => setLastN(e.target.value)} type='LastName' placeholder="Last Name" id="Last Name" name="Last Name" />
+      <input className="Inputs" value={username} onChange={(e) => setUsername(e.target.value)} type='username' placeholder="username" id="username" name="username" />
+      
+      <div className="password-container">
+        <input className="Inputs" value={password} onChange={handlePasswordChange} type='password' placeholder="Password" id="password" name="password" />
+        <div className="password-suggestion">
+          {getPasswordSuggestions()}
+        </div>
+      </div>
+      
+      <input className="Inputs" value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder="mail@example.com" id="email" name="email" />
+      <input className="Inputs" value={Number} onChange={(e) => setNum(e.target.value)} type='Number' placeholder="+961 " id="Number" name="Number" />
+      
+      <button className="Submitbutton" type="submit" onClick={handleSubmit}>Sign Up</button>
+
+      <button className="togglebutton" onClick={() => toggleForm()}>
+        Already have an account? Log in here.
+      </button>
+    </form>
+  </div>
+</div>
+
+        
        </>
    </div>
  );

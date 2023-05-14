@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchFeature from '../../components/SearchFeature';
 import { Col, Card, Row, Select } from 'antd';
-import RadioBox from '../../components/RadioBox';
-import CheckBox from '../../components/CheckBox';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import TestScheduling from '@/components/testScheduling';
@@ -55,6 +53,7 @@ function ProductsPage() {
   const [scheduledTestDrives, setScheduledTestDrives] = useState([]);
   const [scheduledTestDrivesCounter, setScheduledTestDrivesCounter] = useState(0);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [SearchTerms, setSearchTerms] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,6 +68,8 @@ function ProductsPage() {
       return;
     }
     
+
+    
     console.log(e.target.elements);
     emailjs.sendForm('service_yogknkd', 'template_6ljs4f7', e.target, 'oTRpc9rMm5VwpDu1U');
 
@@ -82,6 +83,7 @@ function ProductsPage() {
       e.target.elements.date.value = '';
     }
   };
+
 
   // Calculate the next date
   const nextDay = new Date();
@@ -148,28 +150,23 @@ function ProductsPage() {
         <Navbar />
       </div>
 
-      <div style={{ width: '100%' }}>
+      <div className="lists" style={{ width: '100%' }}>
         <div className="Productpagecontainer" style={{ margin: '0 auto', maxWidth: '1200px', minHeight: '100vh' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
 
             {/*Filter and Search Section*/}
             <div>
               {/*Filter Section*/}
-              <Row gutter={[16, 16]}>
-                <Col lg={12} xs={24}>
-                  <CheckBox />
-                </Col>
-                <Col lg={12} xs={24}>
-                  <RadioBox />
-                </Col>
-              </Row>
+             
 
               {/*Search Section*/}
               <div
                 className="SearchProdductPage"
-                style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}
+                style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}
               >
-                <SearchFeature />
+                <SearchFeature
+                
+                />
               </div>
             </div>
 
@@ -178,9 +175,9 @@ function ProductsPage() {
 
          
           
-      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+      <div  style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
         {/*Car Listings*/}
-        <div style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
+        <div className="listings" style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
           {listings.length === 0 ? (
             <div
               className="CarListings"
@@ -211,8 +208,7 @@ function ProductsPage() {
             marginRight:'-200px'
           }}
         >
-          <div style={{ position: 'relative', marginRight:'-7rem' }}> 
-            <button
+            <button className="testb"
               onClick={toggleTestScheduling}
               style={{ width: "100%", marginBottom: "1rem", }}
 
@@ -333,7 +329,7 @@ function ProductsPage() {
 
       </div>
 
-      </div>
+
       <Footer />
     </>
   );
