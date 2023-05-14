@@ -4,12 +4,18 @@ import Navbar from '@/components/Navbar';
 import { auth } from '../../../firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'next/router';
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+<<<<<<< HEAD
   const [error, setError] = useState("");
+=======
+  const onChange = (value) => {};
+
+>>>>>>> 07b5f87a1cfb3e48c1d1f2e814c7156363d672a4
   const handleSubmit = async (e) => {
      e.preventDefault();
      try {
@@ -60,7 +66,10 @@ export const Login = (props) => {
                 id="password"
                 name="password"
               />
-              
+              <ReCAPTCHA
+                sitekey="6LfkQdclAAAAANwmYDcPupslwLU3cvuadhc8oC9x"
+                onChange={onChange}
+              />,
             <button className="Submitbutton" type="submit">Login</button>
             <button className="togglebutton" onClick={() => toggleForm()}>Don't have an account? Sign up here.</button>
             
