@@ -111,8 +111,8 @@ function ProductsPage() {
   if (loading) {
     return <div>Loading...</div>;
   }
-  
-  const renderCards = listings.map((product, index) => {
+
+  const renderCards = listings.filter(car=>selectedCarMakes.includes(car.make)&&filter(car=> selectedCarMilage.includes(car.mileage))&&cars.filter(car=> selectedCarColor.includes(car.color))&&filter(car=> selectedCarPrice.includes(car.price))&&filter(car=> selectedCarYear.includes(car.year))).map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
@@ -167,9 +167,7 @@ function ProductsPage() {
 
             {/*Filter and Search Section*/}
             <div>
-              {/*Filter Section*/}
-             
-
+              {/*Filter Section its down*/}
               {/*Search Section*/}
               <div
                 className="SearchProdductPage"
