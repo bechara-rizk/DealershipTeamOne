@@ -16,11 +16,13 @@
   padding-top: 60px;
   margin-block-start: 20px;
   margin-left :150px;
+  background-image: url('/images/road2.jpg');
+  background-position: 30% center;
 }
 .edit_car_form {
   width: 100%;
   max-width: 600px;
-  height: 80%;
+  height: 450px;
   color: aliceblue;
   background: #ffffff;
   border-radius: 3px;
@@ -29,6 +31,7 @@
   padding: 120px;
   margin-left :350px;
   margin-top: 50px;
+  
 }
 
 .Edit-Car-Heading {
