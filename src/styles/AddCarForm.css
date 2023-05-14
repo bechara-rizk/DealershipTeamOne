@@ -30,16 +30,16 @@ padding-top: 60px;
 }
 .add-car-form-container { 
   min-height: 550px;
-  width: 48%;
+  width: 55%;
   height: 100%;
   min-width: 350px;
   margin-top: 0;
   margin-right: 0;
-  padding: 50px;
+  padding-left: 40px;
+  padding-bottom: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* center content vertically */
-  
+  justify-content: center; 
   float: left;
   background-color: rgba(255, 255, 255, 0.651);
   color: black;
@@ -55,7 +55,14 @@ padding-top: 60px;
     background-color: transparent;
     
   }
-  
+  .input{
+    background-color: rgba(255, 255, 255, 0.614);
+    color: black;
+    width: auto;
+    background-color: transparent;
+    margin-top: 30px;
+
+  }
   .submit-button {
     background-color: black;
     color: white;
