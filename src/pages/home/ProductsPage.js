@@ -12,6 +12,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import emailjs from '@emailjs/browser';
 import AuthButtons from '@/components/AuthButtonsComp';
 
+
 const { Meta } = Card;
 
 const fetchCollectionData = async () => {
