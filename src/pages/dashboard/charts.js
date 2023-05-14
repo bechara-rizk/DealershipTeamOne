@@ -6,13 +6,13 @@ import DashboardNavbar from '@/components/DashboardNavbar';
 
 export default function adminCharts() {
   return (
- 
+   <><DashboardNavbar/>
+          <Sidebar/>
       <div className="dashboardScreen">
           <Charts/>
-          <DashboardNavbar/>
-          <Sidebar/>
+        
       </div>
-    
+    </>
     
   )
 }
