@@ -22,7 +22,7 @@ const AuthButtons = () => {
           <a href="/auth/Register">Sign Up</a></>:
           <>
                 {user.uid === "4rplVi6gQfW4oZSvnXGf1D4z05x2" ? <a href="/dashboard/home">Admin</a>:null}
-          <a href="" onClick={() => auth.signOut}>Sign out</a>
+          <a href="" onClick={() => auth.signOut()}>Sign out</a>
               </>}
           </div>
         </div>
