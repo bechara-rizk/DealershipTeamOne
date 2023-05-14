@@ -16,9 +16,8 @@ export default function AdminHome() {
     <div className="dashboardScreen">
       <div className="backgroundImage">
       <div className="overlay">
-
-        <DashboardNavbar />
-        <Sidebar />
+      <DashboardNavbar />
+      <Sidebar />
         </div>
         <img src="/images/road2.jpg" alt="Image Description" style={{'width':'100%', 'marginLeft':100}}/>
       </div>
