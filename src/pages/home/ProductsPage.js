@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchFeature from '../../components/SearchFeature';
-import { Col, Card, Row } from 'antd';
-import RadioBox from '../../components/RadioBox';
-import CheckBox from '../../components/CheckBox';
+import { Col, Card, Row, Select } from 'antd';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import TestScheduling from '@/components/testScheduling';
@@ -11,6 +9,8 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import emailjs from '@emailjs/browser';
+import AuthButtons from '@/components/AuthButtonsComp';
 
 const { Meta } = Card;
 
@@ -53,6 +53,7 @@ function ProductsPage() {
   const [scheduledTestDrives, setScheduledTestDrives] = useState([]);
   const [scheduledTestDrivesCounter, setScheduledTestDrivesCounter] = useState(0);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [SearchTerms, setSearchTerms] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,6 +67,11 @@ function ProductsPage() {
       alert('Selected time slot is already scheduled. Please choose a different time slot.');
       return;
     }
+    
+
+    
+    console.log(e.target.elements);
+    emailjs.sendForm('service_yogknkd', 'template_6ljs4f7', e.target, 'oTRpc9rMm5VwpDu1U');
 
     setScheduledTestDrives([...scheduledTestDrives, newTestDrive]);
     setSelectedCar('');
@@ -77,6 +83,7 @@ function ProductsPage() {
       e.target.elements.date.value = '';
     }
   };
+
 
   // Calculate the next date
   const nextDay = new Date();
@@ -110,23 +117,23 @@ function ProductsPage() {
         <Card
           hoverable={true}
           cover={
-            <a href={`/product/${product.id}`}>
+            <a href={`/product/${product.id}`} style={{display:'flex'}}>
               <img
                 src={images[product.VIN]}
                 alt=""
-                style={{ width: '100%', maxHeight: '150px' }}
+                style={{ width: 'auto', maxHeight: '150px', 'margin':'1px auto 0px auto'}}
               />
             </a>
           }
         >
-          <Meta
-            title={product.make}
-            description={`Model: ${product.model}
-              Price: ${product.price}
-              Mileage: ${product.mileage}
-              Year: ${product.year}
-              Color: ${product.color}`}
-          />
+          <h3 style={{margin:0, 'margin-bottom':8}}>{product.make}</h3>
+          <p style={{margin:0, color:'#8C8C8C'}}>Model: {product.model}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Price: {product.price}</p>
+          {typeof(product.mileage)==='undefined'?
+          <p style={{margin:0, color:'#8C8C8C'}}>Mileage: undefined</p>:
+          <p style={{margin:0, color:'#8C8C8C'}}>Mileage: {product.mileage}</p>}
+          <p style={{margin:0, color:'#8C8C8C'}}>Year: {product.year}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Color: {product.color}</p>
         </Card>
       </Col>
     );
@@ -154,28 +161,23 @@ function ProductsPage() {
         <Navbar />
       </div>
 
-      <div style={{ width: '100%' }}>
+      <div className="lists" style={{ width: '100%' }}>
         <div className="Productpagecontainer" style={{ margin: '0 auto', maxWidth: '1200px', minHeight: '100vh' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
 
             {/*Filter and Search Section*/}
             <div>
               {/*Filter Section*/}
-              <Row gutter={[16, 16]}>
-                <Col lg={12} xs={24}>
-                  <CheckBox />
-                </Col>
-                <Col lg={12} xs={24}>
-                  <RadioBox />
-                </Col>
-              </Row>
+             
 
               {/*Search Section*/}
               <div
                 className="SearchProdductPage"
-                style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}
+                style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}
               >
-                <SearchFeature />
+                <SearchFeature
+                
+                />
               </div>
             </div>
 
@@ -184,9 +186,9 @@ function ProductsPage() {
 
          
           
-      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+      <div  style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
         {/*Car Listings*/}
-        <div style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
+        <div className="listings" style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
           {listings.length === 0 ? (
             <div
               className="CarListings"
@@ -214,13 +216,13 @@ function ProductsPage() {
             alignItems: "flex-end",
             width: "30%",
             minWidth: "180px",
-            marginRight:'-100px'
+            marginRight:'-200px'
           }}
         >
-          <div style={{ position: 'relative' }}> {/* Add this wrapper */}
-            <button
+            <button className="testb"
               onClick={toggleTestScheduling}
               style={{ width: "100%", marginBottom: "1rem", }}
+
             >
               Schedule Your Test Drive
             </button>
@@ -232,8 +234,9 @@ function ProductsPage() {
                   alignSelf: 'flex-start',
                   width: '100%',
                   minWidth: '100px',
-                  maxWidth: '600px',
-                  marginTop: '-9rem',
+                  maxWidth: '800px',
+                  marginTop: '-15rem',
+                   marginRight: '-60px',
                 }}
               >
                     <div className="testDriveContainer">
@@ -242,55 +245,70 @@ function ProductsPage() {
         <p className="testDriveLabel">Select a car and available time slot to schedule a test drive.</p>
         <form onSubmit={handleSubmit}>
           <label htmlFor="car" className="testDriveLabel">
-            Car:
-          </label>
+  Car:
+</label>
 
-          <select
-          className='pleasebeblack'
-            id="car"
-            value={selectedCar}
-            onChange={(e) => setSelectedCar(e.target.value)}
-          >
-            <option value="Select-A-TestCar">-- Select a car --</option>
-            {listings.map((listing, index) => (
-              <option key={index} value={listing.make + " " + listing.model}>{listing.make + " " + listing.model}</option>
-            ))}
-          </select>
-          <br />
+<select
+  className='pleasebeblack'
+  id="car"
+  value={selectedCar}
+  onChange={(e) => setSelectedCar(e.target.value)}
+  name='carclient'
+>
+  <option value="Select-A-TestCar">-- Select a car --</option>
+  {listings.map((listing, index) => (
+    <option key={index} value={listing.make + " " + listing.model}>{listing.make + " " + listing.model}</option>
+  ))}
+</select>
+<br />
+<div className="date-picker-container">
+  <label htmlFor="date" className="testDriveLabel">
+    Date:
+  </label>
+  <DatePicker
+    className='pleasebeblack2'
+    selected={selectedDate}
+    onChange={(date) => setSelectedDate(date)}
+    minDate={new Date(minDate)}
+    maxDate={new Date(maxDateFormatted)}
+    filterDate={(date) => date.getDay() !== 0}
+    required
+    name='dateclient'
+  
+    disabled={!selectedCar || selectedCar === 'Select-A-TestCar'}
+  />
+</div>
+
+
+        <br/>
           <label htmlFor="time" className="testDriveLabel">
             Time:
           </label>
           <select
-            id="time"
-            className='pleasebeblack'
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
-            required
-          >
+  id="time"
+  className='pleasebeblack3'
+  value={selectedTime}
+  onChange={(e) => setSelectedTime(e.target.value)}
+  required
+  name='timeclient'
+  disabled={!selectedCar || selectedCar === 'Select-A-TestCar' || !selectedDate}
+>
+   <option value="">-- Select a time slot --</option>
+  <option value="9:00am">9:00am</option>
+  <option value="10:00am">10:00am</option>
+  <option value="11:00am">11:00am</option>
+  <option   value="12:00pm">12:00pm</option>
+  <option value="1:00pm ">1:00pm</option>
+  <option value="2:00pm">2:00pm</option>
+  <option value="3:00pm">3:00pm</option>
+  <option value="4:00pm">4:00pm</option>
+</select>
 
-            <option value="">-- Select a time slot --</option>
-            <option value="9:00am">9:00am</option>
-            <option value="10:00am">10:00am</option>
-            <option value="11:00am">11:00am</option>
-            <option   value="12:00pm ">12:00pm </option>
-            <option value="1:00pm  ">1:00pm </option>
-           <option value="2:00pm ">2:00pm </option>
-            <option value="3:00pm ">3:00pm </option>
-           <option value="4:00pm ">4:00pm </option>
-          </select>
           <br />
-          <label htmlFor="date" className="testDriveLabel">
-          Date:
-        </label>
-        <DatePicker
-          className='pleasebeblack'
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          minDate={new Date(minDate)}
-          maxDate={new Date(maxDateFormatted)}
-          filterDate={(date) => date.getDay() !== 0}
-          required
-        />
+
+        {/* {TODO: put variables instead of fixed values @backend} */}
+        <input type="text" hidden value={'bechara'} name="nameclient"/>
+        <input type="text" hidden value={'becharaerizk@yahoo.com'} name="emailclient"/>
           <br />
           <button type="submit" className="testDriveSubmit" disabled={scheduledTestDrivesCounter >= 3}>
             Schedule Test Drive
@@ -316,13 +334,13 @@ function ProductsPage() {
 </div>
               </div>
             )}
-          </div> {/* Close the wrapper */}
+          </div> 
         </div>
       </div>
 
       </div>
 
-      </div>
+
       <Footer />
     </>
   );

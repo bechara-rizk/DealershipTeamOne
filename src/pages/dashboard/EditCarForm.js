@@ -1,48 +1,37 @@
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import DashboardNavbar from '@/components/DashboardNavbar';
+import Sidebar from "@/components/Sidebars";
 
-const AddCarForm = () => {
-  const [vin, setVin] = useState('');
-  const [make, setMake] = useState('');
-  const [model, setModel] = useState('');
-  const [year, setYear] = useState('');
-  const [mileage, setMileage] = useState('');
-  const [price, setPrice] = useState('');
-  const [color, setColor] = useState('');
-  const [picture, setPicture] = useState(null);
+ const EditCarForm = ({ initialCar }) => {
+    const [vin, setVin] = useState(initialCar ? initialCar.vin : '');
+    const [make, setMake] = useState(initialCar ? initialCar.make : '');
+    const [model, setModel] = useState(initialCar ? initialCar.model : '');
+    const [year, setYear] = useState(initialCar ? initialCar.year : '');
+    const [mileage, setMileage] = useState(initialCar ? initialCar.mileage : '');
+    const [price, setPrice] = useState(initialCar ? initialCar.price : '');
+    const [color, setColor] = useState(initialCar ? initialCar.color : '');
+    const [picture, setPicture] = useState(initialCar ? initialCar.picture : null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
+
   }
 
   const handlePictureChange = (e) => {
     setPicture(e.target.files[0]);
   }
 
-  return (
-    <>
-     <div className='authButtons'>
-        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
-        <div className="dropdown">
-          <button className="dropbtn">Log in <i className="arrowLogin down"></i>
-          <i className="fa fa-caret-down"></i>
-          </button>
-          <div className="dropdown-content">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
-            <a href="#">Adminstrator login </a>
-          </div>
+  return ( 
+  <><DashboardNavbar/> <Sidebar />
+    <div className="side-content">
    
-      </div>
-    </div>
-    <div style={{display:'flex', width:'100vw', height:'35px'}}><Navbar /></div>
-    <h2 className='Add-Car-Heading'>Add Car</h2>
-    <div className="add_car">
-    <form className="add-car-form-container" onSubmit={handleSubmit}>
-
-      <label>
+    <div className="edit_car_form">
+    
+    <div className="edit_car">
+    <form className="edit-car-form-container" onSubmit={handleSubmit}>
+    <h2 className='Edit-Car-Heading'>Edit Car</h2>
+    <div className="inputs_margin">
+      <label className="vin">
         VIN:
         <input
           className="input-field"
@@ -51,8 +40,8 @@ const AddCarForm = () => {
           onChange={(e) => setVin(e.target.value)}
           required />
       </label>
-      <label>
-        Make:
+      <label className="make">
+        Make: 
         <input
           className="input-field"
           type="text"
@@ -60,8 +49,10 @@ const AddCarForm = () => {
           onChange={(e) => setMake(e.target.value)}
           required />
       </label>
-      <label>
-        Model:
+      </div>
+      <div className="inputs_margin">
+      <label className="model">
+        Model: 
         <input
           className="input-field"
           type="text"
@@ -69,7 +60,7 @@ const AddCarForm = () => {
           onChange={(e) => setModel(e.target.value)}
           required />
       </label>
-      <label>
+      <label className="year">
         Year:
         <input
           className="input-field"
@@ -78,16 +69,17 @@ const AddCarForm = () => {
           onChange={(e) => setYear(e.target.value)}
           required />
       </label>
-      <label>
+      </div>
+      <div className="inputs_margin">
+      <label className="mileage">
         Mileage:
         <input
           className="input-field"
-          type="text"
-          value={mileage}
+          type="text"          value={mileage}
           onChange={(e) => setMileage(e.target.value)}
           required />
       </label>
-      <label>
+      <label className="price">
         Price:
         <input
           className="input-field"
@@ -96,7 +88,8 @@ const AddCarForm = () => {
           onChange={(e) => setPrice(e.target.value)}
           required />
       </label>
-      <label>
+      </div>
+      <label className="color">
         Color:
         <input
           className="input-field"
@@ -105,7 +98,7 @@ const AddCarForm = () => {
           onChange={(e) => setColor(e.target.value)}
           required />
       </label>
-      <label>
+      <label className="picturecaredit">
         Picture:
         <input
           className="input-field"
@@ -114,12 +107,13 @@ const AddCarForm = () => {
           onChange={handlePictureChange} />
       </label>
       <button className="submit-button" type="submit">
-        Save
+        Edit Car
       </button>
-    </form></div>
-    <Footer /></>
-    
+    </form></div></div>
+    </div></>
   );
 }
 
-export default AddCarForm;
+export default EditCarForm;
+
+         

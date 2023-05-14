@@ -1,28 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Input } from 'antd';
 
 const { Search } = Input;
 
 function SearchFeature(props) {
+  const [searchTerms, setSearchTerms] = useState('');
 
-    const [SearchTerms, setSearchTerms] = useState("")
+  const onChangeSearch = (event) => {
+    setSearchTerms(event.currentTarget.value);
+    props.refreshFunction(event.currentTarget.value);
+  };
 
-    const onChangeSearch = (event) => {
-        setSearchTerms(event.currentTarget.value)
+  const searchStyle = {
+    borderRadius: '20px',
+    padding: '10px',
+    width: '300px',
+  };
 
-        props.refreshFunction(event.currentTarget.value)
-
-    }
-
-    return (
-        <div className="Search">
-            <Search className="Search"
-                value={SearchTerms}
-                onChange={onChangeSearch}
-                Searchplaceholder="Search By Typing..."
-            />
-        </div>
-    )
+  return (
+    <div style={searchStyle}>
+      <Search
+        className="Search"
+        value={searchTerms}
+        onChange={onChangeSearch}
+        placeholder="Search By Typing..."
+        style={{ backgroundColor:"#232323" , color: 'white' }}
+      />
+    </div>
+  );
 }
 
-export default SearchFeature
+export default SearchFeature;

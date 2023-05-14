@@ -6,14 +6,12 @@ import DashboardNavbar from '@/components/DashboardNavbar';
 
 export default function adminCharts() {
   return (
+    <><Sidebar /><DashboardNavbar />
+    
     <div className="side-content">
-    <Sidebar/>
-     <div className="main-content">
-       <DashboardNavbar/>
-        <div className="pageContainer">
-          <CarSchedulePage/>
-        </div>
-      </div>
- </div>
+
+      <CarSchedulePage />
+
+    </div></>
   );
 }

@@ -2,7 +2,9 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-}
+  margin-left: 20%;
+  height: 100%;
+padding-top: 60px;}
 
 .sales-info-heading {
   text-decoration: underline solid red;
@@ -46,4 +48,19 @@
   background-color: red;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto; /* Push the header to the bottom */
+  text-align: center; /* Center the text horizontally */
+  color: black;
+}
 
+.header-container h6 {
+  margin-left: 334px; /* Add some spacing between the icon and the text */
+  color:black;
+  font-size: 13.25px;
+  font-weight: normal; /* Remove the bold style */
+  text-decoration: underline; /* Add an underline */
+}

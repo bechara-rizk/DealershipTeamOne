@@ -3,6 +3,7 @@ import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import emailjs from '@emailjs/browser';
+import AuthButtons from '@/components/AuthButtonsComp';
 
 const contactUs = () => {
   const handleSubmit = (event) => {
@@ -14,7 +15,7 @@ const contactUs = () => {
     const message = event.target.elements.message.value;
 
     console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-
+    // console.log(event.target.elements.name);
     emailjs.sendForm('service_yogknkd', 'template_cyu3s5f', event.target, 'oTRpc9rMm5VwpDu1U')
 
     
@@ -25,20 +26,7 @@ const contactUs = () => {
 
   return (
     <>
-    <div className='authButtons'>
-        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
-        <div className="dropdown">
-          <button className="dropbtn">Login<i className="arrowLogin down"></i>
-          <i className="fa fa-caret-down"></i>
-          </button>
-          <div className="dropdown-content">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
-            <a href="#">Adminstrator login </a>
-          </div>
-   
-      </div>
-    </div>
+    <AuthButtons/>
     <div style={{display:'flex', width:'100vw', height:'35px'}}><Navbar /></div>
     <section className="Contact">
       

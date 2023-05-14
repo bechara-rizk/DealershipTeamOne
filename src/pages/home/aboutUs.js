@@ -1,24 +1,12 @@
 import React from "react";
 import Navbar from '@/components/Navbar';
 import Footer from "@/components/Footer";
+import AuthButtons from '@/components/AuthButtonsComp';
 
 const AboutUs = () => {
   return (
     <><>
-    <div className='authButtons'>
-        <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
-        <div className="dropdown">
-          <button className="dropbtn">Log in <i className="arrowLogin down"></i>
-          <i className="fa fa-caret-down"></i>
-          </button>
-          <div className="dropdown-content">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
-            <a href="#">Adminstrator login </a>
-          </div>
-   
-        </div>
-      </div>
+    <AuthButtons />
     <>
     <div className="main-content">
       <Navbar />
