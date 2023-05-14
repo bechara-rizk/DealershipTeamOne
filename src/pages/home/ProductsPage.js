@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchFeature from '../../components/SearchFeature';
 import { Col, Card, Row, Select } from 'antd';
-import RadioBox from '../../components/RadioBox';
-import CheckBox from '../../components/CheckBox';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import TestScheduling from '@/components/testScheduling';
@@ -54,6 +52,7 @@ function ProductsPage() {
   const [scheduledTestDrives, setScheduledTestDrives] = useState([]);
   const [scheduledTestDrivesCounter, setScheduledTestDrivesCounter] = useState(0);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [SearchTerms, setSearchTerms] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,6 +67,8 @@ function ProductsPage() {
       return;
     }
     
+
+    
     console.log(e.target.elements);
     emailjs.sendForm('service_yogknkd', 'template_6ljs4f7', e.target, 'oTRpc9rMm5VwpDu1U');
 
@@ -81,6 +82,7 @@ function ProductsPage() {
       e.target.elements.date.value = '';
     }
   };
+
 
   // Calculate the next date
   const nextDay = new Date();
@@ -171,9 +173,11 @@ function ProductsPage() {
               {/*Search Section*/}
               <div
                 className="SearchProdductPage"
-                style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}
+                style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}
               >
-                <SearchFeature />
+                <SearchFeature
+                
+                />
               </div>
             </div>
 
@@ -336,7 +340,7 @@ function ProductsPage() {
 
       </div>
 
-     
+
       <Footer />
     </>
   );

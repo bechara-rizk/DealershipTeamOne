@@ -21,8 +21,7 @@ export const Login = (props) => {
     const errorMessage = e.message;
     if (errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found') {
      setError('Incorrect username or password');
-     } else {
-    setError('An error occurred. Please try again later.');
+    
     }
      }
      };
