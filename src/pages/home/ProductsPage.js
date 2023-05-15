@@ -11,6 +11,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import emailjs from '@emailjs/browser';
 import AuthButtons from '@/components/AuthButtonsComp';
+import { auth } from '../../../firebase';
+
 
 
 const { Meta } = Card;
