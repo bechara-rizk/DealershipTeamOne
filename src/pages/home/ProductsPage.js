@@ -11,8 +11,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import emailjs from '@emailjs/browser';
 import AuthButtons from '@/components/AuthButtonsComp';
-import { auth } from '../../../firebase';
-
 
 
 const { Meta } = Card;
@@ -73,7 +71,7 @@ function ProductsPage() {
     
 
     
-    console.log(e.target.elements);
+    // log(e.target.elements);
     emailjs.sendForm('service_yogknkd', 'template_6ljs4f7', e.target, 'oTRpc9rMm5VwpDu1U');
 
     setScheduledTestDrives([...scheduledTestDrives, newTestDrive]);
@@ -113,8 +111,42 @@ function ProductsPage() {
   if (loading) {
     return <div>Loading...</div>;
   }
-
-  const renderCards = listings.filter(car=>selectedCarMakes.includes(car.make)&&filter(car=> selectedCarMilage.includes(car.mileage))&&cars.filter(car=> selectedCarColor.includes(car.color))&&filter(car=> selectedCarPrice.includes(car.price))&&filter(car=> selectedCarYear.includes(car.year))).map((product, index) => {
+  var price, mileage, year, make;
+  var listings2=listings;
+  function filterFunc(){
+    price=document.getElementById("priceSelected").value;
+    mileage=document.getElementById("mileageSelected").value;
+    year=document.getElementById("yearSelected").value;
+    make=document.getElementById("makeSelected").value;
+    if (price=='all'){
+      listings2=listings.filter(Car=>Car.price);
+    }
+    else{
+      listings2=listings.filter(Car=>Car.price==price);
+    }
+    if (mileage=='all'){
+      listings2=listings2.filter(Car=>Car.mileage);
+    }
+    else{
+      listings2=listings2.filter(Car=>Car.mileage==mileage);
+    }
+    if (year=='all'){
+      listings2=listings2.filter(Car=>Car.year);
+    }
+    else{
+      listings2=listings2.filter(Car=>Car.year==year);
+    }
+    if (make=='all'){
+      listings2=listings2.filter(Car=>Car.make);
+    }
+    else{
+      listings2=listings2.filter(Car=>Car.make==make);
+    }
+    console.log(listings2);
+    // document.getElementById('newCarsFiltered').innerHTML=<Row gutter={[16, 16]}>{renderCards}</Row>
+    return renderCards;
+  }
+  const renderCards = listings2.map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
@@ -169,6 +201,49 @@ function ProductsPage() {
                 />
               </div>
             </div>
+            <div style={{display:'flex'}}>
+              <div style={{margin:'auto'}}>
+                <label htmlFor="" style={{color:'#fff','margin-right':'10px'}}>Price:</label>
+                <select name="" id="priceSelected" style={{background:"#fff", color:'#000'}} onChange={filterFunc}>
+                  <option value="all">All</option>
+                  {listings.map((product, index) => {
+                    return (
+                      <option key={index} value={product.price}>{product.price}</option>
+                    );
+                  })}
+                </select>
+                <div style={{margin:'10px', display:'inline', color:'#fff'}}>|</div>
+                <label htmlFor="" style={{color:'#fff','margin-right':'10px'}}>Mileage:</label>
+                <select name="" id="mileageSelected" style={{background:"#fff", color:'#000'}} onChange={filterFunc}>
+                  <option value="all">All</option>
+                  {listings.map((product, index) => {
+                    return (
+                      <option key={index} value={product.mileage}>{product.mileage}</option>
+                    );
+                  })}
+                </select>
+                <div style={{margin:'10px', display:'inline', color:'#fff'}}>|</div>
+                <label htmlFor="" style={{color:'#fff','margin-right':'10px'}}>Year:</label>
+                <select name="" id="yearSelected" style={{background:"#fff", color:'#000'}} onChange={filterFunc}>
+                  <option value="all">All</option>
+                  {listings.map((product, index) => {
+                    return (
+                      <option key={index} value={product.year}>{product.year}</option>
+                    );
+                  })}
+                </select>
+                <div style={{margin:'10px', display:'inline', color:'#fff'}}>|</div>
+                <label htmlFor="" style={{color:'#fff','margin-right':'10px'}}>Make:</label>
+                <select name="" id="makeSelected" style={{background:"#fff", color:'#000'}} onChange={filterFunc}>
+                  <option value="all">All</option>
+                  {listings.map((product, index) => {
+                    return (
+                      <option key={index} value={product.make}>{product.make}</option>
+                    );
+                  })}
+                </select>
+              </div>
+            </div>
 
 
           </div>
@@ -191,7 +266,7 @@ function ProductsPage() {
               <h2>No post yet...</h2>
             </div>
           ) : (
-            <div>
+            <div id='newCarsFiltered'>
               <Row gutter={[16, 16]}>{renderCards}</Row>
             </div>
           )}

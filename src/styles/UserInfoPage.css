@@ -7,6 +7,7 @@
 .user-info-page{
   align-items: center;
   flex-direction: column;
+  color: black;
   
 }
 
@@ -38,8 +39,8 @@
   border-radius: 13px;
   width: 400px;
   padding: 30px;
-  background-color: white;
-  border: 2px solid red;
+  background-color: white; 
+
   align-items: center;
 }
 
@@ -171,9 +172,18 @@
   display: flex;
   flex-direction: row;
   margin-left: 0;
+  color:black;
 }
 
-.horizontal-line {
-  border-top: 4px solid black;
-  margin: 10px 0;
+
+
+.authContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px; /* Adjust as needed */
+}
+
+.profile {
+  margin-left: 100px; /* Adjust as needed */
 }
