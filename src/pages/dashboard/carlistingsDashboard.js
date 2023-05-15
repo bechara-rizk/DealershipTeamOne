@@ -72,7 +72,7 @@ function ProductsPage() {
               <img
                 src={images[product.VIN]}
                 alt=""
-                style={{ width: 'auto', maxHeight: '150px', 'margin':'1px auto 0px auto'}}
+                style={{ width: 'auto', maxHeight: '150px', maxWidth:'240px', 'margin':'1px auto 0px auto'}}
               />
          
           }
