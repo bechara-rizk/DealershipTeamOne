@@ -5,13 +5,25 @@
   height: 100vh;
   
 }
+#carselect{
+  margin-left: 118px;
 
+}
+.selectacar{
+  margin-left: 104px;
+}
 .date-picker-container{
   margin-left: 118px;
 }
 
 .testDriveLabelTime{
-  margin-left: 14px;
+  margin-left: 12px;
+  padding-left: -50px;
+  
+}
+.testDriveLabel{
+
+  margin-left: 16px;
   
 }
 
@@ -67,7 +79,7 @@ form {
   color: #000;
   font-size: 16px;
   margin-bottom: 25px;
-  margin-left: 109px;
+  margin-left: 150px;
 }
 
 .submit-button {

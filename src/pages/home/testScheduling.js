@@ -65,12 +65,12 @@ function TestDriveScheduler() {
           <label htmlFor="car" className="testDriveLabel">Car:</label>
           <select
             className='pleasebeblack'
-            id="car"
+            id="carselect"
             value={selectedCar}
             onChange={(e) => setSelectedCar(e.target.value)}
             name='carclient'
           >
-            <option value="">-- Select car --</option>
+            <option value="" className='selectacar'>-- Select a car --</option>
             {listings.map((listing, index) => (
               <option key={index} value={listing.make + " " + listing.model}>{listing.make + " " + listing.model}</option>
             ))}
