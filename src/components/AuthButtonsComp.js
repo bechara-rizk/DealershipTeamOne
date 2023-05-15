@@ -27,6 +27,7 @@ const AuthButtons = () => {
   return (
     <div className='authButtons'>
       <img src='/images/logo.jpg' alt='logo' className='homepageLogo'/>
+      <div className='authwrapper'>
       <div className="authContainer">
         <div className="dropdown">
           <button className="dropbtn">
@@ -47,11 +48,14 @@ const AuthButtons = () => {
             )}
           </div>
         </div>
+        </div>
+        <div className='user-profile'>
         {user && (
           <div className="profile">
             <UserProfile />
           </div>
         )}
+        </div>
       </div>
     </div>
   );

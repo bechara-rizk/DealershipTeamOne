@@ -177,13 +177,29 @@
 
 
 
-.authContainer {
+
+
+
+.authButtons {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
-  margin-right: 20px; /* Adjust as needed */
 }
 
-.profile {
-  margin-left: 100px; /* Adjust as needed */
+.authwrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
+
+.user-profile {
+  margin-left: auto;
+  padding-left: 920px;
+}
+
+.homepageLogo {
+  margin-left: oaut;
+ padding-right: 550px;
+}
+
