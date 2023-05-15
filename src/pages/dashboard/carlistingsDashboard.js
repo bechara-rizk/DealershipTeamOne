@@ -10,6 +10,7 @@ import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { PushpinOutlined } from '@ant-design/icons';
+import { FaPlusCircle } from 'react-icons/fa';
 
 const { Meta } = Card;
 
@@ -116,6 +117,13 @@ function ProductsPage() {
                 style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}
               >
                 <SearchFeature />
+                
+              
+    
+  <a href="/dashboard/AddCarForm" className="add-car-button">
+      <FaPlusCircle className="icon" />
+      <span className="text">Add Car</span>
+    </a>
               </div>
             </div>
 

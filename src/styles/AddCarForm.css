@@ -113,4 +113,35 @@ padding-top: 60px;
   .submit-button:hover {
     background-color: red;
   }
+
+  .add-car-button {
+    position: relative;
+    display: inline-block;
+   
+    color: #232323;
+    padding: 10px;
+    border: none;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
   
+ 
+  
+  .icon {
+    font-size: 32px; /* Adjust the size as desired */
+  }
+  
+  .text {
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .add-car-button:hover .text {
+    opacity: 1;
+  }
