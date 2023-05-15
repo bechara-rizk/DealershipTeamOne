@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-
+import { firestore, storage } from '../../../firebase';
+import { collection, addDoc } from "firebase/firestore";
+import { ref, uploadBytes } from "firebase/storage";
 import Sidebar from '@/components/Sidebars';
 import DashboardNavbar from '@/components/DashboardNavbar';
 
@@ -20,6 +22,25 @@ const AddCarForm = () => {
 
   const handlePictureChange = (e) => {
     setPicture(e.target.files[0]);
+  }
+
+  const addCar = async () => {
+    let data = {
+      VIN: vin,
+      make: make,
+      model: model,
+      mileage: parseInt(mileage),
+      year: parseInt(year),
+      price: parseInt(price),
+      color: color,
+      sold: false
+    }
+    let db = firestore
+    let colRef = collection(db, "listings")
+    await addDoc(colRef, data).then(() => console.log("working")).catch((e) => console.log(e))
+    const str = storage
+    const imageRef = ref(str, 'images/' + picture.name);
+    await uploadBytes(imageRef, picture)
   }
 
   return (
@@ -107,7 +128,7 @@ const AddCarForm = () => {
           accept="image/*"
           onChange={handlePictureChange} />
       </label>
-      <button className="submit-button" type="submit">
+      <button className="submit-button" onClick={(event) => addCar()} type="submit">
         Add Car
       </button>
     </form></div></div>
