@@ -2,10 +2,13 @@ import React from 'react';
 import { MdNotificationsNone } from 'react-icons/md';
 import { FiSearch } from 'react-icons/fi';
 import { BiMessageRoundedDetail } from 'react-icons/bi';
-import Link from 'next/link';
+import { auth } from '../../firebase';
+import { useRouter } from 'next/router';
+
 
 
 const DashboardNavbar = () => {
+  const router = useRouter();
   return (
     <div className="dashNav">
       {/* <div className="search">
@@ -25,11 +28,12 @@ const DashboardNavbar = () => {
        <img src={"https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"} alt="avatar" />
       </div>
 
-      <div className="signout">
-      <Link href="" className="item">
+      <button onClick={async() => { //style this button, make it anything except for a link or a element
+        await auth.signOut()
+        router.push('/home/homescreen')
+      }} className="signout">
       <span>Sign out</span>
-          </Link>
-      </div>
+      </button>
     </div>
   )
 }
