@@ -9,6 +9,7 @@ return (
       <li><a className="active" href="/home/homescreen">Home</a></li>
       <li><a href="/home/ProductsPage">Products</a></li>
       <li><a href="/home/compareCar">Compare Cars</a></li>
+      <li><a href="/home/testScheduling">Request Test Drive</a></li>
       <li><a href="/home/contactUs">Contact Us</a></li>
       <li><a href="/home/aboutUs">About</a></li>
     </ul>
