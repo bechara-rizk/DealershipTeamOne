@@ -102,7 +102,7 @@ const AddCarForm = () => {
       <label className="picture">
         Picture:
         <input
-          className="input-field"
+          className="input"
           type="file"
           accept="image/*"
           onChange={handlePictureChange} />

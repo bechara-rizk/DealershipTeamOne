@@ -24,7 +24,7 @@ function SearchFeature(props) {
         value={searchTerms}
         onChange={onChangeSearch}
         placeholder="Search By Typing..."
-        style={{ backgroundColor:"#232323" , color: 'white' }}
+        style={{ color: 'white' }}
       />
     </div>
   );

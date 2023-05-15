@@ -150,6 +150,9 @@ const getPasswordSuggestions = () => {
     fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
   };
 
+  const regex = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+  //implement password regex
+
   if (passwordStrength === 0) {
     return <span style={{ ...passwordStyle, color: "gray" }}>Enter a password</span>;
   } else if (passwordStrength < 6) {

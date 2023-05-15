@@ -14,6 +14,7 @@ import AuthButtons from '@/components/AuthButtonsComp';
 import { auth } from '../../../firebase';
 
 
+
 const { Meta } = Card;
 
 const fetchCollectionData = async () => {
@@ -112,25 +113,24 @@ function ProductsPage() {
   if (loading) {
     return <div>Loading...</div>;
   }
-  
-  const renderCards = listings.map((product, index) => {
+
+  const renderCards = listings.filter(car=>selectedCarMakes.includes(car.make)&&filter(car=> selectedCarMilage.includes(car.mileage))&&cars.filter(car=> selectedCarColor.includes(car.color))&&filter(car=> selectedCarPrice.includes(car.price))&&filter(car=> selectedCarYear.includes(car.year))).map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
           hoverable={true}
           cover={
-            <a href={`/product/${product.id}`} style={{display:'flex'}}>
               <img
                 src={images[product.VIN]}
                 alt=""
                 style={{ width: 'auto', maxHeight: '150px', 'margin':'1px auto 0px auto'}}
               />
-            </a>
+            
           }
         >
           <h3 style={{margin:0, 'margin-bottom':8}}>{product.make}</h3>
           <p style={{margin:0, color:'#8C8C8C'}}>Model: {product.model}</p>
-          <p style={{margin:0, color:'#8C8C8C'}}>Price: {product.price}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Price: {product.price}$</p>
           {typeof(product.mileage)==='undefined'?
           <p style={{margin:0, color:'#8C8C8C'}}>Mileage: undefined</p>:
           <p style={{margin:0, color:'#8C8C8C'}}>Mileage: {product.mileage}</p>}
@@ -148,9 +148,7 @@ function ProductsPage() {
   return (
     <>
       <div className="headercontainer" style={{ textAlign: 'center' }}>
-        <div className="authButtons">
-          <img src="/images/logo.jpg" alt="logo" className="homepageLogo" />
-        </div>
+        <AuthButtons />
         <Navbar />
       </div>
 
@@ -160,9 +158,7 @@ function ProductsPage() {
 
             {/*Filter and Search Section*/}
             <div>
-              {/*Filter Section*/}
-             
-
+              {/*Filter Section its down*/}
               {/*Search Section*/}
               <div
                 className="SearchProdductPage"

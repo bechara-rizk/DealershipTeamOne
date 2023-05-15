@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchFeature from '../../components/SearchFeature';
 import { Col, Card, Row, Select } from 'antd';
-import RadioBox from '../../components/RadioBox';
-import CheckBox from '../../components/CheckBox';
+
 import DashboardNavbar from '@/components/DashboardNavbar';
 import Sidebar from '@/components/Sidebars';
 import { firestore, storage } from '../../../firebase';
@@ -69,14 +68,13 @@ function ProductsPage() {
         <Card
           hoverable={true}
           cover={
-            <a href={`/product/${product.id}`} style={{display:'flex'}}>
-              
+           
               <img
                 src={images[product.VIN]}
                 alt=""
                 style={{ width: 'auto', maxHeight: '150px', 'margin':'1px auto 0px auto'}}
               />
-            </a>
+         
           }
         >
           <h3 style={{margin:0, 'margin-bottom':8}}>
@@ -84,7 +82,7 @@ function ProductsPage() {
                 <FontAwesomeIcon icon={faPen} className="edit-icon" style={{ marginLeft: '10px' }} />
               </h3>
               <p style={{margin:0, color:'#8C8C8C'}}>Model: {product.model}</p>
-          <p style={{margin:0, color:'#8C8C8C'}}>Price: {product.price}</p>
+          <p style={{margin:0, color:'#8C8C8C'}}>Price: {product.price}$</p>
           {typeof(product.mileage)==='undefined'?
           <p style={{margin:0, color:'#8C8C8C'}}>Mileage: undefined</p>:
           <p style={{margin:0, color:'#8C8C8C'}}>Mileage: {product.mileage}</p>}
@@ -111,15 +109,7 @@ function ProductsPage() {
             {/*Filter and Search Section*/}
             <div>
               {/*Filter Section*/}
-              <Row gutter={[16, 16]}>
-                <Col lg={12} xs={24}>
-                  <CheckBox />
-                </Col>
-                <Col lg={12} xs={24}>
-                  <RadioBox />
-                </Col>
-              </Row>
-
+             
               {/*Search Section*/}
               <div
                 className="SearchProdductPage"
