@@ -4,19 +4,36 @@
   align-items: center;
   height: 100vh;
   
+}
 
+.date-picker-container{
+  margin-left: 118px;
+}
+
+.testDriveLabelTime{
+  margin-left: 14px;
+  
+}
+
+.TestSchedulingUser{
+  background-image:url('/images/cartest.jpg');
+  background-position: center center;
+  background-size: cover;
 }
 
 .testDriveBox {
-  background-color: #ffffff;
+  background-color: #0000006c;
   border: 8px groove #000000;
   border-radius: 8px;
   padding: 20px;
   width: 400px;
   text-align: center;
-  background-color: transparent;
+  margin-top: -200px;
+  width: 520px;
   padding: -10px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  color: #fff;
+  font-family: 'Poppins' ;
  
   
 }
