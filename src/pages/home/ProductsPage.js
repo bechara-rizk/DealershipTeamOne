@@ -11,6 +11,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import emailjs from '@emailjs/browser';
 import AuthButtons from '@/components/AuthButtonsComp';
+import { auth } from '../../../firebase';
+
 
 const { Meta } = Card;
 
@@ -148,15 +150,6 @@ function ProductsPage() {
       <div className="headercontainer" style={{ textAlign: 'center' }}>
         <div className="authButtons">
           <img src="/images/logo.jpg" alt="logo" className="homepageLogo" />
-          <div className="dropdown">
-            {!auth.currentUser ? <>
-              <a href="/auth/Login">Login</a>
-              <a href="/auth/Register">Sign Up</a></> :
-              <>
-                {auth.currentUser.uid === "4rplVi6gQfW4oZSvnXGf1D4z05x2" ? <a href="/dashboard/home">Admin</a> : null}
-                <a href="" onClick={() => auth.signOut}>Sign out</a>
-              </>}
-          </div>
         </div>
         <Navbar />
       </div>
