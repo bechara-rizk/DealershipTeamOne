@@ -13,6 +13,10 @@ import { FaPlusCircle } from 'react-icons/fa';
 import { Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { uploadBytes } from "firebase/storage";
+import { FaTrash } from 'react-icons/fa';
+import { deleteDoc } from "firebase/firestore";
+
+
 
 
 const { Meta } = Card;
@@ -41,6 +45,7 @@ const fetchStorageData = async () => {
   }
   return images;
 };
+
 
 function ProductsPage() {
   const [listings, setListings] = useState(null);
@@ -104,7 +109,26 @@ function ProductsPage() {
     setEditMode(false);
   };
   
+  const handleDelete = async (carId) => {
+    try {
+      const carRef = doc(firestore, "listings", carId);
+      await deleteDoc(carRef);
+      console.log("Car deleted successfully!");
+     
+    } catch (error) {
+      console.error("Error deleting car:", error);
+     
+    }
+    const newCollectionData = await fetchCollectionData();
+    setListings(newCollectionData);
   
+    const newStorageData = await fetchStorageData();
+    setImages(newStorageData);
+  
+    setEditMode(false);
+  };
+  
+ 
   
   
   if (loading) {
@@ -139,6 +163,7 @@ function ProductsPage() {
            
           {product.make}
             <FontAwesomeIcon
+              color="#232323"
               icon={faPen}
               className="edit-icon"
               style={{ marginLeft: '10px', color: 'black', cursor: 'pointer' }}
@@ -154,6 +179,10 @@ function ProductsPage() {
           )}
           <p style={{ margin: 0, color: '#8C8C8C' }}>Year: {product.year}</p>
           <p style={{ margin: 0, color: '#8C8C8C' }}>Color: {product.color}</p>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '8vh' }}>
+  <FaTrash size={24} color="#232323" onClick={() =>  handleDelete(product.id)} />
+</div>
+
         </Card>
       </Col>
     );
