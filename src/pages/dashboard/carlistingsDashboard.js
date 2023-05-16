@@ -55,6 +55,8 @@ function ProductsPage() {
   const [editedCar, setEditedCar] = useState(null);
   const [editedCarData, setEditedCarData] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+
 
 
   useEffect(() => {
@@ -70,6 +72,9 @@ function ProductsPage() {
     fetchData();
   }, []);
 
+  const handleSearch = (term) => {
+    setSearchTerm(term.toLowerCase());
+  };
   const handleEdit = (car) => {
     setEditMode(true);
     setEditedCar(car);
@@ -84,15 +89,17 @@ function ProductsPage() {
       const storageRef = ref(storage, `images/${selectedFile.name}`);
       await uploadBytes(storageRef, selectedFile);
       const downloadURL = await getDownloadURL(storageRef);
-  
+      
       updatedCarData.picture = downloadURL;
-      updatedCarData.VIN = selectedFile.name.slice(0, -4); // Make sure to remove the file extension
+      updatedCarData.VIN = selectedFile.name.slice(0, -4); 
+    } else {
+      updatedCarData.picture = editedCarData.picture;
     }
   
     const carRef = doc(firestore, "listings", editedCarData.id);
     await updateDoc(carRef, updatedCarData);
   
-    // Refresh the data after saving
+  
     const newCollectionData = await fetchCollectionData();
     setListings(newCollectionData);
   
@@ -128,16 +135,27 @@ function ProductsPage() {
     return <div>Loading...</div>;
   }
 
-  const renderCards = listings.map((product, index) => {
+  const renderCards = listings
+  .filter((product) => {
+    if (searchTerm === '') {
+      return true;
+    }
+    return (
+      product.make.toLowerCase().includes(searchTerm) ||
+      product.model.toLowerCase().includes(searchTerm)
+    );
+  })
+  .map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
           hoverable={true}
+          className='card'
           cover={
             <img
               src={images[product.VIN]}
               alt=""
-              style={{ width: 'auto', maxHeight: '150px', maxWidth: '240px', margin: '1px auto 0px auto' }}
+              style={{ width: '100%', maxHeight: 'auto', maxWidth: '500px',minHeight:"250px", objectFit: 'contain' }}
             />
           }
         >
@@ -210,7 +228,7 @@ function ProductsPage() {
      <Upload
       beforeUpload={file => {
       setSelectedFile(file);
-      return false; // Prevent antd from auto uploading the file
+      return false; 
     }}
      >
       <Button icon={<UploadOutlined />}>Click to Upload</Button>
@@ -229,67 +247,67 @@ function ProductsPage() {
   
 
   return (
-    <>
-      <DashboardNavbar />
-      <Sidebar />
-      <div className="Dashboardproducts">
-        <div className="headercontainer" style={{ textAlign: 'center' }}></div>
-
-        <div style={{ width: '100%' }}>
-          <div
-            className="Productpagecontainer"
-            style={{ margin: '0 auto', maxWidth: '1200px', minHeight: '100vh' }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-              {/*Filter and Search Section*/}
-              <div>
-                {/*Filter Section*/}
-
-                {/*Search Section*/}
-                <div
-                  className="SearchProdductPage"
-                  style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}
-                >
-                  <SearchFeature />
-
-                  <a href="/dashboard/AddCarForm" className="add-car-button">
-                    <FaPlusCircle className="icon" />
-                    <span className="text">                      Add Car
-                    </span>
-                  </a>
-                </div>
-              </div>
-
+      <>
+        <DashboardNavbar />
+        <Sidebar />
+        <div className="Dashboardproducts">
+          <div className="headercontainer" style={{ textAlign: 'center' }}></div>
+  
+          <div style={{ width: '100%' }}>
+            <div
+              className="Productpagecontainer"
+              style={{ margin: '0 auto', maxWidth: '1400px', minHeight: '100vh' }}
+            >
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-                {/* Car Listings */}
-                <div style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
-                  {listings.length === 0 ? (
-                    <div
-                      className="CarListings"
-                      style={{
-                        display: 'flex',
-                        height: '300px',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <h2>No post yet...</h2>
-                    </div>
-                  ) : (
-                    <div>
-                      <Row gutter={[16, 16]}>{renderCards}</Row>
-                    </div>
-                  )}
+                {/*Filter and Search Section*/}
+                <div>
+                  {/*Filter Section*/}
+  
+                  {/*Search Section*/}
+                  <div
+                    className="SearchProdductPage"
+                    style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}
+                  >
+                    <SearchFeature onSearch={handleSearch} />
+  
+                    <a href="/dashboard/AddCarForm" className="add-car-button">
+                      <FaPlusCircle className="icon" />
+                      <span className="text">Add Car</span>
+                    </a>
+                  </div>
+                </div>
+  
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+                  {/* Car Listings */}
+                  <div style={{ flex: 1, minWidth: 'calc(100% - 800px)' }}>
+                    {listings.length === 0 ? (
+                      <div
+                        className="CarListings"
+                        style={{
+                          display: 'flex',
+                          height: '300px',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <h2>No post yet...</h2>
+                      </div>
+                    ) : (
+                      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+  <Row gutter={[16, 16]}>{renderCards}</Row>
+</div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          {editMode && editModal}
         </div>
-        {editMode && editModal}
-      </div>
-    </>
-  );
-}
-
-export default ProductsPage;
+      </>
+    );
+  }
+  
+  export default ProductsPage;
+  
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SearchFeature from '../../components/SearchFeature';
+import SearchFeature from '@/components/SearchFeature';
 import { Col, Card, Row, Select } from 'antd';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -54,21 +54,27 @@ function ProductsPage() {
   const [scheduledTestDrives, setScheduledTestDrives] = useState([]);
   const [scheduledTestDrivesCounter, setScheduledTestDrivesCounter] = useState(0);
   const [selectedDate, setSelectedDate] = useState(null);
-  const [SearchTerms, setSearchTerms] = useState("")
-
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredListings, setFilteredListings] = useState(null);
+  const mileageToNumber = mileage => {
+    if (!mileage) return null;
+    if (typeof mileage !== 'string') mileage = mileage.toString();
+    const num = Number(mileage.replace(/[^0-9\.-]+/g,""));
+    return isNaN(num) ? null : num;
+  }
+  
+    const handleSearch = (term) => {
+      setSearchTerm(term.toLowerCase());
+    };
+     
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!selectedDate) {
       alert('Please select a date.');
       return;
     }
-    const scheduledDate = selectedDate.toISOString().slice(0, 10);
-    // Check if selected time slot is already scheduled
-    if (scheduledTestDrives.some(testDrive => testDrive.time === selectedTime && testDrive.date === scheduledDate)) {
-      alert('Selected time slot is already scheduled. Please choose a different time slot.');
-      return;
-    }
-    
+
+  
 
     
     // log(e.target.elements);
@@ -111,52 +117,51 @@ function ProductsPage() {
   if (loading) {
     return <div>Loading...</div>;
   }
-  var price, mileage, year, make;
-  var listings2=listings;
+
+
   function filterFunc(){
-    price=document.getElementById("priceSelected").value;
-    mileage=document.getElementById("mileageSelected").value;
-    year=document.getElementById("yearSelected").value;
-    make=document.getElementById("makeSelected").value;
-    if (price=='all'){
-      listings2=listings.filter(Car=>Car.price);
+    let price=document.getElementById("priceSelected").value;
+    let mileage=document.getElementById("mileageSelected").value;
+    let year=document.getElementById("yearSelected").value;
+    let make=document.getElementById("makeSelected").value;
+    let listings2=listings;
+    if (price !== 'all'){
+      price = parseInt(price);
+      listings2=listings2.filter(Car=>Car.price <= price);
     }
-    else{
-      listings2=listings.filter(Car=>Car.price==price);
+    if (mileage !== 'all'){
+      mileage = parseInt(mileage);
+      listings2=listings2.filter(Car=>mileageToNumber(Car.mileage) <= mileage);
     }
-    if (mileage=='all'){
-      listings2=listings2.filter(Car=>Car.mileage);
+    if (year !== 'all'){
+      listings2=listings2.filter(Car=>Car.year == year);
     }
-    else{
-      listings2=listings2.filter(Car=>Car.mileage==mileage);
+    if (make !== 'all'){
+      listings2=listings2.filter(Car=>Car.make.toLowerCase() == make.toLowerCase());
     }
-    if (year=='all'){
-      listings2=listings2.filter(Car=>Car.year);
-    }
-    else{
-      listings2=listings2.filter(Car=>Car.year==year);
-    }
-    if (make=='all'){
-      listings2=listings2.filter(Car=>Car.make);
-    }
-    else{
-      listings2=listings2.filter(Car=>Car.make==make);
-    }
-    console.log(listings2);
-    // document.getElementById('newCarsFiltered').innerHTML=<Row gutter={[16, 16]}>{renderCards}</Row>
-    return renderCards;
+    setFilteredListings(listings2); // Update state so the component re-renders
   }
-  const renderCards = listings2.map((product, index) => {
+
+  const renderCards = (filteredListings ? filteredListings : listings).filter((product) => {
+    if (searchTerm === '') {
+      return true;
+    }
+    return (
+      product.make.toLowerCase().includes(searchTerm) ||
+      product.model.toLowerCase().includes(searchTerm)
+    );
+  }).map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
-        <Card
+         <Card
           hoverable={true}
+          className='card'
           cover={
-              <img
-                src={images[product.VIN]}
-                alt=""
-                style={{ width: 'auto', maxHeight: '150px', maxWidth:'240px', 'margin':'1px auto 0px auto'}}
-              />
+            <img
+              src={images[product.VIN]}
+              alt=""
+              style={{ width: '100%',height:"200px", objectFit: 'contain' }}
+            />
             
           }
         >
@@ -194,54 +199,72 @@ function ProductsPage() {
               {/*Search Section*/}
               <div
                 className="SearchProdductPage"
-                style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}
+                style={{ display: 'flex', justifyContent: 'flex-end', margin: '2rem auto', marginleft:'1rem'}}
               >
-                <SearchFeature
+                <SearchFeature onSearch={handleSearch} />
+
                 
-                />
               </div>
             </div>
             <div style={{display:'flex'}}>
               <div style={{margin:'auto'}}>
                 <label htmlFor="" style={{color:'#fff','margin-right':'10px'}}>Price:</label>
                 <select name="" id="priceSelected" style={{background:"#fff", color:'#000'}} onChange={filterFunc}>
-                  <option value="all">All</option>
-                  {listings.map((product, index) => {
-                    return (
-                      <option key={index} value={product.price}>{product.price}</option>
-                    );
-                  })}
-                </select>
+            
+                 <option value="all">All</option>
+                 <option value="10000">Less than 10k</option>
+                 <option value="20000">Less than 20k</option>
+                  <option value="30000">Less than 30k</option>
+                  <option value="40000">Less than 40k</option>
+                  <option value="50000">Less than 50k</option>
+                  <option value="60000">Less than 60k</option>
+                  <option value="70000">Less than 70k</option>
+                  <option value="80000">Less than 80k</option>
+                  <option value="90000">Less than 90k</option>
+                  <option value="100000">Less than 100k</option>
+             </select>
+
+   
+                
                 <div style={{margin:'10px', display:'inline', color:'#fff'}}>|</div>
                 <label htmlFor="" style={{color:'#fff','margin-right':'10px'}}>Mileage:</label>
                 <select name="" id="mileageSelected" style={{background:"#fff", color:'#000'}} onChange={filterFunc}>
                   <option value="all">All</option>
-                  {listings.map((product, index) => {
-                    return (
-                      <option key={index} value={product.mileage}>{product.mileage}</option>
-                    );
-                  })}
+              <option value="10000">Less than 10k</option>
+                  <option value="20000">Less than 20k</option>
+                  <option value="30000">Less than 30k</option>
+                  <option value="40000">Less than 40k</option>
+                  <option value="50000">Less than 50k</option>
+                  <option value="60000">Less than 60k</option>
+                  <option value="70000">Less than 70k</option>
+                  <option value="80000">Less than 80k</option>
+                  <option value="90000">Less than 90k</option>
+                  <option value="100000">Less than 100k</option>
                 </select>
                 <div style={{margin:'10px', display:'inline', color:'#fff'}}>|</div>
                 <label htmlFor="" style={{color:'#fff','margin-right':'10px'}}>Year:</label>
                 <select name="" id="yearSelected" style={{background:"#fff", color:'#000'}} onChange={filterFunc}>
                   <option value="all">All</option>
-                  {listings.map((product, index) => {
-                    return (
-                      <option key={index} value={product.year}>{product.year}</option>
-                    );
-                  })}
-                </select>
+                  {       Array.from(new Set(listings.map(product => Number(product.year)))).sort((a, b) => b - a)
+    .map((year, index) => {
+      return (
+        <option key={index} value={year}>{year}</option>
+      );
+    })
+  }
+</select>
                 <div style={{margin:'10px', display:'inline', color:'#fff'}}>|</div>
                 <label htmlFor="" style={{color:'#fff','margin-right':'10px'}}>Make:</label>
                 <select name="" id="makeSelected" style={{background:"#fff", color:'#000'}} onChange={filterFunc}>
                   <option value="all">All</option>
-                  {listings.map((product, index) => {
-                    return (
-                      <option key={index} value={product.make}>{product.make}</option>
-                    );
-                  })}
-                </select>
+                  {    Array.from(new Set(listings.map(product => product.make)))
+    .map((make, index) => {
+      return (
+        <option key={index} value={make}>{make}</option>
+      );
+         })
+              }
+            </select>
               </div>
             </div>
 

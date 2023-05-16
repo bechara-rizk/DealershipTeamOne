@@ -63,5 +63,7 @@
   }
 
 .compareCar{
-  background-color: #383636;
+  background-image: url('/images/big1.jpg');
+  background-position: center center;
+  background-size: cover;
 }
