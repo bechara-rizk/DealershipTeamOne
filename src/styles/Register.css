@@ -10,5 +10,12 @@
   .password-suggestion-strong {
     color: green;
   }
+
+  .homepageLogo{
+    /* width: 100%; */
+    height: 80%;
+    margin: 0 auto 0 auto; ;
+    /* margin-top: 10%; */
+  }
   
  

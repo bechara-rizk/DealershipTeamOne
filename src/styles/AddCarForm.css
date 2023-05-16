@@ -129,13 +129,13 @@ padding-top: 60px;
  
   
   .icon {
-    font-size: 32px; /* Adjust the size as desired */
+    font-size: 32px; 
   }
   
   .text {
     position: absolute;
-    top: 70%;
-    left: 70%;
+    top: 80%;
+    left: 82%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
     opacity: 0;

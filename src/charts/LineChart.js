@@ -42,7 +42,7 @@ export const data = {
           fill: false,
           data: ['60',"72","55","85","75"],
           
-          borderColor: 'black', 
+          borderColor: '#454545', 
           
           borderWidth: 5
           
@@ -61,7 +61,7 @@ export const data = {
 const LineChart = () => {
   return (
     <div className="chart">
-      <h2 style={{color: 'black'}}>Sales Statistics</h2>
+      <h2 style={{color: '#454545'}}>Sales Statistics</h2>
       <Line options={options} data={data}/>
     </div>
   )
