@@ -54,21 +54,20 @@ function ProductsPage() {
   const [scheduledTestDrives, setScheduledTestDrives] = useState([]);
   const [scheduledTestDrivesCounter, setScheduledTestDrivesCounter] = useState(0);
   const [selectedDate, setSelectedDate] = useState(null);
-  const [SearchTerms, setSearchTerms] = useState("")
-
+  const [searchTerm, setSearchTerm] = useState('');
+   
+    const handleSearch = (term) => {
+      setSearchTerm(term.toLowerCase());
+    };
+     
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!selectedDate) {
       alert('Please select a date.');
       return;
     }
-    const scheduledDate = selectedDate.toISOString().slice(0, 10);
-    // Check if selected time slot is already scheduled
-    if (scheduledTestDrives.some(testDrive => testDrive.time === selectedTime && testDrive.date === scheduledDate)) {
-      alert('Selected time slot is already scheduled. Please choose a different time slot.');
-      return;
-    }
-    
+
+  
 
     
     // log(e.target.elements);
@@ -146,17 +145,26 @@ function ProductsPage() {
     // document.getElementById('newCarsFiltered').innerHTML=<Row gutter={[16, 16]}>{renderCards}</Row>
     return renderCards;
   }
-  const renderCards = listings2.map((product, index) => {
+  const renderCards = listings.filter((product) => {
+    if (searchTerm === '') {
+      return true;
+    }
+    return (
+      product.make.toLowerCase().includes(searchTerm) ||
+      product.model.toLowerCase().includes(searchTerm)
+    );
+  }).map((product, index) => {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
-        <Card
+         <Card
           hoverable={true}
+          className='card'
           cover={
-              <img
-                src={images[product.VIN]}
-                alt=""
-                style={{ width: 'auto', maxHeight: '150px', maxWidth:'240px', 'margin':'1px auto 0px auto'}}
-              />
+            <img
+              src={images[product.VIN]}
+              alt=""
+              style={{ width: '100%',height:"200px", objectFit: 'contain' }}
+            />
             
           }
         >
@@ -194,11 +202,11 @@ function ProductsPage() {
               {/*Search Section*/}
               <div
                 className="SearchProdductPage"
-                style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}
+                style={{ display: 'flex', justifyContent: 'flex-end', margin: '2rem auto', marginleft:'1rem'}}
               >
-                <SearchFeature
+                <SearchFeature onSearch={handleSearch} />
+
                 
-                />
               </div>
             </div>
             <div style={{display:'flex'}}>
