@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SearchFeature from '../../components/SearchFeature';
+import SearchFeature from '@/components/SearchFeature';
 import { Col, Card, Row, Select } from 'antd';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';

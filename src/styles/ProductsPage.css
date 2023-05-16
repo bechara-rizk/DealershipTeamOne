@@ -1,11 +1,13 @@
-.Dashboardproducts{
-  margin-left: 20%;
+.Dashboardproducts {
+  padding-left: 20%;
   height: 100%;
-padding-top: 60px;
-
-  
- 
+  padding-top: 60px;
 }
+  
+.card {
+  margin: 20px; /* Adjust as needed */
+}
+
 .Productheader{
   padding-top: 10%;
     font-size:50px;
@@ -161,6 +163,12 @@ background-color: black;
 
   .Search{
     background-color: #232323;
+  }
+  .searchbrstyle{
+    height: 50px;  /* adjust as per your requirement */
+    font-size: 20px;  /* adjust as per your requirement */
+    color: black;
+
   }
 
 /*FILTER FUNCTION COLLAPSIBLE BUTTON */
