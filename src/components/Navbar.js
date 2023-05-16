@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import UserProfile from "./UserProfile";
+import UserProfile from "../pages/auth/UserProfile";
 
 const Navbar = () => {
 return (

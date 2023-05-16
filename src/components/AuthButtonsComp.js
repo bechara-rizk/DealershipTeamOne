@@ -1,6 +1,6 @@
 import { auth } from '../../firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
-import UserProfile from './UserProfile';
+import UserProfile from '../pages/auth/UserProfile';
 
 const AuthButtons = () => {
   const [user, loading] = useAuthState(auth);
