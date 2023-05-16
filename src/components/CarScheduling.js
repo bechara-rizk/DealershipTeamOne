@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function CarSchedulePage() {
   const [selectedCar, setSelectedCar] = useState(null);
   const [car1Times, setCar1Times] = useState([]);
   const [car2Times, setCar2Times] = useState([]);
-
+  const [startDate, setStartDate] = useState(new Date());
 
   const handleCarSelection = (carNum) => {
     setSelectedCar(carNum);
@@ -36,7 +37,7 @@ function CarSchedulePage() {
 
     return (
       <div className="time-selector">
-        {availableTimes.map((time) => (
+        {selectedCar && startDate && availableTimes.map((time) => (
           <button
             key={time}
             onClick={() => handleTimeClick(time)}
@@ -55,6 +56,7 @@ function CarSchedulePage() {
       </div>
     );
   };
+
   const CarSelector = () => {
     const handleCarClick = (carNum) => {
       handleCarSelection(carNum);
@@ -63,20 +65,40 @@ function CarSchedulePage() {
     return (
       <div className="car-selector">
         <p className='whichcar'>Select a car:</p>
-        <button onClick={() => handleCarClick(1)}>Audi A4</button>
-        <button onClick={() => handleCarClick(2)}>BMW 4 series</button>
+        <button  style={{ backgroundColor: '#454545', color: '#fff' }} onClick={() => handleCarClick(1)}>Audi A4</button>
+        <button style={{ backgroundColor: '#454545', color: '#fff' }}className='buttoncarschedule' onClick={() => handleCarClick(2)}>BMW 4 series</button>
       </div>
     );
   };
 
+  const DateSelector = () => {
+    const isWeekday = date => {
+      const day = date.getDay(date);
+      return day !== 0 ;
+    };
 
+    return (
+      <div className="date-selector">
+        <p>Select a date:</p>
+        <DatePicker 
+          selected={startDate} 
+          className="datepicker-input"
+          onChange={date => setStartDate(date)} 
+          minDate={new Date()} 
+          maxDate={new Date().setDate(new Date().getDate() + 7)} 
+          filterDate={isWeekday} 
+          dateFormat="MMMM d, yyyy"
+        />
+      </div>
+    );
+  };
 
-  const SelectedTimes = () => {
+  function SelectedTimes() {
     const selectedTimes = selectedCar === 1 ? car1Times : car2Times;
 
     return (
       <div className="selected-times">
-        <p className='AvTime'>{selectedCar === 1 ? 'Audi A4' : 'BMW 4 series'} Available time:</p>
+        <p className='AvTime'>{selectedCar === 1        ? 'Audi A4' : 'BMW 4 series'} Available time:</p>
         {selectedTimes.length === 0 ? (
           <p>No times selected</p>
         ) : (
@@ -88,7 +110,7 @@ function CarSchedulePage() {
         )}
       </div>
     );
-  };
+  }
 
   const handleSaveChanges = () => {
     alert(
@@ -102,14 +124,14 @@ function CarSchedulePage() {
   return (
     <div className="car-schedule-page">
       <h1>Car Schedule</h1>
-      <CarSelector />
+      <DateSelector />
+      {startDate && <CarSelector />}
       {selectedCar !== null && (
         <>
           <p className='whichcar'> {selectedCar === 1 ? 'Audi A4' : 'BMW 4 series'}</p>
-
           <TimeSelector />
           <SelectedTimes />
-          <button name="SaveChanges" onClick={handleSaveChanges}>Save Changes</button>
+          <button style={{ backgroundColor: '#454545', color: '#fff' }} name="SaveChanges" onClick={handleSaveChanges}>Save Changes</button>
         </>
       )}
     </div>
@@ -117,3 +139,4 @@ function CarSchedulePage() {
 }
 
 export default CarSchedulePage;
+

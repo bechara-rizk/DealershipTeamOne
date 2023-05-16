@@ -94,6 +94,9 @@
   .selected-times li {
     margin: 5px 0;
   }
+  .datepicker-input {
+    color: black;
+  }
   
   button {
     margin: 10px;
@@ -104,6 +107,10 @@
     color: #fff;
     cursor: pointer;
     transition: background-color 0.2s ease;
+  }
+  .buttoncarschedule{
+    background-color: #454545;
+
   }
   
   button:hover {
