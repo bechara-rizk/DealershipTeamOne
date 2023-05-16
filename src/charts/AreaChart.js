@@ -53,8 +53,8 @@ export const data = {
             fill: true,
             label: 'Customers',
             data: [20, 35, 25, 48, 62, 54, 72],
-            borderColor: 'black', // trendline color
-            backgroundColor: 'rgba(128, 128, 128, 0.2)', // grey area
+            borderColor: '#454545', 
+            backgroundColor: 'rgba(128, 128, 128, 0.2)', 
         },
     ],
 };
@@ -63,7 +63,7 @@ export const data = {
 const AreaChart = () => {
     return (
         <div className='chart'>
-            <h2 style={{color: 'black'}}>Customers</h2>
+            <h2 style={{color: '#454545'}}>Customers</h2>
             <Line options={options} data={data} />
         </div>
     )
