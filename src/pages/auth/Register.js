@@ -169,14 +169,17 @@ const getPasswordSuggestions = () => {
     <div className="Login-Reg">
       <>
         <div className="LoginContainer">
-          <div className="authButtons">
-            <img src="/images/logo.jpg" alt="logo" className="homepageLogo" />
-          </div>
+        <div className="authButtons" >
+          <img src="/images/logo.jpg" alt="logo" className="homepageLogo" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
+        </div>
           <Navbar />
         </div>
         <div className="LoginRegwrapper">
   <div className="auth-form-container">
     <form className="regform" onSubmit={handleSubmit}>
+      <h2></h2>
+      <h2></h2>
+      <h2></h2>
       <h2> Sign-Up </h2>
 
       <input className="Inputs" value={Name} onChange={(e) => setName(e.target.value)} type='Name' placeholder="Name" id="Name" name="Name" />
@@ -192,17 +195,14 @@ const getPasswordSuggestions = () => {
       
       <input className="Inputs" value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder="mail@example.com" id="email" name="email" />
       <input className="Inputs" value={Number} onChange={(e) => setNum(e.target.value)} type='Number' placeholder="+961 " id="Number" name="Number" />
-      
+    
       <button className="Submitbutton" type="submit" onClick={handleSubmit}>Sign Up</button>
-
       <button className="togglebutton" onClick={() => toggleForm()}>
         Already have an account? Log in here.
       </button>
     </form>
   </div>
 </div>
-
-        
        </>
    </div>
  );
