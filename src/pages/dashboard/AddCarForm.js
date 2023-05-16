@@ -17,6 +17,13 @@ const AddCarForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (vin && make && model && year && mileage && price && color && picture) {
+      // If they have, go ahead and add the car
+      addCar();
+    } else {
+      // If not, show an alert to the user
+      alert("Please fill out all fields before submitting.");
+    }
     // Handle form submission here
   }
 
@@ -128,9 +135,10 @@ const AddCarForm = () => {
           accept="image/*"
           onChange={handlePictureChange} />
       </label>
-      <button className="submit-button" onClick={(event) => addCar()} type="submit">
+      <button className="submit-button" type="submit">
         Add Car
-      </button>
+     </button>
+
     </form></div></div>
  </>
   );
