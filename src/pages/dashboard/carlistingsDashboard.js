@@ -4,17 +4,15 @@ import { Col, Card, Row, Input, Button, Form, Modal } from 'antd';
 import DashboardNavbar from '@/components/DashboardNavbar';
 import Sidebar from '@/components/Sidebars';
 import { firestore, storage } from '../../../firebaseConfig';
-import { collection, query, where, getDocs, doc, updateDoc } from "firebase/firestore";
-import { ref, listAll, getDownloadURL } from "firebase/storage";
+import { collection, query, where, getDocs, doc, updateDoc, addDoc, deleteDoc } from "firebase/firestore";
+import { ref, listAll, getDownloadURL, uploadBytes } from "firebase/storage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { PushpinOutlined } from '@ant-design/icons';
 import { FaPlusCircle } from 'react-icons/fa';
 import { Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import { uploadBytes } from "firebase/storage";
 import { FaTrash } from 'react-icons/fa';
-import { deleteDoc } from "firebase/firestore";
 
 
 const { Meta } = Card;
@@ -80,10 +78,25 @@ function ProductsPage() {
 
   };
 
-  const handleSold = async (carId) => {
+  const handleSold = async (car) => {
     try {
-      const carRef = doc(firestore, "listings", carId);
+      let db = firestore
+      const colCarRef = collection(db, "listings")
+      const carRef = doc(colCarRef, car.VIN);
+      const colSaleRef = collection(db, "sales")
       await updateDoc(carRef, { sold: true });
+      await addDoc(colSaleRef, {
+        carInfo: {
+          VIN: car.VIN,
+          make: car.make,
+          model: car.model,
+          mileage: car.mileage,
+          year: car.year,
+          color: car.color
+        },
+        price: car.price,
+        date: new Date()
+      })
       console.log("Car marked as sold!");
 
       const newCollectionData = await fetchCollectionData();
@@ -101,19 +114,14 @@ function ProductsPage() {
     if (!editedCarData || !editedCarData.id) {
       return;
     }
-
     if (selectedFile) {
-      const storageRef = ref(storage, `images/${selectedFile.name}`);
-      await uploadBytes(storageRef, selectedFile);
-      const downloadURL = await getDownloadURL(storageRef);
-
-      updatedCarData.picture = downloadURL;
-      updatedCarData.VIN = selectedFile.name.slice(0, -4);
-    } else {
-      updatedCarData.picture = editedCarData.picture;
+      const str = storage
+      const imageRef = ref(str, 'images/' + editedCar.VIN + selectedFile.name.slice(-4));
+      await uploadBytes(imageRef, selectedFile)
     }
 
     const carRef = doc(firestore, "listings", editedCarData.id);
+    delete updatedCarData.picture
     await updateDoc(carRef, updatedCarData);
 
 
@@ -181,7 +189,7 @@ function ProductsPage() {
               src="/images/sold-out.png"
               alt="Icon"
               style={{ width: '8vh', height: '8vh', position: 'absolute', top: 0, left: 0 }}
-              onClick={() => handleSold(product.id)}
+              onClick={() => handleSold(product)}
             />
             <h3 style={{ margin: 0, marginBottom: 8 }}>
 
@@ -275,7 +283,7 @@ function ProductsPage() {
     <>
       <DashboardNavbar />
       <Sidebar />
-      <div className="Dashboardproducts">
+      <div className="Dashboardproducts">handleEditSubmit
         <div className="headercontainer" style={{ textAlign: 'center' }}></div>
 
         <div style={{ width: '100%' }}>

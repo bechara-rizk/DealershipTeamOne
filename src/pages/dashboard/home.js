@@ -1,9 +1,3 @@
-// import Link from 'next/link';
-// import React from 'react';
-// import Sidebar from '@/components/Sidebars';
-// import DashboardNavbar from '@/components/DashboardNavbar';
-// //import extraImage from '@/components/Extraimage';
-
 import Link from 'next/link';
 import React from 'react';
 import Sidebar from '@/components/Sidebars';
