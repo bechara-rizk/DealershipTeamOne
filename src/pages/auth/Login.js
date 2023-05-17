@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import { auth } from '../../../firebase';
+import { auth } from '../../../firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'next/router';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -46,50 +46,50 @@ export const Login = (props) => {
     router.push('/auth/Register');
   };
   return (
-    
+
     <div className="Login-Reg">
       <div className="LoginHeader">
-      <img src='/images/logo.jpg' alt='logo' className='LoginLogo'/>
-      <Navbar />
+        <img src='/images/logo.jpg' alt='logo' className='LoginLogo' />
+        <Navbar />
       </div>
-        <div className="LoginRegwrapper">
-          <div className="auth-form-container">
-           
-            <form className="loginform" onSubmit={handleSubmit}>
-              
+      <div className="LoginRegwrapper">
+        <div className="auth-form-container">
+
+          <form className="loginform" onSubmit={handleSubmit}>
+
             <h2> Login </h2>
-              <input className="Inputs"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                type="text"
-                placeholder="Email"
-                id="username"
-                name="username"
-              />
-              <input className="Inputs"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-                placeholder="Password"
-                id="password"
-                name="password"
-              />
-              <ReCAPTCHA
-                sitekey="6LfkQdclAAAAANwmYDcPupslwLU3cvuadhc8oC9x"
-                onChange={onChange}
-              />,
+            <input className="Inputs"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              type="text"
+              placeholder="Email"
+              id="username"
+              name="username"
+            />
+            <input className="Inputs"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+              id="password"
+              name="password"
+            />
+            <ReCAPTCHA
+              sitekey="6LfkQdclAAAAANwmYDcPupslwLU3cvuadhc8oC9x"
+              onChange={onChange}
+            />,
             <button className="Submitbutton" type="submit">Login</button>
             <button className="togglebutton" onClick={() => toggleForm()}>Don't have an account? Sign up here.</button>
-            
-            </form>
-            {error && <div className="error">{error}</div>}
-            </div>
-          </div>
-      
+
+          </form>
+          {error && <div className="error">{error}</div>}
+        </div>
+      </div>
+
     </div>
-    
-    
-    
+
+
+
   );
 };
 export default Login;
