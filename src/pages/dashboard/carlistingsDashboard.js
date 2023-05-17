@@ -17,8 +17,6 @@ import { FaTrash } from 'react-icons/fa';
 import { deleteDoc } from "firebase/firestore";
 
 
-
-
 const { Meta } = Card;
 
 const fetchCollectionData = async () => {
@@ -57,7 +55,7 @@ function ProductsPage() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
-
+ 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,7 +77,26 @@ function ProductsPage() {
     setEditMode(true);
     setEditedCar(car);
     setEditedCarData(car);
+    
   };
+
+  const handleSold = async (carId) => {
+    try {
+      const carRef = doc(firestore, "listings", carId);
+      await updateDoc(carRef, { sold: true });
+      console.log("Car marked as sold!");
+  
+      const newCollectionData = await fetchCollectionData();
+      setListings(newCollectionData);
+  
+      const newStorageData = await fetchStorageData();
+      setImages(newStorageData);
+    } catch (error) {
+      console.error("Error marking car as sold:", error);
+    }
+  };
+  
+
   const handleEditSubmit = async (updatedCarData) => {
     if (!editedCarData || !editedCarData.id) {
       return;
@@ -149,6 +166,7 @@ function ProductsPage() {
     return (
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
+        
           hoverable={true}
           className='card'
           cover={
@@ -159,11 +177,17 @@ function ProductsPage() {
             />
           }
         >
+           <img
+        src="/images/sold-out.png"
+        alt="Icon"
+        style={{ width: '8vh', height: '8vh', position: 'absolute', top: 0, left: 0 }}
+        onClick={() => handleSold(product.id)}
+      />
           <h3 style={{ margin: 0, marginBottom: 8 }}>
            
           {product.make}
             <FontAwesomeIcon
-              color="#232323"
+              color="#454545"
               icon={faPen}
               className="edit-icon"
               style={{ marginLeft: '10px', color: 'black', cursor: 'pointer' }}
@@ -180,8 +204,9 @@ function ProductsPage() {
           <p style={{ margin: 0, color: '#8C8C8C' }}>Year: {product.year}</p>
           <p style={{ margin: 0, color: '#8C8C8C' }}>Color: {product.color}</p>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '8vh' }}>
-  <FaTrash size={24} color="#232323" onClick={() =>  handleDelete(product.id)} />
-</div>
+          
+            <FaTrash size={24} color="#454545" onClick={() =>  handleDelete(product.id)} />
+          </div>
 
         </Card>
       </Col>

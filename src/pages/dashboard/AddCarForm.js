@@ -5,7 +5,10 @@ import { ref, uploadBytes } from "firebase/storage";
 import Sidebar from '@/components/Sidebars';
 import DashboardNavbar from '@/components/DashboardNavbar';
 
+
 const AddCarForm = () => {
+ 
+
   const [vin, setVin] = useState('');
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
@@ -15,17 +18,42 @@ const AddCarForm = () => {
   const [color, setColor] = useState('');
   const [picture, setPicture] = useState(null);
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (vin && make && model && year && mileage && price && color && picture) {
-      // If they have, go ahead and add the car
-      addCar();
-    } else {
-      // If not, show an alert to the user
+    const yearInt = parseInt(year, 10);
+    const priceInt = parseInt(price, 10);
+    const mileageInt = parseInt(mileage, 10);
+  
+    if (!vin || !make || !model || !color || !picture) {
       alert("Please fill out all fields before submitting.");
+    } else if (isNaN(yearInt) || !year.match(/^\d{4}$/)) {
+      alert("Please enter a valid 4-digit year before submitting.");
+    } else if (isNaN(priceInt) || (priceInt % 1 !== 0)) {
+      alert("Please enter a valid whole number price before submitting.");
+    } else if (isNaN(mileageInt) || (mileageInt % 1 !== 0)) {
+      alert("Please enter a valid whole number mileage before submitting.");
+    } else {
+      try {
+        await addCar();
+        setVin('');
+        setMake('');
+        setModel('');
+        setYear('');
+        setMileage('');
+        setPrice('');
+        setColor('');
+        setPicture(null);
+        
+       
+      } catch (e) {
+        console.log(e);
+      }
     }
-    // Handle form submission here
-  }
+  };
+
+  
+ 
 
   const handlePictureChange = (e) => {
     setPicture(e.target.files[0]);
