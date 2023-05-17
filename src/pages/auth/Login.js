@@ -9,35 +9,42 @@ import ReCAPTCHA from "react-google-recaptcha";
 export const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [recaptchaValue, setRecaptchaValue] = useState(null); // <-- Add this line
   const router = useRouter();
 
   const [error, setError] = useState("");
 
-  const onChange = (value) => {};
+  const onChange = (value) => {
+    setRecaptchaValue(value); // <-- Add this line
+  };
+
   const handleSubmit = async (e) => {
-     e.preventDefault();
-     try {
-    await signInWithEmailAndPassword(auth, username, password)
-     router.push('/home/homescreen')
-   } catch (e) {
-    console.log(e)
-     const errorCode = e.code;
-    const errorMessage = e.message;
-    if (errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found') {
-     setError('Incorrect username or password');
-    
+    e.preventDefault();
+
+    // Check recaptchaValue before signing in
+    if (!recaptchaValue) {
+      setError('Please verify the reCAPTCHA.');
+      return;
     }
-    else{
-      setError('Invalid Input!');
+
+    try {
+      await signInWithEmailAndPassword(auth, username, password);
+      router.push('/home/homescreen');
+    } catch (e) {
+      console.log(e);
+      const errorCode = e.code;
+      const errorMessage = e.message;
+      if (errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found') {
+        setError('Incorrect username or password');
+      } else {
+        setError('Invalid Input!');
+      }
     }
-     }
-     };
-    
+  };
 
   const toggleForm = () => {
-      router.push('/auth/Register')
-    };
-
+    router.push('/auth/Register');
+  };
   return (
     
     <div className="Login-Reg">
