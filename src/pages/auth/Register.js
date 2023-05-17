@@ -91,6 +91,7 @@ import {
 } from "firebase/firestore";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
+import AuthButtons from "@/components/AuthButtonsComp";
 
 export const Register = (props) => {
   const [username, setUsername] = useState("");
@@ -169,17 +170,17 @@ const getPasswordSuggestions = () => {
     <div className="Login-Reg">
       <>
         <div className="LoginContainer">
-        <div className="authButtons" >
-          <img src="/images/logo.jpg" alt="logo" className="homepageLogo" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
-        </div>
+        <AuthButtons/>
           <Navbar />
         </div>
         <div className="LoginRegwrapper">
   <div className="auth-form-container">
     <form className="regform" onSubmit={handleSubmit}>
-      <h2></h2>
-      <h2></h2>
-      <h2></h2>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <h2> Sign-Up </h2>
 
       <input className="Inputs" value={Name} onChange={(e) => setName(e.target.value)} type='Name' placeholder="Name" id="Name" name="Name" />
