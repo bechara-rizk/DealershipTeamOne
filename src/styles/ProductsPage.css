@@ -5,17 +5,16 @@
 }
   
 .card {
-  margin: 20px; /* Adjust as needed */
+  margin: 20px; 
 }
 
 .Productheader{
   padding-top: 10%;
-    font-size:50px;
-    font-family: 'Segoe UI', 'Helvetica Neue', Arial,
-    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
-    align-items: center;
-    
+  font-size:50px;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial,
+  'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+  'Noto Color Emoji';
+  align-items: center;
 }
 
 .lists{
@@ -23,12 +22,10 @@
   background-position: center center;
   background-size: cover;
 }
+
 .ProdHead{
- 
-background-color: black; 
+  background-color: black; 
 }
-
-
 
 .ProdPLogo{
   display: block;
@@ -36,144 +33,141 @@ background-color: black;
   margin-right: auto;
   width: 177px;
 }
-.ant-input{
-    margin-top: 11.75px;
-}
 
+.ant-input{
+  margin-top: 11.75px;
+}
 
 .ProductsPageCont{
   background-color: #232323;
 }
+
 .homepageLogo{
-    /* width: 100%; */
-    height: 80%;
-    margin: 0 auto 0 auto; ;
-    /* margin-top: 10%; */
-  }
-  
-  /* for thr dropdown menu for login/ sign up */
-  
-  .dropdown {
-    float: left;
-    overflow: hidden;
-    margin-bottom:100px;
-  }
-  .edit-icon {
-    color: black;
-  }
-  .dropbtnProdPage {
-    font-size: 1rem;  
-    border: none;
-    outline: none;
-    color: white;
-    background-color: transparent;
-    font-family: Poppins;
-    margin: inherit;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-bottom: 120px;
-    margin-right: 40px;
-  }
-  
-  .dropdown-content-ProdPage {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: white;
-    min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
-  }
-  
-  .dropdown-content-ProdPage a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  
-  .dropdown:hover .dropdown-content-ProdPage {
-    display: block;
-    margin-top: -140px;
-    font-family: 'Poppins';
-  }
-  
-  .arrowLogin {
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 4px;
-  }
-  .date-picker-container {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    width:5rem;
-    font-size: 16px;
-    
- 
-  }
-  myInput{
-    width: 200px;
-    
-  }
-  .pleasebeblack2{
-    color: #000;
-    font-size: 16px;
-    margin-bottom: 25px;
-    margin-left: 100px;
-    max-width: max-content;}
+  height: 80%;
+  margin: 0 auto;
+}
 
-    .pleasebeblack3{
-      color: #000;
-      font-size: 16px;
-      margin-bottom: 25px;
-      margin-left: 85px;
-    
-  }
-  .date-picker-container .testDriveLabel {
-    margin-right: 0px; /* adjust as needed */
-    width:100%;
-    margin-left: 5px;
+.dropdown {
+  float: left;
+  overflow: hidden;
+  margin-bottom:100px;
+}
 
-  }
-  .testDriveLabel{
-    margin-left: 2.5px;
-  }
-  .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-  .dropdown-content-ProdPage a:hover {
-    background-color: #ddd;
+.edit-icon {
+  color: black;
+}
 
-  }
-  
+.dropbtnProdPage {
+  font-size: 1rem;  
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  font-family: Poppins;
+  margin: inherit;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 120px;
+  margin-right: 40px;
+}
 
-  .testb{
-    margin-right: 200px;
-    width: 6px; 
-    height: 40px; 
-    padding: 8px;
-  
-    font-size: 14px;
-  }
+.dropdown-content-ProdPage {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
 
-  .Search{
-    background-color: #232323;
-  }
-  .searchbrstyle{
-    height: 50px;  /* adjust as per your requirement */
-    font-size: 20px;  /* adjust as per your requirement */
-    color: black;
+.dropdown-content-ProdPage a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
 
-  }
+.dropdown:hover .dropdown-content-ProdPage {
+  display: block;
+  margin-top: -140px;
+  font-family: 'Poppins';
+}
 
-/*FILTER FUNCTION COLLAPSIBLE BUTTON */
+.arrowLogin {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+}
+
+.date-picker-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  width:5rem;
+  font-size: 16px;
+}
+
+myInput{
+  width: 200px;
+}
+
+.pleasebeblack2{
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 25px;
+  margin-left: 100px;
+  max-width: max-content;
+}
+
+.pleasebeblack3{
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 25px;
+  margin-left: 85px;
+}
+
+.date-picker-container .testDriveLabel {
+  margin-right: 0px;
+  width:100%;
+  margin-left: 5px;
+}
+
+.testDriveLabel{
+  margin-left: 2.5px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.dropdown-content-ProdPage a:hover {
+  background-color: #ddd;
+}
+
+.testb{
+  margin-right: 200px;
+  width: 6px; 
+  height: 40px; 
+  padding: 8px;
+  font-size: 14px;
+}
+
+.Search{
+  background-color: #232323;
+}
+
+.searchbrstyle{
+  height: 50px;  
+  font-size: 20px;
+  color: black;
+}
+
 .filter collapsible {
   background-color: black;
   color: white;
@@ -209,4 +203,67 @@ background-color: black;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
 }
- 
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .Dashboardproducts {
+    padding-left: 5%;
+    padding-top: 20px;
+  }
+
+  .Productheader {
+    font-size: 30px;
+    padding-top: 5%;
+  }
+
+  .dropdown {
+    margin-bottom: 50px;
+  }
+
+  .dropbtnProdPage {
+    margin-right: 10px;
+  }
+
+  .dropdown-content-ProdPage {
+    min-width: 80px;
+  }
+
+  .date-picker-container {
+    width: 4rem;
+    font-size: 12px;
+  }
+
+  myInput {
+    width: 150px;
+  }
+
+  .pleasebeblack2, .pleasebeblack3 {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+
+  .testb {
+    margin-right: 20px;
+    width: 3px;
+    height: 20px;
+    padding: 4px;
+    font-size: 10px;
+  }
+
+  .searchbrstyle {
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .filter collapsible {
+    padding: 10px;
+    width: 100%;
+  }
+  .Dashboardproducts {
+    padding-left: 40%;
+    height: 50%;
+    width: 50%;
+    padding-top: 60px;
+  }
+    
+}
