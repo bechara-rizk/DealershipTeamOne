@@ -74,7 +74,7 @@ const AddCarForm = () => {
     let colRef = collection(db, "listings")
     await addDoc(colRef, data)
     const str = storage
-    const imageRef = ref(str, 'images/' + picture.name);
+    const imageRef = ref(str, 'images/' + vin + picture.name.slice(picture.name.length - 4));
     await uploadBytes(imageRef, picture)
   }
 
