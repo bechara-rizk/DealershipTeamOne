@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import SearchFeature from '@/components/SearchFeature';
-import { Col, Card, Row, Select } from 'antd';
+import { Col, Card, Row, Select, Input } from 'antd';
+
+import { Modal, Form, InputNumber, Button } from 'antd';
+
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import TestScheduling from '@/components/testScheduling';
@@ -56,6 +59,25 @@ function ProductsPage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredListings, setFilteredListings] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+const [carSpecs, setCarSpecs] = useState({make: '', model: '', mileage: '', price: ''});
+const showModal = () => {
+  setIsModalVisible(true);
+};
+
+const handleOk = () => {
+  setIsModalVisible(false);
+};
+
+const handleCancel = () => {
+  setIsModalVisible(false);
+};
+
+const handleFormSubmit = (values) => {
+  setCarSpecs(values);
+  setIsModalVisible(false);
+};
+
   const mileageToNumber = mileage => {
     if (!mileage) return null;
     if (typeof mileage !== 'string') mileage = mileage.toString();
@@ -205,6 +227,28 @@ function ProductsPage() {
 
                 
               </div>
+              <Button style={{backgroundColor:'black'}} type="primary" onClick={showModal}>Can't Find the car you want ?</Button>
+              <Modal title="Notify when available" open={isModalVisible} onOk={handleOk} onCancel={handleCancel}  footer={null} width={'350px'}>
+  <Form onFinish={handleFormSubmit}>
+    <Form.Item label="Make" name="make">
+      <Input placeholder="Enter car make" />
+    </Form.Item>
+    <Form.Item label="Model" name="model">
+      <Input placeholder="Enter car model" />
+    </Form.Item>
+    <Form.Item label="Mileage" name="mileage">
+      <InputNumber placeholder="Enter mileage" />
+    </Form.Item>
+    <Form.Item label="Price" name="price">
+      <InputNumber placeholder="Enter price" />
+    </Form.Item>
+    <Form.Item>
+      <Button style={{backgroundColor:'black'}}  type="primary" htmlType="submit">Submit</Button>
+    </Form.Item>
+  </Form>
+</Modal>
+
+
             </div>
             <div style={{display:'flex'}}>
               <div style={{margin:'auto'}}>
