@@ -64,3 +64,43 @@ padding-top: 60px;}
   font-weight: normal; /* Remove the bold style */
   text-decoration: underline; /* Add an underline */
 }
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  height: 25px;
+  width: 50%;
+  border: 1px solid #706d6d;
+  padding: 5px 10px;
+  background-color: rgba(227, 224, 224, 0.74);
+  margin-bottom: 10px;
+  transition: border-width 0.2s ease-in-out; }
+
+.search-container:focus-within {
+  border-width: 2px; 
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  color: #454545;
+}
+
+.search-container input:focus {
+  outline: none;
+}
+
+.search-container seaech-icon {
+  border: none;
+  background-color: transparent;
+  color: #454545;
+  border-radius: 45%;
+  width: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
