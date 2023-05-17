@@ -125,7 +125,7 @@ function TestDriveScheduler() {
             <ul>
               {scheduledTestDrives.map((testDrive, index) => (
                 <li key={index} style={{ borderBottom: '1px solid #000', marginBottom: '10px', paddingBottom: '10px' }}>
-                  Test Drive Request for Car: {testDrive.car}, Time: {testDrive.time}, Date: {testDrive.date} has been scheduled Successfully
+                  Test Drive Request for Car: {testDrive.car}, Time: {testDrive.time}, Date: {testDrive.date} has been Requested Successfully
                 </li>
               ))}
             </ul>
