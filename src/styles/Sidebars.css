@@ -36,7 +36,7 @@
   justify-content: flex-start; /* Align items to the start */
   display: grid;
   grid-template-columns: 2rem 5rem;
-  height: 3rem;
+  height: 2.5rem;
   margin: 0.5rem 0;
   padding-left: 1rem;
   row-gap: 2rem;
@@ -56,7 +56,7 @@
   justify-content: flex-start; /* Align items to the start */
   display: grid;
   grid-template-columns: 2rem 5rem;
-  height: 3rem;
+  height: 2.5rem;
   margin: 0.5rem 0;
   padding-left: 1rem;
   row-gap: 2rem;

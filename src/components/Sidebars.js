@@ -8,6 +8,8 @@ import { BiUser } from 'react-icons/bi';
 import { IoReceiptOutline } from 'react-icons/io5';
 import { FaCar } from 'react-icons/fa';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = () => {
   return (
@@ -23,34 +25,32 @@ const Sidebar = () => {
     <HiOutlineHome className="menu-icon" />
     <span className="menu-text">Home</span>
   </Link>
-
+  <Link href="/home/homescreen" className="item">
+  <FontAwesomeIcon icon={faUser} className="user-icon" />
+    <span className="menu-text">Test as user</span>
+  </Link>
   <Link href="/dashboard/carlistingsDashboard" className="item">
     <FaCar className="car-icon" />
     <span className="menu-text">Car List</span>
-  </Link>
-
-  <Link href="/dashboard/CustomerInfo" className="item">
-  <FaUser className="user-icon" />
-    <span className="menu-text">Customer Info</span>
   </Link>
 
   <Link href="/dashboard/SalesInfoPage" className="item2">
     <IoReceiptOutline className="orders-icon" />
     <span className="menu-text">Sales Information</span>
   </Link>
-
-  <Link href="/dashboard/CarScheduleAccepatnce" className="item2">
+ <div>
+  <Link href="/dashboard/CarSchedule" className="item2">
     <FaCalendarAlt className="TestSchedule-icon" />
     <span className="menu-text">Test Schedule</span>
   </Link>
+  </div>
 
-  <Link href="/dashboard/charts" className="item">
+
+</div>
+          <Link href="/dashboard/charts" className="item">
             <FiBarChart2 className="chart-icon" />
             <span className="menu-text">Charts</span>
           </Link>
-
-</div>
-          
         </div>
 
        
