@@ -34,6 +34,11 @@ const Sidebar = () => {
     <span className="menu-text">Car List</span>
   </Link>
 
+  <Link href="/dashboard/CustomerInfo" className="item">
+  <FaUser className="user-icon" />
+    <span className="menu-text">Customer Info</span>
+  </Link>
+
   <Link href="/dashboard/SalesInfoPage" className="item2">
     <IoReceiptOutline className="orders-icon" />
     <span className="menu-text">Sales Information</span>
