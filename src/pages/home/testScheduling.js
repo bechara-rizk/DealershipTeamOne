@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from '@/components/Navbar';
@@ -9,9 +9,9 @@ import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
 import { auth } from "../../../firebaseConfig";
 
 const fetchCollectionData = async () => {
-  let db = firestore
-  let colRef = collection(db, "listings")
-  let q = query(colRef, where("sold", "==", false))
+  let db = firestore;
+  let colRef = collection(db, "listings");
+  let q = query(colRef, where("sold", "==", false));
   const querySnapshot = await getDocs(q);
   const documents = querySnapshot.docs.map((doc) => doc.data());
   return documents;
@@ -24,11 +24,11 @@ const uploadTestDrive = async (car, date, time, user) => {
     time: time,
     userID: user.uid,
     status: 0
-  }
-  let db = firestore
-  let colRef = collection(db, "testDrives")
-  await addDoc(colRef, data)
-}
+  };
+  let db = firestore;
+  let colRef = collection(db, "testDrives");
+  await addDoc(colRef, data);
+};
 
 function TestDriveScheduler() {
   const [selectedCar, setSelectedCar] = useState('');
@@ -42,7 +42,6 @@ function TestDriveScheduler() {
   useEffect(() => {
     const fetchData = async () => {
       const collectionData = await fetchCollectionData();
-
       setListings(collectionData);
       setLoading(false);
     };
@@ -57,12 +56,14 @@ function TestDriveScheduler() {
       return;
     }
     const scheduledDate = selectedDate.toISOString().slice(0, 10);
+
+    const dateInput = datePickerRef.current;
     if (scheduledTestDrives.some(testDrive => testDrive.time === selectedTime && testDrive.date === scheduledDate)) {
       alert('Selected time slot is already scheduled. Please choose a different time slot.');
       return;
     }
 
-    await uploadTestDrive(selectedCar, scheduledDate, selectedTime, auth.currentUser)
+    await uploadTestDrive(selectedCar, scheduledDate, selectedTime, auth.currentUser);
     const newTestDrive = { car: selectedCar, time: selectedTime, date: scheduledDate };
     setScheduledTestDrives([...scheduledTestDrives, newTestDrive]);
     setSelectedCar('');
@@ -71,9 +72,11 @@ function TestDriveScheduler() {
 
     const scheduleAnother = window.confirm('Would you like to schedule another test drive?');
     if (!scheduleAnother) {
-      e.target.elements.date.value = '';
+      dateInput.value = '';
     }
   };
+
+  const datePickerRef = useRef(null);
 
   const nextDay = new Date();
   nextDay.setDate(nextDay.getDate() + 1);
@@ -84,18 +87,17 @@ function TestDriveScheduler() {
   const maxDateFormatted = maxDate.toISOString().slice(0, 10);
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
-
     <>
       <AuthButtons />
-      <div className="TestSchedulingUser"  >
+      <div className="TestSchedulingUser">
         <Navbar />
         <div className="testDriveContainer">
-          {auth.currentUser ?
-            <div className="testDriveContainer"  >
+          {auth.currentUser ? (
+            <div className="testDriveContainer">
               <div className="testDriveBox">
                 <h1 className="testDriveTitle">Schedule your test drive Now</h1>
                 <p className="testDriveLabel">Select a car and available time slot to schedule a test drive.</p>
@@ -126,6 +128,7 @@ function TestDriveScheduler() {
                       required
                       name='dateclient'
                       disabled={!selectedCar || selectedCar === 'Select-A-TestCar'}
+                      ref={datePickerRef}
                     />
                   </div>
                   <br />
@@ -159,27 +162,27 @@ function TestDriveScheduler() {
                 </form>
                 {scheduledTestDrives.length > 0 && (
                   <div>
-                    <h1 className='testDriveTitle'>Scheduled Test Drives:</h1>
-                    <ul>
-                      {scheduledTestDrives.map((testDrive, index) => (
-                        <li key={index} style={{ borderBottom: '1px solid #000', marginBottom: '10px', paddingBottom: '10px' }}>
-                          Test Drive Request for Car: {testDrive.car}, Time: {testDrive.time}, Date: {testDrive.date} has been Requested Successfully
-                        </li>
-                      ))}
-                    </ul>
+ 
+{scheduledTestDrives.map((testDrive, index) => {
+  console.log('Request sent Successfully');
+  return null; // Return null to avoid rendering any elements on the screen
+})}
+
                   </div>
                 )}
                 {scheduledTestDrivesCounter >= 3 && (
                   <p className="testDriveMessage">You have reached the maximum number of scheduled test drives (3).</p>
                 )}
               </div>
-            </div> :
-            <div className="testDriveContainer"  >
+            </div>
+          ) : (
+            <div className="testDriveContainer">
               <div className="testDriveBox">
                 <h1 className="testDriveTitle">You must login to schedule a test drive</h1>
                 <a href="/auth/Login" className="testDriveTitle">Login Now</a>
               </div>
-            </div>}
+            </div>
+          )}
         </div>
         <Footer />
       </div>
@@ -188,5 +191,3 @@ function TestDriveScheduler() {
 }
 
 export default TestDriveScheduler;
-
-
