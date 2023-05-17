@@ -39,7 +39,7 @@ const Sidebar = () => {
     <span className="menu-text">Sales Information</span>
   </Link>
  <div>
-  <Link href="/dashboard/CarSchedule" className="item2">
+  <Link href="/dashboard/CarScheduleAcceptance" className="item2">
     <FaCalendarAlt className="TestSchedule-icon" />
     <span className="menu-text">Test Schedule</span>
   </Link>
