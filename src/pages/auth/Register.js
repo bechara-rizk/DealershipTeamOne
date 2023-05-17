@@ -35,6 +35,26 @@ export const Register = (props) => {
       return;
     }
 
+    if (!username || !password || !email || !Number || !Name || !LastName) {
+      setError("Please fill in all fields.");
+      return;
+    }
+
+    // Check email format
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email.match(emailPattern)) {
+    setError("Please enter a valid email address.");
+    return;
+  }
+
+  // Check phone number format
+  const phonePattern = /^\d{8}$/;
+
+  if (!Number.match(phonePattern)) {
+    setError("Please enter a valid phone number (XXXXXXXX).");
+    return;
+  }
+
     try {
       let userCredentials = await createUserWithEmailAndPassword(
         auth,
@@ -189,7 +209,7 @@ export const Register = (props) => {
                 value={Number}
                 onChange={(e) => setNum(e.target.value)}
                 type="Number"
-                placeholder="+961 "
+                placeholder="XXXXXXXX"
                 id="Number"
                 name="Number"
               />
