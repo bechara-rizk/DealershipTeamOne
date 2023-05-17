@@ -7,6 +7,7 @@ import { firestore, storage } from '../../../firebaseConfig';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 import AuthButtons from '@/components/AuthButtonsComp';
+import LoadingPage from "@/components/loading";
 
 const fetchCollectionData = async () => {
   let db = firestore
@@ -65,7 +66,7 @@ export default function CompareCar() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingPage/></div>;
   }
   console.log(listings)
   console.log(images)

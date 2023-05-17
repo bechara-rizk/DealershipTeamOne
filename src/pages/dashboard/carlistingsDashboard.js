@@ -13,6 +13,7 @@ import { FaPlusCircle } from 'react-icons/fa';
 import { Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { FaTrash } from 'react-icons/fa';
+import LoadingPage from "@/components/loading";
 
 
 const { Meta } = Card;
@@ -157,7 +158,7 @@ function ProductsPage() {
 
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingPage/></div>;
   }
 
   const renderCards = listings

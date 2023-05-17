@@ -11,6 +11,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import emailjs from '@emailjs/browser';
 import AuthButtons from '@/components/AuthButtonsComp';
+import LoadingPage from "@/components/loading";
 
 
 const { Meta } = Card;
@@ -115,7 +116,7 @@ function ProductsPage() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingPage/></div>;
   }
 
 

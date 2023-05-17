@@ -3,7 +3,7 @@ import Sidebar from '@/components/Sidebars';
 import DashboardNavbar from '@/components/DashboardNavbar';
 import { firestore } from '../../../firebaseConfig';
 import { collection, query, where, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
-
+import LoadingPage from "@/components/loading";
 class slotDate {
   constructor(s){
 
@@ -76,7 +76,7 @@ const CarScheduleAcceptance = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingPage/></div>;
   }
 
   const handleStatusChange = (id, dbID, user, newStatus) => {
