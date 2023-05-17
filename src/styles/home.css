@@ -41,6 +41,7 @@ body {
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: auto;
   }
   
   /* Set the .overlay to position absolute and occupy the entire space */
