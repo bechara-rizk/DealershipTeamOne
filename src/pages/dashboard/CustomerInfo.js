@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebars";
 import DashboardNavbar from "@/components/DashboardNavbar";
 import { getFirestore, collection, getDocs, updateDoc, doc } from "firebase/firestore";
-import { auth } from "../../../firebase";
+import { auth } from "../../../firebaseConfig";
 import { FaSearch } from "react-icons/fa";
 
 const fetchAllUserData = async () => {
@@ -69,7 +69,7 @@ function CustomerInfo() {
       <div className="sales-info-page">
         <h1 className="sales-info-heading">Customer Information</h1>
         <div className="search-container">
-         
+
           <input
             className="search-input"
             type="text"
@@ -77,10 +77,10 @@ function CustomerInfo() {
             value={searchTerm}
             onChange={handleSearchInputChange}
           />
-        <FaSearch className="search-icon" />
+          <FaSearch className="search-icon" />
         </div>
-        
-  
+
+
         <table className="sales-info-table">
           <thead>
             <tr>
@@ -97,7 +97,7 @@ function CustomerInfo() {
                 <td>
                   {editingUser && editingUser.id === user.id ? (
                     <input
-                      style={{ color: "black", width: "100px"}}
+                      style={{ color: "black", width: "100px" }}
                       value={editingUser.firstName}
                       onChange={(event) => handleInputChange(event, "firstName")}
                     />
@@ -119,7 +119,7 @@ function CustomerInfo() {
                 <td>
                   {editingUser && editingUser.id === user.id ? (
                     <input
-                      style={{ color: "black"}}
+                      style={{ color: "black" }}
                       value={editingUser.email}
                       onChange={(event) => handleInputChange(event, "email")}
                     />
@@ -129,7 +129,7 @@ function CustomerInfo() {
                 </td>
                 <td>
                   {editingUser && editingUser.id === user.id ? (
-                    <input 
+                    <input
                       style={{ color: "black", width: "100px" }}
                       value={editingUser.number}
                       onChange={(event) => handleInputChange(event, "number")}
