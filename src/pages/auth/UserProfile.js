@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
-import { auth } from "../../../firebase";
+import { auth } from "../../../firebaseConfig";
 
 const Avatar = ({ onClick }) => {
   return (
@@ -21,9 +21,10 @@ const UserInfoPage = ({ onClose }) => {
     firstName: '',
     lastName: '',
     email: '',
-    number: '',});
+    number: '',
+  });
 
-const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       const db = getFirestore();
@@ -42,7 +43,7 @@ const [isEditing, setIsEditing] = useState(false);
     }
   }, [auth.currentUser]);
 
-  
+
   const handleUserInfoChange = (field, value) => {
     setUserInfo(prevState => ({
       ...prevState,
@@ -80,7 +81,7 @@ const [isEditing, setIsEditing] = useState(false);
               <div className='inputs'>
                 <label htmlFor="firstName" className='Uname'>Name</label>
                 <input id="firstName" type="text" value={userInfo.firstName} onChange={(e) => handleUserInfoChange('firstName', e.target.value)} />
-              </div>              
+              </div>
               <div className='inputs'>
                 <label htmlFor="lastName" className='Uname'>Family</label>
                 <input id="lastName" type="text" value={userInfo.lastName} onChange={(e) => handleUserInfoChange('lastName', e.target.value)} />
@@ -123,7 +124,7 @@ const UserProfile = () => {
 
   return (
     <div className="user-profile">
-      
+
       <Avatar onClick={handleAvatarClick} />
       {isInfoPageOpen && <UserInfoPage onClose={handleInfoPageClose} />}
     </div>
