@@ -104,7 +104,7 @@ export const Register = (props) => {
     if (passwordStrength === 0) {
       return (
         <span style={{ ...passwordStyle, color: "gray" }}>
-          Enter a password
+    
         </span>
       );
     } else if (passwordStrength < 6) {
