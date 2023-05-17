@@ -12,8 +12,9 @@ export default function AdminHome() {
       <div className="overlay">
       <DashboardNavbar />
       <Sidebar />
+    
         </div>
-        <img src="/images/road2.jpg" alt="Image Description" style={{'width':'100%', 'marginLeft':100}}/>
+    
       </div>
       
     </div>
