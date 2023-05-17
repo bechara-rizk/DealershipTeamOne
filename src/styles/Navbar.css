@@ -47,7 +47,10 @@
   margin: 0 max(10px, 3vw) 0 max(10px, 3vw);
 }
 
-
-
-
+@media screen and (max-width:874px){
+  .navbar > ul > li {
+    margin: 0;
+    width: 16.7%;
+  }
+}
  
