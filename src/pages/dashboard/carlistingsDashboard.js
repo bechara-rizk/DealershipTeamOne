@@ -13,6 +13,8 @@ import { FaPlusCircle } from 'react-icons/fa';
 import { Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { FaTrash } from 'react-icons/fa';
+import { auth } from "../../../firebaseConfig";
+import { useRouter } from 'next/router';
 import LoadingPage from "@/components/loading";
 
 
@@ -53,13 +55,17 @@ function ProductsPage() {
   const [editedCarData, setEditedCarData] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-
-
+  const router = useRouter()
 
   useEffect(() => {
     const fetchData = async () => {
       const collectionData = await fetchCollectionData();
       const storageData = await fetchStorageData();
+      const user = auth.currentUser
+
+      if (!user || user.uid !== "1TaE0cpIawWbsbKcJ2cij6uUpmi2") {
+        router.push('/')
+      }
 
       setListings(collectionData);
       setImages(storageData);
@@ -284,7 +290,7 @@ function ProductsPage() {
     <>
       <DashboardNavbar />
       <Sidebar />
-      <div className="Dashboardproducts">handleEditSubmit
+      <div className="Dashboardproducts">
         <div className="headercontainer" style={{ textAlign: 'center' }}></div>
 
         <div style={{ width: '100%' }}>

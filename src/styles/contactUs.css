@@ -76,7 +76,7 @@ text-decoration: none;
   font-size:22px ;
 }
 
-.contact_container .contactInfo .box .text{
+.contact_container .contactInfo .box .textcontact{
   display:flex;
   margin-left: 20px;
   font-size: 16px;
@@ -85,7 +85,7 @@ text-decoration: none;
   
 }
 
-.contact_container .contactInfo .box .text h3{
+.contact_container .contactInfo .box .textcontact h3{
   
 
   color: white;

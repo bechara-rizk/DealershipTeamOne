@@ -37,21 +37,21 @@ const contactUs = () => {
         <div className="contactInfo">
           <div className="box">
             <div className="icon"><FontAwesomeIcon icon={faMapMarkerAlt} /></div>
-            <div className="text">
+            <div className="textcontact">
               <h3>Address</h3>
               <p>Lebanon,<br></br> Beirut</p>
             </div>
           </div>
           <div className="box">
             <div className="icon"><FontAwesomeIcon icon={faPhoneAlt} /></div>
-            <div className="text">
+            <div className="textcontact">
               <h3>Phone</h3>
               <a href="tel:55555555">55 555 555</a>
             </div>
           </div>
           <div className="box">
             <div className="icon"><FontAwesomeIcon icon={faEnvelope} /></div>
-            <div className="text">
+            <div className="textcontact">
               <h3>Email</h3>
               <a href="mailto:luxeMotor@gmail.com">luxeMotor@gmail.com</a>
             </div>

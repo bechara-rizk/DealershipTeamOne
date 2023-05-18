@@ -3,6 +3,7 @@ import Sidebar from '@/components/Sidebars';
 import DashboardNavbar from '@/components/DashboardNavbar';
 import { firestore } from '../../../firebaseConfig';
 import { collection, query, where, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
+import { useRouter } from 'next/router';
 
 class slotDate {
   constructor(s){
@@ -58,10 +59,16 @@ const CarScheduleAcceptance = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredTestDrives, setFilteredTestDrives] = useState();
   const [loading, setLoading] = useState(true)
+  const router = useRouter()
 
   useEffect(() => {
     const fetchData = async () => {
       const collectionData = await fetchCollectionData();
+      const user = auth.currentUser
+
+      if (!user || user.uid !== "1TaE0cpIawWbsbKcJ2cij6uUpmi2") {
+        router.push('/')
+      }
 
       setTestDrives(collectionData);
       setFilteredTestDrives(collectionData)

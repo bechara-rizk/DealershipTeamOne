@@ -29,6 +29,7 @@ export const Login = (props) => {
 
     try {
       await signInWithEmailAndPassword(auth, username, password);
+      if (username === "luxemotors@gmail.com") router.push('/dashboard/home')
       router.push('/home/homescreen');
     } catch (e) {
       console.log(e);
