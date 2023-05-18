@@ -3,7 +3,7 @@ import Sidebar from '@/components/Sidebars';
 import DashboardNavbar from '@/components/DashboardNavbar';
 import { firestore } from '../../../firebaseConfig';
 import { collection, query, where, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
-import LoadingPage from "@/components/loading";
+
 class slotDate {
   constructor(s){
 
@@ -28,10 +28,6 @@ const updateStatus = async (dbId, status) => {
   let colRef = collection(db, "testDrives")
   let docRef = doc(colRef, dbId)
   await setDoc(docRef, { status: status }, { merge: true });
-}
-
-const sendEmail = async (user) => {
-
 }
 
 const fetchCollectionData = async () => {
@@ -76,10 +72,10 @@ const CarScheduleAcceptance = () => {
   }, []);
 
   if (loading) {
-    return <div><LoadingPage/></div>;
+    return <div>Loading...</div>;
   }
 
-  const handleStatusChange = (id, dbID, user, newStatus) => {
+  const handleStatusChange = (id, dbID, newStatus) => {
     const updatedTestDrives = testDrives.map((drive) => {
       if (drive.id === id) {
         return { ...drive, status: newStatus };
@@ -90,7 +86,6 @@ const CarScheduleAcceptance = () => {
     if (newStatus === "Cancelled") status = -1
     else if (newStatus === "Completed") status = 2
     updateStatus(dbID, status)
-    sendEmail(user) //user has .firstName .lastName .username .email .number
     setTestDrives(updatedTestDrives);
     setFilteredTestDrives(updatedTestDrives);
   };
@@ -123,23 +118,23 @@ const CarScheduleAcceptance = () => {
           <ul>
             {filteredTestDrives.map((testDrive) => (
               <li key={testDrive.id}>
-                {testDrive.car} - {testDrive.status} - {testDrive.date} - {testDrive.time}- by: {testDrive.user.firstName + " " + testDrive.user.lastName}
+                {testDrive.car} - {testDrive.status} - {testDrive.date} - {testDrive.time} - Requested by: {testDrive.user.firstName + " " + testDrive.user.lastName}
                 <button
-                  onClick={() => handleStatusChange(testDrive.id, testDrive.db, testDrive.user, 'Scheduled')}
+                  onClick={() => handleStatusChange(testDrive.id, testDrive.db, 'Scheduled')}
                   disabled={testDrive.status === 'Scheduled'}
                   style={{ color: 'white', backgroundColor: '#454545', border: '1px solid #454545' }}
                 >
                   Set Scheduled
                 </button>
                 <button
-                  onClick={() => handleStatusChange(testDrive.id, testDrive.db, testDrive.user, 'Cancelled')}
+                  onClick={() => handleStatusChange(testDrive.id, testDrive.db, 'Cancelled')}
                   disabled={testDrive.status === 'Cancelled'}
                   style={{ color: 'white', backgroundColor: '#454545', border: '1px solid #454545' }}
                 >
                   Set Cancelled
                 </button>
                 <button
-                  onClick={() => handleStatusChange(testDrive.id, testDrive.db, testDrive.user, 'Completed')}
+                  onClick={() => handleStatusChange(testDrive.id, testDrive.db, 'Completed')}
                   disabled={testDrive.status === 'Completed'}
                   style={{ color: 'white', backgroundColor: '#454545', border: '1px solid #454545' }}
                 >
