@@ -28,10 +28,10 @@ const Footer = () => {
 			 <h4>get help</h4>
 			 <ul>
 			 	
-			   <li><a href="/home/faq ">FAQ</a></li>
+			   <li><a href="/home/faq">FAQ</a></li>
 			   <li><a href="/home/ProductsPage">Products page</a></li>
 			   <li><a href="/home/compareCar">Compare Cars</a></li>
-			   <li><a href=" ">News</a></li>
+			   <li><a href="/home/testScheduling">Request Test Drive</a></li>
 			   
 			 </ul>
 		   </div>
