@@ -4,7 +4,7 @@ import DashboardNavbar from '@/components/DashboardNavbar';
 import { firestore } from '../../../firebaseConfig';
 import { collection, query, where, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
 import { useRouter } from 'next/router';
-
+import { auth } from '../../../firebaseConfig';
 class slotDate {
   constructor(s){
 
