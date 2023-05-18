@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from '@/components/Navbar';
 import Footer from "@/components/Footer";
+import LoadingPage from "@/components/loading";
 import AuthButtons from '@/components/AuthButtonsComp';
 import { firestore } from '../../../firebaseConfig';
 import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
@@ -87,7 +88,7 @@ function TestDriveScheduler() {
   const maxDateFormatted = maxDate.toISOString().slice(0, 10);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingPage/></div>;
   }
 
   return (

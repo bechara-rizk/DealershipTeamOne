@@ -7,6 +7,7 @@ import { firestore, storage } from '../../../firebaseConfig';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 import AuthButtons from '@/components/AuthButtonsComp';
+import LoadingPage from "@/components/loading";
 
 const fetchCollectionData = async () => {
   let db = firestore
@@ -65,7 +66,7 @@ export default function CompareCar() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingPage/></div>;
   }
   console.log(listings)
   console.log(images)
@@ -82,7 +83,7 @@ export default function CompareCar() {
 
 
           <div className="child">
-            <img src={selectedCar1 && car1 ? images[car1.VIN] : '/images/blackcar.png'} alt="car image" style={{ width: '450px', height: '210px' }} />
+            <img src={selectedCar1 && car1 ? images[car1.VIN] : '/images/blackcar.png'} alt="car image" style={{ width: '450px', height: '210px', maxWidth:'100%' }} />
             <form onSubmit={handleSubmit}>
               <h3 className="cars">First Car</h3>
               <label htmlFor="car-Test">Car:</label>
@@ -128,7 +129,7 @@ export default function CompareCar() {
 
 
           <div className="child">
-            <img src={selectedCar2 && car2 ? images[car2.VIN] : '/images/redcar.jpg'} alt="car image" style={{ width: '450px', height: '200px' }} />
+            <img src={selectedCar2 && car2 ? images[car2.VIN] : '/images/redcar.jpg'} alt="car image" style={{width: '450px', height: '210px', maxWidth:'100%' }} />
             <form onSubmit={handleSubmit}>
               <h3 className="cars">Second Car</h3>
               <label htmlFor="car-Test">Car:</label>
