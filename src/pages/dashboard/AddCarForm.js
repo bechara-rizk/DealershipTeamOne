@@ -22,9 +22,9 @@ const AddCarForm = () => {
   useEffect(() => {
     const user = auth.currentUser
 
-    if (!user || user.uid !== "1TaE0cpIawWbsbKcJ2cij6uUpmi2") {
-      router.push('/')
-    }
+ //   if (!user || user.uid !== "1TaE0cpIawWbsbKcJ2cij6uUpmi2") {
+   //   router.push('/')
+  //  }
   }, [])
 
   
@@ -86,6 +86,8 @@ const AddCarForm = () => {
     const str = storage
     const imageRef = ref(str, 'images/' + vin + picture.name.slice(picture.name.length - 4));
     await uploadBytes(imageRef, picture)
+    
+    router.push('/dashboard/carlistingsDashboard');  
   }
 
   return (
