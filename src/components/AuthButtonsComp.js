@@ -42,7 +42,7 @@ const AuthButtons = () => {
                 </>
               ) : (
                 <>
-                  {user.uid === "4rplVi6gQfW4oZSvnXGf1D4z05x2" ? <a href="/dashboard/home">Admin</a> : null}
+                  {user.uid === "1TaE0cpIawWbsbKcJ2cij6uUpmi2" ? <a href="/dashboard/home">Admin</a> : null}
                   <a href="" onClick={() => auth.signOut()}>Sign out</a>
                 </>
               )}

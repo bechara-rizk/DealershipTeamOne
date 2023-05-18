@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { firestore, storage } from '../../../firebaseConfig';
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes } from "firebase/storage";
 import Sidebar from '@/components/Sidebars';
 import DashboardNavbar from '@/components/DashboardNavbar';
+import { auth } from "../../../firebaseConfig";
+import {useRouter} from 'next/router';
 
 
 const AddCarForm = () => {
-
-
   const [vin, setVin] = useState('');
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
@@ -17,7 +17,17 @@ const AddCarForm = () => {
   const [price, setPrice] = useState('');
   const [color, setColor] = useState('');
   const [picture, setPicture] = useState(null);
+  const router = useRouter()
 
+  useEffect(() => {
+    const user = auth.currentUser
+
+    if (!user || user.uid !== "1TaE0cpIawWbsbKcJ2cij6uUpmi2") {
+      router.push('/')
+    }
+  }, [])
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
