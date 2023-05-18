@@ -123,7 +123,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="user-profile">
+    <div >
 
       <Avatar onClick={handleAvatarClick} />
       {isInfoPageOpen && <UserInfoPage onClose={handleInfoPageClose} />}
