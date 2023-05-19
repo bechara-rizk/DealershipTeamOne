@@ -83,7 +83,7 @@ export default function CompareCar() {
 
 
           <div className="child">
-            <img src={selectedCar1 && car1 ? images[car1.VIN] : '/images/blackcar.png'} alt="car image" style={{ width: '450px', height: '210px', maxWidth:'100%' }} />
+            <img src={selectedCar1 && car1 ? images[car1.VIN] : '/images/redd.png'} alt="car image" style={{ width: '450px', height: '230px', maxWidth:'100%' }} />
             <form onSubmit={handleSubmit}>
               <h3 className="cars">First Car</h3>
               <label htmlFor="car-Test">Car:</label>
@@ -129,7 +129,7 @@ export default function CompareCar() {
 
 
           <div className="child">
-            <img src={selectedCar2 && car2 ? images[car2.VIN] : '/images/redcar.jpg'} alt="car image" style={{width: '450px', height: '210px', maxWidth:'100%' }} />
+            <img src={selectedCar2 && car2 ? images[car2.VIN] : '/images/lastpic.png'} alt="car image" style={{width: '450px', height: '230px', maxWidth:'100%' }} />
             <form onSubmit={handleSubmit}>
               <h3 className="cars">Second Car</h3>
               <label htmlFor="car-Test">Car:</label>

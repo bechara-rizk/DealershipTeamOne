@@ -79,7 +79,7 @@ const CarScheduleAcceptance = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingPage/></div>;
   }
 
   const handleStatusChange = (id, dbID, newStatus) => {
@@ -102,7 +102,7 @@ const CarScheduleAcceptance = () => {
     setSearchQuery(query);
 
     const filteredDrives = testDrives.filter((drive) =>
-      drive.carName.toLowerCase().includes(query.toLowerCase())
+    drive.car?.toLowerCase().includes(query.toLowerCase()),
     );
 
     setFilteredTestDrives(filteredDrives);
@@ -125,7 +125,7 @@ const CarScheduleAcceptance = () => {
           <ul>
             {filteredTestDrives.map((testDrive) => (
               <li key={testDrive.id}>
-                {testDrive.car} - {testDrive.status} - {testDrive.date} - {testDrive.time} - Requested by: {testDrive.user.firstName + " " + testDrive.user.lastName}
+                {testDrive.car} - {testDrive.status} - {testDrive.date} - {testDrive.time} - by: {testDrive.user.firstName + " " + testDrive.user.lastName}
                 <button
                   onClick={() => handleStatusChange(testDrive.id, testDrive.db, 'Scheduled')}
                   disabled={testDrive.status === 'Scheduled'}

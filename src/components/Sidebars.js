@@ -52,10 +52,7 @@ const Sidebar = () => {
 
 
 </div>
-          <Link href="/dashboard/charts" className="item">
-            <FiBarChart2 className="chart-icon" />
-            <span className="menu-text">Charts</span>
-          </Link>
+
         </div>
 
        

@@ -48,10 +48,8 @@ const AuthButtons = () => {
               )}
             </div>
           </div>
-        </div>
-        <div className='user-profile'>
           {user && (
-            <div className="profile">
+            <div className='user-profile'>
               <UserProfile />
             </div>
           )}
@@ -59,6 +57,6 @@ const AuthButtons = () => {
       </div>
     </div>
   );
-};
+          }  
 
 export default AuthButtons;

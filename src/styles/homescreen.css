@@ -111,19 +111,23 @@ button {
 
 }
 
-.homepageLogo{
-  /* width: 100%; */
+.homepageLogo {
   height: 80%;
-  margin: 0 auto 0 auto; ;
-  /* margin-top: 10%; */
+  margin: 0 auto 0 auto;
 }
-
-/* for thr dropdown menu for login/ sign up */
 
 .dropdown {
   float: left;
   overflow: hidden;
 }
+
+.user-profile {
+  margin-left: 20%;
+  padding-top: 80%;
+}
+
+
+
 
 .dropdown .dropbtn {
   font-size: 1rem;  

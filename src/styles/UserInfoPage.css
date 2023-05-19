@@ -156,10 +156,6 @@
   
 }
 
-.user-profile {
-
-  margin-right: 400px;
-}
 
 .gray-background {
   position: absolute;
@@ -182,25 +178,7 @@
 
 
 
-.authButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.authwrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
 
-.user-profile {
-  margin-left: auto;
-}
 
-.homepageLogo {
-  margin-left: oaut;
- padding-right: 550px;
-}
 

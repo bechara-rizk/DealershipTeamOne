@@ -10,9 +10,10 @@ export default function AdminHome() {
   useEffect(() => {
     const user = auth.currentUser
 
-    if (!user || user.uid !== "1TaE0cpIawWbsbKcJ2cij6uUpmi2") {
-      router.push('/')
-    }
+  //  if (!user || user.uid !== "1TaE0cpIawWbsbKcJ2cij6uUpmi2") {
+    //  router.push('/')
+    //}
+    
   }, [])
   return (
     <div className="entirePage">

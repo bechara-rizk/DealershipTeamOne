@@ -23,12 +23,14 @@ const UserInfoPage = ({ onClose }) => {
     email: '',
     number: '',
   });
+  const user = auth.currentUser
 
   const [isEditing, setIsEditing] = useState(false);
   useEffect(() => {
+    const user = auth.currentUser
     const fetchData = async () => {
       const db = getFirestore();
-      const userDocRef = doc(db, "users", auth.currentUser.uid);
+      const userDocRef = doc(db, "users", user.uid);
       const userDoc = await getDoc(userDocRef);
       if (userDoc.exists()) {
         setUserData(userDoc.data());
@@ -37,11 +39,11 @@ const UserInfoPage = ({ onClose }) => {
         console.log("No such user document!");
       }
     };
-
-    if (auth.currentUser) {
+    console.log(user);
+    if (user) {
       fetchData();
     }
-  }, [auth.currentUser]);
+  }, [user]);
 
 
   const handleUserInfoChange = (field, value) => {
@@ -52,8 +54,9 @@ const UserInfoPage = ({ onClose }) => {
   };
 
   const handleSaveChanges = async () => {
+    const user = auth.currentUser
     const db = getFirestore();
-    const userDocRef = doc(db, "users", auth.currentUser.uid);
+    const userDocRef = doc(db, "users", user.uid);
     await setDoc(userDocRef, userInfo, { merge: true });
     setUserData(userInfo);
     setIsEditing(false);
@@ -123,7 +126,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="user-profile">
+    <div >
 
       <Avatar onClick={handleAvatarClick} />
       {isInfoPageOpen && <UserInfoPage onClose={handleInfoPageClose} />}
