@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Link from 'next/link';
-import { IoReceiptOutline } from 'react-icons/io5';
-import Sidebar from '@/components/Sidebars';
-import DashboardNavbar from '@/components/DashboardNavbar';
+import Link from "next/link";
+import { IoReceiptOutline } from "react-icons/io5";
+import Sidebar from "@/components/Sidebars";
+import DashboardNavbar from "@/components/DashboardNavbar";
 import { auth, firestore } from "../../../firebaseConfig";
-import { collection, query, getDocs, addDoc, serverTimestamp } from 'firebase/firestore';
-import { useRouter } from 'next/router';
+import {
+  collection,
+  query,
+  getDocs,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { useRouter } from "next/router";
 import { FaSearch } from "react-icons/fa";
 
 function SalesInfoPage() {
@@ -17,19 +23,19 @@ function SalesInfoPage() {
     const user = auth.currentUser;
 
     if (!user || user.uid !== "1TaE0cpIawWbsbKcJ2cij6uUpmi2") {
-      router.push('/');
+      router.push("/");
     }
   }, []);
 
   const getSalesInfo = async () => {
     try {
-      const salesCollection = collection(firestore, 'sales');
+      const salesCollection = collection(firestore, "sales");
       const salesSnapshot = await getDocs(salesCollection);
       const data = salesSnapshot.docs.map((doc) => doc.data());
       setSalesInfo(data);
     } catch (error) {
       // Handle error
-      console.error('Error fetching sales information:', error);
+      console.error("Error fetching sales information:", error);
     }
   };
 
@@ -37,58 +43,69 @@ function SalesInfoPage() {
     getSalesInfo();
   }, []);
 
-
   const handleSearchInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredSalesInfo = salesInfo.filter((data) =>
-  data.carInfo && data.carInfo.make && data.carInfo.make.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  data.carInfo && data.carInfo.model && data.carInfo.model.toLowerCase().includes(searchTerm.toLowerCase())
-);
+  const filteredSalesInfo = salesInfo.filter(
+    (data) =>
+      (data.carInfo &&
+        data.carInfo.make &&
+        data.carInfo.make.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (data.carInfo &&
+        data.carInfo.model &&
+        data.carInfo.model.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
 
   return (
-<>
-<DashboardNavbar />
-<Sidebar />
-<div className="sales-info-page">
-<h1 className="sales-info-heading">Sales Information</h1>
-<div className="search-container">
-<input
-         className="search-input"
-         type="text"
-         placeholder="Search..."
-         value={searchTerm}
-         onChange={handleSearchInputChange}
-       />
-<FaSearch className="search-icon" />
-</div>
-<table className="sales-info-table">
-<thead>
-<tr>
-<th>Make</th>
-<th>Model</th>
-<th>Total Revenue</th>
-<th>Date Sold</th>
-</tr>
-</thead>
-<tbody>
-{filteredSalesInfo.map((row) => (
-<tr key={row.date}>
-<td>{row.carInfo.make} {row.carInfo.model}</td>
-<td>{row.carInfo.model}</td>
-<td>${row.price}</td>
-<td>{row.date.toDate().toLocaleDateString()}</td>
-</tr>
-))}
-</tbody>
-</table>
-<button className="sales-info-button" onClick={getSalesInfo}>
-Refresh
-</button>
-</div>
-</>
-);
+    <>
+      <DashboardNavbar />
+      <Sidebar />
+      <div className="sales-info-page">
+        <h1 className="sales-info-heading">Sales Information</h1>
+        <div className="search-container">
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={handleSearchInputChange}
+          />
+          <FaSearch className="search-icon" />
+        </div>
+        <table className="sales-info-table">
+          <thead>
+            <tr>
+              
+              <th>Car</th>
+              <th>Price</th>
+              <th>Date Sold</th>
+              <th>Name</th>
+              <th>Last Name</th>
+              <th>email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredSalesInfo.map((row) => (
+              <tr key={row.date}>
+                <td>{row.carInfo.make} {row.carInfo.model}</td>
+                <td>${row.carInfo.price}</td>
+                <td>{row.date.toDate().toLocaleDateString()}</td>
+                <td>{row.userInfo &&  row.userInfo.firstName}</td>
+                <td>{row.userInfo &&  row.userInfo.lastName}</td>
+                <td>{row.userInfo &&  row.userInfo.email}</td>
+                <td>{row.userInfo &&  row.userInfo.number}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <button className="sales-info-button" onClick={getSalesInfo}>
+          Refresh
+        </button>
+      </div>
+    </>
+  );
 }
 
 export default SalesInfoPage;

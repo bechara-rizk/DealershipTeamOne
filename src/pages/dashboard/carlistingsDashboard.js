@@ -61,7 +61,7 @@ function ProductsPage() {
   const [phoneValue, setPhoneValue] = useState('');
   const [emailValue, setEmailValue] = useState('');
   const [carToBeSold, setCarToBeSold] = useState(null);
-
+  const [carInfo, setCarInfo] = useState(null);
   const router = useRouter()
 
   useEffect(() => {
@@ -104,74 +104,79 @@ function ProductsPage() {
         model: car.model,
         mileage: car.mileage,
         year: car.year,
-        color: car.color
+        color: car.color,
+        price: car.price
       };
-  
-      const colSaleRef = collection(firestore, "sales");
-      await addDoc(colSaleRef, {
-        carInfo,
-        price: car.price,
-        date: new Date()
-      });
-      console.log("Car marked as sold!");
 
-     
+      setCarInfo(carInfo);
       setIsFormVisible(true);
     } catch (error) {
       console.error("Error marking car as sold:", error);
     }
+    
   };
 
   
-  const handleInfo = async (values) => {
-    setFirstNameValue(values.firstName);
-    setLastNameValue(values.lastName);
-    setPhoneValue(values.phone);
-    setEmailValue(values.email);
-
-   
+  const handleInfo = async (values, carInfo) => {
+    const { firstName, lastName, phone, email } = values;
+  
+    const userInfo = {
+      firstName,
+      lastName,
+      email,
+      number: phone
+    };
+    
+    const colSaleRef = collection(firestore, "sales");
+  
+    await addDoc(colSaleRef, {
+      userInfo,
+      carInfo,
+      
+      date: new Date(),
+    });
+  
     setIsFormVisible(false);
     const newCollectionData = await fetchCollectionData();
     setListings(newCollectionData);
-
+  
     const newStorageData = await fetchStorageData();
     setImages(newStorageData);
   };
-  
 
+  const formModal = (
+    <Modal
+      title="Customer Details"
+      open={isFormVisible}
+      onCancel={() => setIsFormVisible(false)}
+      footer={null}
+    >
+      <Form layout="vertical" onFinish={(values) => handleInfo(values, carInfo)} width="60px">
+        <Row justify="center">
+          <Col span={12}>
+            <Form.Item label="First Name" name="firstName">
+              <Input />
+            </Form.Item>
+            <Form.Item label="Last Name" name="lastName">
+              <Input />
+            </Form.Item>
+            <Form.Item label="Phone" name="phone">
+              <Input />
+            </Form.Item>
+            <Form.Item label="Email" name="email">
+              <Input />
+            </Form.Item>
+            <Form.Item>
+            <Button style={{ backgroundColor: '#454545', color: 'white' }} htmlType="submit">
+              Submit
+            </Button>
+            </Form.Item>
+          </Col>
+        </Row>
+      </Form>
+    </Modal>
+  );
 
-const formModal = (
-  <Modal
-    title="Customer Details"
-    open={isFormVisible}
-    onCancel={() => setIsFormVisible(false)}
-    footer={null}
-  >
-    <Form layout="vertical" onFinish={(values) => handleInfo(values)} width="60px">
-      <Row justify="center">
-        <Col span={12}>
-          <Form.Item label="First Name" name="firstName">
-            <Input />
-          </Form.Item>
-          <Form.Item label="Last Name" name="lastName">
-            <Input />
-          </Form.Item>
-          <Form.Item label="Phone" name="phone">
-            <Input />
-          </Form.Item>
-          <Form.Item label="Email" name="email">
-            <Input />
-          </Form.Item>
-          <Form.Item>
-          <Button style={{ backgroundColor: '#454545', color: 'white' }} htmlType="submit">
-            Submit
-          </Button>
-          </Form.Item>
-        </Col>
-      </Row>
-    </Form>
-  </Modal>
-);
 
 
   const handleEditSubmit = async (updatedCarData) => {
