@@ -1,0 +1,86 @@
+[debug] [2023-05-19T05:03:32.829Z] ----------------------------------------------------------------------
+[debug] [2023-05-19T05:03:32.830Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\97450\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2023-05-19T05:03:32.831Z] CLI Version:   12.0.1
+[debug] [2023-05-19T05:03:32.831Z] Platform:      win32
+[debug] [2023-05-19T05:03:32.831Z] Node Version:  v16.15.1
+[debug] [2023-05-19T05:03:32.837Z] Time:          Fri May 19 2023 08:03:32 GMT+0300 (Eastern European Summer Time)
+[debug] [2023-05-19T05:03:32.837Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-19T05:03:32.840Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-05-19T05:03:32.912Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-19T05:03:32.912Z] > authorizing via signed-in user (itzbahb@gmail.com)
+[debug] [2023-05-19T05:03:32.912Z] [iam] checking project car-dealership-9bbbe for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-19T05:03:32.913Z] > refreshing access token with scopes: []
+[debug] [2023-05-19T05:03:32.914Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-19T05:03:32.914Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-19T05:03:33.854Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-05-19T05:03:33.854Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-05-19T05:03:33.936Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-05-19T05:03:33.936Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-19T05:03:33.943Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions [none]
+[debug] [2023-05-19T05:03:33.943Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions x-goog-quota-user=projects/car-dealership-9bbbe
+[debug] [2023-05-19T05:03:33.943Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-19T05:03:35.257Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions 200
+[debug] [2023-05-19T05:03:35.257Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-19T05:03:35.258Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/car-dealership-9bbbe [none]
+[debug] [2023-05-19T05:03:36.015Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/car-dealership-9bbbe 200
+[debug] [2023-05-19T05:03:36.015Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/car-dealership-9bbbe {"projectId":"car-dealership-9bbbe","projectNumber":"1088203370503","displayName":"Car Dealership","name":"projects/car-dealership-9bbbe","resources":{"hostingSite":"car-dealership-9bbbe","storageBucket":"car-dealership-9bbbe.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_74b4ef28-4878-4e28-93a4-629e2369f280"}
+[debug] [2023-05-19T05:03:39.892Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/car-dealership-9bbbe/sites pageToken=&pageSize=10
+[debug] [2023-05-19T05:03:41.453Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/car-dealership-9bbbe/sites 200
+[debug] [2023-05-19T05:03:41.453Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/car-dealership-9bbbe/sites {"sites":[{"name":"projects/car-dealership-9bbbe/sites/car-dealership-9bbbe","defaultUrl":"https://car-dealership-9bbbe.web.app","appId":"1:1088203370503:web:3aa620d2ec46fc9bd17aa2","type":"DEFAULT_SITE"}]}
+[debug] [2023-05-19T05:03:41.454Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1088203370503:web:3aa620d2ec46fc9bd17aa2/config [none]
+[debug] [2023-05-19T05:03:42.825Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1088203370503:web:3aa620d2ec46fc9bd17aa2/config 200
+[debug] [2023-05-19T05:03:42.825Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1088203370503:web:3aa620d2ec46fc9bd17aa2/config {"projectId":"car-dealership-9bbbe","appId":"1:1088203370503:web:3aa620d2ec46fc9bd17aa2","storageBucket":"car-dealership-9bbbe.appspot.com","locationId":"europe-west","apiKey":"AIzaSyAxMvQrEVvVODwMnC-PKh6haLPk4w3lAxI","authDomain":"car-dealership-9bbbe.firebaseapp.com","messagingSenderId":"1088203370503"}
+[debug] [2023-05-19T05:04:27.694Z] Error: Export encountered errors on following paths:
+	/dashboard/CarScheduleAcceptance
+    at C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\export\index.js:613:19
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Span.traceAsyncFn (C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\trace\trace.js:103:20)
+    at async C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\build\index.js:1483:21
+    at async Span.traceAsyncFn (C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\trace\trace.js:103:20)
+    at async C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\build\index.js:1339:17
+    at async Span.traceAsyncFn (C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\trace\trace.js:103:20)
+    at async build (C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\build\index.js:143:29)
+    at async build (C:\Users\97450\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:56:5)
+    at async prepareFrameworks (C:\Users\97450\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:207:122)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-05-19T05:05:00.622Z] ----------------------------------------------------------------------
+[debug] [2023-05-19T05:05:00.625Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\97450\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2023-05-19T05:05:00.625Z] CLI Version:   12.0.1
+[debug] [2023-05-19T05:05:00.626Z] Platform:      win32
+[debug] [2023-05-19T05:05:00.626Z] Node Version:  v16.15.1
+[debug] [2023-05-19T05:05:00.630Z] Time:          Fri May 19 2023 08:05:00 GMT+0300 (Eastern European Summer Time)
+[debug] [2023-05-19T05:05:00.631Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-19T05:05:00.719Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-19T05:05:00.719Z] > authorizing via signed-in user (itzbahb@gmail.com)
+[debug] [2023-05-19T05:05:00.720Z] [iam] checking project car-dealership-9bbbe for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-19T05:05:00.722Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions [none]
+[debug] [2023-05-19T05:05:00.722Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions x-goog-quota-user=projects/car-dealership-9bbbe
+[debug] [2023-05-19T05:05:00.722Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-19T05:05:02.267Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions 200
+[debug] [2023-05-19T05:05:02.268Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-dealership-9bbbe:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-19T05:05:02.269Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/car-dealership-9bbbe [none]
+[debug] [2023-05-19T05:05:02.893Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/car-dealership-9bbbe 200
+[debug] [2023-05-19T05:05:02.893Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/car-dealership-9bbbe {"projectId":"car-dealership-9bbbe","projectNumber":"1088203370503","displayName":"Car Dealership","name":"projects/car-dealership-9bbbe","resources":{"hostingSite":"car-dealership-9bbbe","storageBucket":"car-dealership-9bbbe.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_74b4ef28-4878-4e28-93a4-629e2369f280"}
+[debug] [2023-05-19T05:05:09.753Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/car-dealership-9bbbe/sites pageToken=&pageSize=10
+[debug] [2023-05-19T05:05:11.047Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/car-dealership-9bbbe/sites 200
+[debug] [2023-05-19T05:05:11.047Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/car-dealership-9bbbe/sites {"sites":[{"name":"projects/car-dealership-9bbbe/sites/car-dealership-9bbbe","defaultUrl":"https://car-dealership-9bbbe.web.app","appId":"1:1088203370503:web:3aa620d2ec46fc9bd17aa2","type":"DEFAULT_SITE"}]}
+[debug] [2023-05-19T05:05:11.049Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1088203370503:web:3aa620d2ec46fc9bd17aa2/config [none]
+[debug] [2023-05-19T05:05:12.255Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1088203370503:web:3aa620d2ec46fc9bd17aa2/config 200
+[debug] [2023-05-19T05:05:12.256Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1088203370503:web:3aa620d2ec46fc9bd17aa2/config {"projectId":"car-dealership-9bbbe","appId":"1:1088203370503:web:3aa620d2ec46fc9bd17aa2","storageBucket":"car-dealership-9bbbe.appspot.com","locationId":"europe-west","apiKey":"AIzaSyAxMvQrEVvVODwMnC-PKh6haLPk4w3lAxI","authDomain":"car-dealership-9bbbe.firebaseapp.com","messagingSenderId":"1088203370503"}
+[debug] [2023-05-19T05:05:51.171Z] Error: Export encountered errors on following paths:
+	/dashboard/CarScheduleAcceptance
+    at C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\export\index.js:613:19
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Span.traceAsyncFn (C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\trace\trace.js:103:20)
+    at async C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\build\index.js:1483:21
+    at async Span.traceAsyncFn (C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\trace\trace.js:103:20)
+    at async C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\build\index.js:1339:17
+    at async Span.traceAsyncFn (C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\trace\trace.js:103:20)
+    at async build (C:\Users\97450\Desktop\DealershipTeamOne\node_modules\next\dist\build\index.js:143:29)
+    at async build (C:\Users\97450\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:56:5)
+    at async prepareFrameworks (C:\Users\97450\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:207:122)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -5,12 +5,6 @@ import { firestore } from '../../../firebaseConfig';
 import { collection, query, where, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
 import { useRouter } from 'next/router';
 
-class slotDate {
-  constructor(s){
-
-  }
-}
-
 let users = {}
 
 
