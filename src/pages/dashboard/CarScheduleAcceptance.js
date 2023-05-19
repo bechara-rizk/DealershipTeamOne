@@ -4,6 +4,7 @@ import DashboardNavbar from '@/components/DashboardNavbar';
 import { firestore } from '../../../firebaseConfig';
 import { collection, query, where, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
 import { useRouter } from 'next/router';
+import { auth } from '../../../firebaseConfig';
 
 let users = {}
 
@@ -73,7 +74,7 @@ const CarScheduleAcceptance = () => {
   }, []);
 
   if (loading) {
-    return <div><LoadingPage/></div>;
+    return <div></div>;
   }
 
   const handleStatusChange = (id, dbID, newStatus) => {
